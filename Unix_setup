@@ -1,0 +1,16 @@
+.screenrc
+bindkey -k k1 prev
+bindkey -k k2 next
+caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
+
+.bashrc
+export GREP_COLOR='1;92'
+export GPGKEY=769D777E
+LS_COLORS='di=92:fi=0:ln=0:pi=0:so=0:bd=0:cd=0:or=0:mi=0:ex=0'
+# General UNIX
+alias la='ls -lah --color'
+alias ls='ls -h --color'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias ..='cd ..'
