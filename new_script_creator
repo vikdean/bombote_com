@@ -1,0 +1,48 @@
+#!/bin/bash
+
+##--------------------------------------------------------------------------------------------
+## The purpose of this script is to create a new empty file, put it into the script folder,
+## set the cHmod to 700 and create an alias.
+##--------------------------------------------------------------------------------------------
+
+scriptname="$1"
+scriptdir="${HOME}/script"
+filename="${scriptdir}/${scriptname}.sh"
+
+if [[ ! $1 ]]; then
+	echo "Missing argument"
+	exit 1
+fi
+
+if [[ -e filename ]]; then
+	echo "File ${filename} already exist"
+	exit 1
+fi
+
+echo
+echo "#!/bin/bash" > ${filename}
+echo
+echo -e "\e[0mScript\e[92m ${filename} \e[0mcreated."
+sleep 1
+chmod 700 ${filename}
+echo
+echo -e "\e[0mcHmod is set to \e[92m700\e[0m.\n"
+echo -e "------------------------------------------------------------------------------------------------------"
+sleep 2
+echo
+echo -e "Do you wish to make an alias for this script?"
+read ans
+if [[ $ans = "yes" ]]
+then
+	echo
+	echo "Please enter the alias you wishes to use:"
+	read input_variable
+	echo
+	sleep 1
+    echo -e "
+alias $input_variable='~/script/$1.sh'" >> .bashrc
+    echo -e "\e[0mAlias <\e[92malias $input_variable='~/script/$1.sh'\e[0m> is added into .bashrc"
+    echo
+else
+    exit
+fi
