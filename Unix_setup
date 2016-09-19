@@ -1,8 +1,3 @@
-.screenrc
-bindkey -k k1 prev
-bindkey -k k2 next
-caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
-
 .bashrc
 export PS1="\[\e[m\]\[\e[92m\][\[\e[m\]\[\e[37m\]\e[0m\w\[\e[m\]\[\e[92m\]]\[\e[m\]\\$ "
 export GREP_COLOR='1;92'
