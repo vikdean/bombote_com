@@ -1,0 +1,26 @@
+# no annoying audible bell, please
+vbell off
+
+deflogin off
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# advertise hardstatus support to $TERMCAP
+termcapinfo xterm ks@:ke@
+
+defscrollback 100000
+shell bash
+
+bindkey -k k1 prev
+bindkey -k k2 next
+
+termcapinfo xterm* ti@:te@
+
+caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
