@@ -24,3 +24,9 @@ bindkey -k k2 next
 termcapinfo xterm* ti@:te@
 
 caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
+
+
+
+###################
+screen -s bash -L
+###################
