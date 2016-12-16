@@ -9,7 +9,7 @@
 [~]$
 export PS1="\h\[\e[32m\][\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
 
-[zdesmcstutt5:~]$
+[servername:~]$
 export PS1="\[\e[32m\][\[\e[m\]\h:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
 
 12.15 11:34[~]$
@@ -19,14 +19,13 @@ ________________________________________________________________________________
 
 ### eGREP - Include kifejezes utani 5 sor
 
-more ol | egrep -e "crypto ca enroll RobertBoschGmbH" -A 5
+more ol | egrep -e "crypto ca enroll" -A 5
 
 _________________________________________________________________________________________________________________________________________________________________________________
 
 ### Notepad++ Delete Empty Lines
 
 \n\r
-
 _________________________________________________________________________________________________________________________________________________________________________________
 
 ### Notepad++ Delete Lines Except
@@ -35,25 +34,33 @@ ________________________________________________________________________________
 
 _________________________________________________________________________________________________________________________________________________________________________________
 
-### Bash compare
-
-vimdiff file1 file2
-
-sdiff file1 file2
-_________________________________________________________________________________________________________________________________________________________________________________
-
 ### Syntax highlight
 
-storage.type.work - Light Green, Bold
-storage.modifier.work - Green, Bold
-string.quoted.work - Yellow
-support.function.work - White Bold
-support.class.work - Dark Blue
-variable.language.work - Blue
-invalid.illegal.work - Italic Pink
-invalid.deprecated.work - Italic Highlighted Red
-constant.numeric.work - Green
-constant.language.work - Orange
+comment.line.work
+storage.type.work
+storage.modifier.work
+string.quoted.work
+support.function.work
+support.class.work
+support.type.work
+support.constant.work
+support.variable.work
+support.other.work
+variable.parameter.work
+variable.language.work
+variable.other.work
+invalid.illegal.work
+invalid.deprecated.work
+constant.numeric.work
+constant.character.work
+constant.character.escape.work
+constant.language.work
+constant.other.work
+entity.name.tag.work
+entity.other.attribute-name.work
+keyword.control.work
+keyword.operator.work
+keyword.other.work
 
 #################################################################################################################################################################################
 #################################################################################################################################################################################
@@ -99,45 +106,6 @@ CIDR   Subnet Mask       Addresses       Wildcard
 /2     192.0.0.0         1,073,741,824   63.255.255.255
 /1     128.0.0.0         2,147,483,648   127.255.255.255
 /0     0.0.0.0           4,294,967,296   255.255.255.255
-_________________________________________________________________________________________________________________________________________________________________________________
-
-### Regular Expressions
-
- ┌───────────┬───────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────┐
- │ Character │ 				      Definition					                         │           		Example                                  │
- ├───────────┼───────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┤
- │ 	^	       │ The pattern has to appear at the beginning of a string.	 │ ^cat matches any string that begins with cat          │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	$	       │ The pattern has to appear at the end of a string.	       │ cat$ matches any string that ends with cat            │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	.	       │ Matches any character.	                                   │ cat. matches catT and cat2 but notcatty               │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	[]	     │ Matches one of any characters enclosed.	                 │ gr[ae]y matches gray or grey                          │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	[^]	     │ Matches one of any characters EXCEPT those enclosed.	     │ 1[^02] matches 13 but not 10 or12                     │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	[-]	     │ Matches any characters within the range.	                 │ [1-9] matches any single digit EXCEPT 0               │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	 ?		   │ Preceding item must match one or zero times.	             │ colou?r matches color or colour but not colouur       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	 +       │ Preceding item must match one or more times.	             │ be+ matches be or bee but not b                       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │ 	*		     │ Preceding item must match zero or more times.	           │ be* matches b or be orbeeeeeeeeee                     │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	()	     │ Creates a substring or item that metacharacters           │ a(bee)?t matches at or abeet but not abet             │
- │           │ can be applied to	                                       │                                                       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	{n}	  	 │ Specifies exact number of times for the preceding         │ [0-9]{3} matches any three digits                     │
- │           │ item to match.	                                           │                                                       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	{n,}     │ Specifies minimum number of times for the preceding       │ [0-9]{3,} matches any three or more digits            │
- │           │ item to match.	                                           │                                                       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	{n,m}	   │ Specifies minimum and maximum number of times for         │ [0-9]{3,5} matches any three, four, or five digits    │
- │           │ the preceding item to match.	                             │                                                       │
- │-----------│-----------------------------------------------------------│-------------------------------------------------------│
- │	 |	     │ One of the alternatives has to match.	                   │ July (first|1st|1) will match July 1stbut not July 2  │
- └───────────┴───────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────┘
 _________________________________________________________________________________________________________________________________________________________________________________
 
 ### IPv6 bit mapping
