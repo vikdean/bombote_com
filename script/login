@@ -1,0 +1,48 @@
+#!/usr/bin/expect
+
+##-------------------------------------------------------------------
+## Author: Viktor Arlett 
+## Created at 27.11.2014 
+##-------------------------------------------------------------------
+## Recommended to use it with permission 700 (chmod 700 scriptname)
+##-------------------------------------------------------------------                     
+#####################################################################
+
+set username "username"
+set pw [open "path to the password file" r]
+set password [read $pw]
+
+spawn ssh [lindex $argv 0]
+
+expect {
+"*(yes/no)*" {
+send "yes\n"
+exp_continue
+}		
+"*?assword:*" {
+send "$password\r"
+interact
+exit
+}
+-re "FATAL*|no hostkey alg" {
+	spawn telnet [lindex $argv 0]
+		expect {
+			"?sername:" {
+			send "$username\n"
+			exp_continue
+			}
+			"?ogin:*" {
+			send "$username\n"
+			exp_continue
+			}
+			"*?assword:*" {
+			send "$password\n"
+			interact 
+			exit
+			exp_continue
+				}
+				}
+				}	
+}
+
+#####################################################################
