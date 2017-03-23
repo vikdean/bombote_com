@@ -31,7 +31,7 @@
                 <key>lineHighlight</key>
                 <string>#37474f</string>
                 <key>selection</key>
-                <string>#37474f</string>
+                <string>#9F0100</string>
                 <key>selectionBorder</key>
                 <string>#1CBD03</string>
                 <key>activeGuide</key>
@@ -160,7 +160,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#8bc34a</string>
+                <string>#FFA3E1</string>
             </dict>
         </dict>
         <dict>
@@ -239,15 +239,52 @@
                 <string>#808080</string>
             </dict>
         </dict>
+         <dict>
+            <key>name</key>
+            <string>Library constant</string>
+            <key>scope</key>
+            <string>support.variable</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#00F4FF</string>
+            </dict>
+        </dict>
+                 <dict>
+            <key>name</key>
+            <string>Library constant</string>
+            <key>scope</key>
+            <string>support.other</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#FF2A05</string>
+            </dict>
+        </dict>
         <dict>
             <key>name</key>
             <string>Library class/type</string>
             <key>scope</key>
-            <string>support.type, support.class</string>
+            <string>support.type</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
                 <string>#607d8b</string>
+            </dict>
+        </dict>
+                <dict>
+            <key>name</key>
+            <string>Library class/type</string>
+            <key>scope</key>
+            <string>support.class</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FDA601</string>
             </dict>
         </dict>
         <dict>
@@ -257,8 +294,8 @@
             <string>support.other.variable</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
+                <key>foreground</key>
+                <string>#FE5659</string>
             </dict>
         </dict>
         <dict>
@@ -672,6 +709,115 @@
                 <string>#ffd54f</string>
             </dict>
         </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco ACL/Route-map</string>
+            <key>scope</key>
+            <string>cisco.acl.routemap</string>
+            <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#FDA601</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Description</string>
+            <key>scope</key>
+            <string>cisco.description</string>
+            <key>settings</key>
+                <dict>
+                <key>foreground</key>
+                <string>#BFBFBF</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Management (SNMP, Logging, NTP, AAA, TACACS)</string>
+            <key>scope</key>
+            <string>cisco.management</string>
+            <key>settings</key>
+                <dict>
+                <key>foreground</key>
+                <string>#F7AAE6</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Interfaces</string>
+            <key>scope</key>
+            <string>cisco.interface</string>
+            <key>settings</key>
+                <dict>
+                 <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Interfaces Sub</string>
+            <key>scope</key>
+            <string>cisco.interface.sub</string>
+            <key>settings</key>
+                <dict>
+                 <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#01DBFD</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Routing</string>
+            <key>scope</key>
+            <string>cisco.routing</string>
+            <key>settings</key>
+                <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#FD971F</string>
+                </dict>
+            </dict>
+            <dict>
+            <key>name</key>
+            <string>Cisco Shutdown</string>
+            <key>scope</key>
+            <string>cisco.shutdown</string>
+            <key>settings</key>
+                <dict>
+                <key>background</key>
+                <string>#C51524</string>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+                </dict>
+            </dict>
+           <dict>
+            <key>name</key>
+            <string>Cisco STP</string>
+            <key>scope</key>
+            <string>cisco.stp</string>
+            <key>settings</key>
+                <dict>
+                <key>foreground</key>
+                <string>#79D2A8</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+            <string>Cisco VLAN</string>
+            <key>scope</key>
+            <string>cisco.vlan</string>
+            <key>settings</key>
+                <dict>
+                <key>foreground</key>
+                <string>#79D2A8</string>
+                </dict>
+            </dict>
     </array>
     <key>uuid</key>
     <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
