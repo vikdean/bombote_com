@@ -13,15 +13,9 @@
     <array>
         <dict>
             <key>match</key>
-            <string>^\s*no </string>
+            <string>^\s*no</string>
             <key>name</key>
             <string>invalid.illegal.ciscooo</string>
-        </dict>
-        <dict>
-            <key>match</key>
-            <string>access-list</string>
-            <key>name</key>
-            <string>string.quoted.ciscooo</string>
         </dict>
         <dict>
             <key>match</key>
@@ -37,7 +31,7 @@
         </dict>
         <dict>
             <key>match</key>
-            <string>\$</string>
+            <string>\$.*</string>
             <key>name</key>
             <string>constant.language.ciscooo</string>
         </dict>
@@ -111,19 +105,73 @@
             <key>match</key>
             <string>^\s*>(.*)</string>
             <key>name</key>
-            <string>constant.language.work</string>
+            <string>constant.language.ciscooo</string>
         </dict>
         <dict>
             <key>match</key>
             <string>### (.*)</string>
             <key>name</key>
-            <string>keyword.control.work</string>
+            <string>keyword.control.ciscooo</string>
         </dict>
          <dict>
             <key>match</key>
             <string>!!!(.*)</string>
             <key>name</key>
-            <string>invalid.deprecated.work</string>
+            <string>invalid.deprecated.ciscooo</string>
+        </dict>
+                <dict>
+            <key>match</key>
+            <string>^\s*shutdown</string>
+            <key>name</key>
+            <string>cisco.shutdown.ciscooo</string>
+        </dict>
+                    <dict>
+            <key>match</key>
+            <string>^\s*(snmp-server|ntp|ntp server|aaa|tacacs-server|logging server|logging source|logging monitor|logging message)</string>
+            <key>name</key>
+            <string>cisco.management.ciscooo</string>
+        </dict>
+                            <dict>
+            <key>match</key>
+            <string>^route-map|access-list|ip access-list</string>
+            <key>name</key>
+            <string>cisco.acl.routemap.ciscooo</string>
+        </dict>
+           <dict>
+            <key>match</key>
+            <string>^\s*interface|^\s*Interface</string>
+            <key>name</key>
+            <string>cisco.interface.ciscooo</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>((FastEthernet|GigabitEthernet|TenGigabitEthernet|Ethernet|Fa|Gi|Te|Eth)\d?/\d?/*\d*|(Port-channel|port-channel|FastEthernet|Vlan|Po|VL|Loopback*|loopback*|mgmt*)\d+)</string>
+            <key>name</key>
+            <string>cisco.interface.sub.ciscooo</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>(router ospf|router bgp|router eigrp)(.*)</string>
+            <key>name</key>
+            <string>cisco.routing.ciscooo</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>(description|desc) (.*)</string>
+            <key>name</key>
+            <string>cisco.description.ciscooo</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>spanning-tree</string>
+            <key>name</key>
+            <string>cisco.stp.ciscooo</string>
+        </dict>
+                <dict>
+            <key>match</key>
+            <string>^\s*vlan</string>
+            <key>name</key>
+            <string>cisco.vlan.ciscooo</string>
         </dict>
     </array>
     <key>scopeName</key>
