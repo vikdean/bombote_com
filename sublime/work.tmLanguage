@@ -64,156 +64,342 @@
             <key>name</key>
             <string>string.quoted.work</string>
         </dict>
-                 <dict>
-             <key>match</key>
-            <string>comment.line.work</string>
-            <key>name</key>
-            <string>comment.line.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>storage.type.work</string>
-            <key>name</key>
-            <string>storage.type.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>storage.modifier.work</string>
-            <key>name</key>
-            <string>storage.modifier.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>string.quoted.work</string>
-            <key>name</key>
-            <string>string.quoted.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.function.work</string>
-            <key>name</key>
-            <string>support.function.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.class.work</string>
-            <key>name</key>
-            <string>support.class.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.type.work</string>
-            <key>name</key>
-            <string>support.type.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.constant.work</string>
-            <key>name</key>
-            <string>support.constant.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.variable.work</string>
-            <key>name</key>
-            <string>support.variable.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>support.other.work</string>
-            <key>name</key>
-            <string>support.other.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>variable.parameter.work</string>
-            <key>name</key>
-            <string>variable.parameter.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>variable.language.work</string>
-            <key>name</key>
-            <string>variable.language.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>variable.other.work</string>
-            <key>name</key>
-            <string>variable.other.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>invalid.illegal.work</string>
-            <key>name</key>
-            <string>invalid.illegal.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>invalid.deprecated.work</string>
-            <key>name</key>
-            <string>invalid.deprecated.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>constant.numeric.work</string>
-            <key>name</key>
-            <string>constant.numeric.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>constant.character.work</string>
-            <key>name</key>
-            <string>constant.character.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>constant.character.escape.work</string>
-            <key>name</key>
-            <string>constant.character.escape.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>constant.language.work</string>
-            <key>name</key>
-            <string>constant.language.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>constant.other.work</string>
-            <key>name</key>
-            <string>constant.other.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>entity.name.tag.work</string>
-            <key>name</key>
-            <string>entity.name.tag.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>entity.other.inherited-class.work</string>
-            <key>name</key>
-            <string>entity.other.inherited-class.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>keyword.control.work</string>
-            <key>name</key>
-            <string>keyword.control.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>keyword.operator.work</string>
-            <key>name</key>
-            <string>keyword.operator.work</string>
-        </dict>
-                 <dict>
-             <key>match</key>
-            <string>keyword.other.work</string>
-            <key>name</key>
-            <string>keyword.other.work</string>
-        </dict>
+<dict>
+    <key>match</key>
+    <string>constant.numeric.work</string>
+    <key>name</key>
+    <string>constant.numeric</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>constant.language.work</string>
+    <key>name</key>
+    <string>constant.language</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>constant.character.work</string>
+    <key>name</key>
+    <string>constant.character</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>constant.other.work</string>
+    <key>name</key>
+    <string>constant.other</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>variable.work</string>
+    <key>name</key>
+    <string>variable</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>keyword.work</string>
+    <key>name</key>
+    <string>keyword</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>storage.work</string>
+    <key>name</key>
+    <string>storage</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>storage.type.work</string>
+    <key>name</key>
+    <string>storage.type</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>entity.name.class.work</string>
+    <key>name</key>
+    <string>entity.name.class</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>entity.other.inherited-class.work</string>
+    <key>name</key>
+    <string>entity.other.inherited-class</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>entity.name.function.work</string>
+    <key>name</key>
+    <string>entity.name.function</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>variable.parameter.work</string>
+    <key>name</key>
+    <string>variable.parameter</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>entity.name.tag.work</string>
+    <key>name</key>
+    <string>entity.name.tag</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>entity.other.attribute-name.work</string>
+    <key>name</key>
+    <string>entity.other.attribute-name</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.function.work</string>
+    <key>name</key>
+    <string>support.function</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.constant.work</string>
+    <key>name</key>
+    <string>support.constant</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.variable.work</string>
+    <key>name</key>
+    <string>support.variable</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.other.work</string>
+    <key>name</key>
+    <string>support.other</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.type.work</string>
+    <key>name</key>
+    <string>support.type</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.class.work</string>
+    <key>name</key>
+    <string>support.class</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>support.other.variable.work</string>
+    <key>name</key>
+    <string>support.other.variable</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>invalid.work</string>
+    <key>name</key>
+    <string>invalid</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>invalid.deprecated.work</string>
+    <key>name</key>
+    <string>invalid.deprecated</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markdown.heading.work</string>
+    <key>name</key>
+    <string>markdown.heading</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.italic.work</string>
+    <key>name</key>
+    <string>markup.italic</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.quote.work</string>
+    <key>name</key>
+    <string>markup.quote</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>string.other.link.title.markdown.work</string>
+    <key>name</key>
+    <string>string.other.link.title.markdown</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.raw.block.work</string>
+    <key>name</key>
+    <string>markup.raw.block</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>punctuation.definition.fenced.markdown.work</string>
+    <key>name</key>
+    <string>punctuation.definition.fenced.markdown</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>variable.language.fenced.markdown.work</string>
+    <key>name</key>
+    <string>variable.language.fenced.markdown</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>punctuation.definition.list_item.markdown.work</string>
+    <key>name</key>
+    <string>punctuation.definition.list_item.markdown</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>meta.separator.work</string>
+    <key>name</key>
+    <string>meta.separator</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.table.work</string>
+    <key>name</key>
+    <string>markup.table</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>meta.diff.work</string>
+    <key>name</key>
+    <string>meta.diff</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.deleted.work</string>
+    <key>name</key>
+    <string>markup.deleted</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.inserted.work</string>
+    <key>name</key>
+    <string>markup.inserted</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>markup.changed.work</string>
+    <key>name</key>
+    <string>markup.changed</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>meta.diff.work</string>
+    <key>name</key>
+    <string>meta.diff</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>sublimelinter.gutter-mark.work</string>
+    <key>name</key>
+    <string>sublimelinter.gutter-mark</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>sublimelinter.mark.error.work</string>
+    <key>name</key>
+    <string>sublimelinter.mark.error</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>sublimelinter.mark.warning.work</string>
+    <key>name</key>
+    <string>sublimelinter.mark.warning</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>comment.block.attribute.rust.work</string>
+    <key>name</key>
+    <string>comment.block.attribute.rust</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>meta.preprocessor.rust.work</string>
+    <key>name</key>
+    <string>meta.preprocessor.rust</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>meta.namespace-block.rust.work</string>
+    <key>name</key>
+    <string>meta.namespace-block.rust</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>punctuation.definition.string.begin.json.work</string>
+    <key>name</key>
+    <string>punctuation.definition.string.begin.json</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>source.json meta meta meta.structure.dictionary string.work</string>
+    <key>name</key>
+    <string>source.json meta meta meta.structure.dictionary string</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>source.json meta meta meta meta.structure.dictionary string.work</string>
+    <key>name</key>
+    <string>source.json meta meta meta meta.structure.dictionary string</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>source.json meta meta meta meta meta.structure.dictionary string.work</string>
+    <key>name</key>
+    <string>source.json meta meta meta meta meta.structure.dictionary string</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.acl.routemap.work</string>
+    <key>name</key>
+    <string>cisco.acl.routemap</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.description.work</string>
+    <key>name</key>
+    <string>cisco.description</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.management.work</string>
+    <key>name</key>
+    <string>cisco.management</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.interface.work</string>
+    <key>name</key>
+    <string>cisco.interface</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.interface.sub.work</string>
+    <key>name</key>
+    <string>cisco.interface.sub</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.routing.work</string>
+    <key>name</key>
+    <string>cisco.routing</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.shutdown.work</string>
+    <key>name</key>
+    <string>cisco.shutdown</string>
+</dict>
+<dict>
+    <key>match</key>
+    <string>cisco.stp.work</string>
+    <key>name</key>
+    <string>cisco.stp</string>
+</dict>
     </array>
     <key>scopeName</key>
     <string>text.work</string>
