@@ -68,7 +68,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#9FF509</string>
+                <string>#7e57c2</string>
             </dict>
         </dict>
         <dict>
@@ -79,7 +79,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#79F07B</string>
+                <string>#7e57c2</string>
             </dict>
         </dict>
         <dict>
@@ -90,7 +90,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#9FF509</string>
+                <string>##7e57c2</string>
             </dict>
         </dict>
         <dict>
@@ -111,10 +111,8 @@
             <string>keyword</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string>bold</string>
                 <key>foreground</key>
-                <string>#00E003</string>
+                <string>#ff5722</string>
             </dict>
         </dict>
         <dict>
@@ -127,7 +125,7 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#20DE8F</string>
+                <string>#e91e63</string>
             </dict>
         </dict>
         <dict>
@@ -160,7 +158,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#FFA3E1</string>
+                <string>#8bc34a</string>
             </dict>
         </dict>
         <dict>
@@ -176,18 +174,7 @@
                 <string>#009688</string>
             </dict>
         </dict>
-        <dict>
-            <key>name</key>
-            <string>Function argument</string>
-            <key>scope</key>
-            <string>variable.parameter</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FD971F</string>
-            </dict>
-        </dict>
-        <dict>
+       <dict>
             <key>name</key>
             <string>Tag name</string>
             <key>scope</key>
@@ -197,7 +184,7 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#1CE2A2</string>
+                <string>#26a69a</string>
             </dict>
         </dict>
         <dict>
@@ -223,7 +210,7 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#A0A0A0</string>
+                <string>#03a9f4</string>
             </dict>
         </dict>
         <dict>
@@ -236,55 +223,18 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#808080</string>
-            </dict>
-        </dict>
-         <dict>
-            <key>name</key>
-            <string>Library constant</string>
-            <key>scope</key>
-            <string>support.variable</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string></string>
-                <key>foreground</key>
-                <string>#00F4FF</string>
-            </dict>
-        </dict>
-                 <dict>
-            <key>name</key>
-            <string>Library constant</string>
-            <key>scope</key>
-            <string>support.other</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string></string>
-                <key>foreground</key>
-                <string>#FF2A05</string>
+                <string>#03a9f4</string>
             </dict>
         </dict>
         <dict>
             <key>name</key>
             <string>Library class/type</string>
             <key>scope</key>
-            <string>support.type</string>
+            <string>support.type, support.class</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
                 <string>#607d8b</string>
-            </dict>
-        </dict>
-                <dict>
-            <key>name</key>
-            <string>Library class/type</string>
-            <key>scope</key>
-            <string>support.class</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FDA601</string>
             </dict>
         </dict>
         <dict>
@@ -294,8 +244,8 @@
             <string>support.other.variable</string>
             <key>settings</key>
             <dict>
-                <key>foreground</key>
-                <string>#FE5659</string>
+                <key>fontStyle</key>
+                <string></string>
             </dict>
         </dict>
         <dict>
@@ -321,9 +271,9 @@
             <key>settings</key>
             <dict>
                 <key>background</key>
-                <string>#C51524</string>
+                <string>#AE81FF</string>
                 <key>foreground</key>
-                <string>#FFFFFF</string>
+                <string>#F8F8F0</string>
             </dict>
         </dict>
         <dict>
@@ -436,7 +386,7 @@
                 <key>fontStyle</key>
                 <string>underline</string>
                 <key>foreground</key>
-                <string>#00FDFF</string>
+                <string>#fb8419</string>
             </dict>
         </dict>
         <dict>
@@ -818,6 +768,119 @@
                 <string>#79D2A8</string>
                 </dict>
             </dict>
+                    <dict>
+            <key>name</key>
+            <string>Work - Sub Category</string>
+            <key>scope</key>
+            <string>work.subcategory</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#79F07B</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Work - Main Category</string>
+            <key>scope</key>
+            <string>work.maincategory</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#00E003</string>
+            </dict>
+        </dict>
+                <dict>
+            <key>name</key>
+            <string>Work - Divider</string>
+            <key>scope</key>
+            <string>work.divider</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#939393</string>
+            </dict>
+        </dict>
+            <dict>
+            <key>name</key>
+            <string>Work - Main Divider</string>
+            <key>scope</key>
+            <string>work.maindivider</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#A0A0A0</string>
+            </dict>
+        </dict>
+                <dict>
+            <key>name</key>
+            <string>Work - Numbers</string>
+            <key>scope</key>
+            <string>work.numbers</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFEA00</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Work - Prio1</string>
+            <key>scope</key>
+            <string>work.prio1</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#C51524</string>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Work - Prio2</string>
+            <key>scope</key>
+            <string>work.prio2</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#FF7900</string>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Work - Prio3</string>
+            <key>scope</key>
+            <string>work.prio3</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#FFED00</string>
+                <key>foreground</key>
+                <string>#000000</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Work - Commands</string>
+            <key>scope</key>
+            <string>work.command</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#7030A0</string>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+        </dict>
+        </dict>
     </array>
     <key>uuid</key>
     <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
