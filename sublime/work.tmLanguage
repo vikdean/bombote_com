@@ -14,55 +14,73 @@
             <key>match</key>
             <string>^\s*>(.*)</string>
             <key>name</key>
-            <string>constant.language.work</string>
+            <string>work.subcategory.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>### (.*)</string>
             <key>name</key>
-            <string>keyword.control.work</string>
+            <string>work.maincategory.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</string>
             <key>name</key>
-            <string>comment.line.work</string>
+            <string>work.divider.work</string>
         </dict>
                 <dict>
             <key>match</key>
             <string>_________________________________________________________________________________________________________________________________________________________________________________</string>
             <key>name</key>
-            <string>comment.line.work</string>
+            <string>work.divider.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</string>
             <key>name</key>
-            <string>comment.line.work</string>
+            <string>work.divider.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>#################################################################################################################################################################################</string>
             <key>name</key>
-            <string>support.function.work</string>
+            <string>work.maindivider.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>\d+\.\d+\.\d+\.\d+(/\d{1,2})?</string>
             <key>name</key>
-            <string>string.quoted.work</string>
+            <string>work.numbers.work</string>
         </dict>
          <dict>
             <key>match</key>
             <string>!!!(.*)</string>
             <key>name</key>
-            <string>invalid.deprecated.work</string>
+            <string>work.prio1.work</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>!!(.*)</string>
+            <key>name</key>
+            <string>work.prio2.work</string>
+        </dict>
+            <dict>
+            <key>match</key>
+            <string>!(.*)</string>
+            <key>name</key>
+            <string>work.prio3.work</string>
+        </dict>
+            <dict>
+            <key>match</key>
+            <string>\$(.*)</string>
+            <key>name</key>
+            <string>work.command.work</string>
         </dict>
         <dict>
             <key>match</key>
             <string>[0-9a-fA-F]{0,4}:([0-9a-fA-F]{0,4}:)+[0-9a-fA-F]{0,4}(/\d{1,3})?</string>
             <key>name</key>
-            <string>string.quoted.work</string>
+            <string>work.numbers.work</string>
         </dict>
 <dict>
     <key>match</key>
