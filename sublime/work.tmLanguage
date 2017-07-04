@@ -12,37 +12,37 @@
     <array>
         <dict>
             <key>match</key>
-            <string>^\s*>(.*)</string>
+            <string>^\s*> (.*)</string>
             <key>name</key>
             <string>work.subcategory.work</string>
         </dict>
         <dict>
             <key>match</key>
-            <string>### (.*)</string>
+            <string>^\s*### (.*)</string>
             <key>name</key>
             <string>work.maincategory.work</string>
         </dict>
         <dict>
             <key>match</key>
-            <string>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</string>
+            <string>^\s*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</string>
             <key>name</key>
             <string>work.divider.work</string>
         </dict>
                 <dict>
             <key>match</key>
-            <string>_________________________________________________________________________________________________________________________________________________________________________________</string>
+            <string>^\s*_________________________________________________________________________________________________________________________________________________________________________________</string>
             <key>name</key>
             <string>work.divider.work</string>
         </dict>
         <dict>
             <key>match</key>
-            <string>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</string>
+            <string>^\s*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</string>
             <key>name</key>
             <string>work.divider.work</string>
         </dict>
         <dict>
             <key>match</key>
-            <string>#################################################################################################################################################################################</string>
+            <string>^\s*#################################################################################################################################################################################</string>
             <key>name</key>
             <string>work.maindivider.work</string>
         </dict>
@@ -54,25 +54,31 @@
         </dict>
          <dict>
             <key>match</key>
-            <string>!!!(.*)</string>
+            <string>^\s*!!!!(.*)</string>
             <key>name</key>
             <string>work.prio1.work</string>
         </dict>
         <dict>
             <key>match</key>
-            <string>!!(.*)</string>
+            <string>^\s*!!!(.*)</string>
             <key>name</key>
             <string>work.prio2.work</string>
         </dict>
             <dict>
             <key>match</key>
-            <string>!(.*)</string>
+            <string>^\s*!!(.*)</string>
             <key>name</key>
             <string>work.prio3.work</string>
         </dict>
+        <dict>
+            <key>match</key>
+            <string>^\s*!(.*)</string>
+            <key>name</key>
+            <string>work.prio4.work</string>
+        </dict>
             <dict>
             <key>match</key>
-            <string>\$(.*)</string>
+            <string>\$ (.*)</string>
             <key>name</key>
             <string>work.command.work</string>
         </dict>
