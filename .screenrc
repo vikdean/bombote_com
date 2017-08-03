@@ -1,31 +1,21 @@
-# no annoying audible bell, please
 vbell off
-
+defutf8 on
 deflogin off
-
-# detach on hangup
 autodetach on
-
-# don't display the copyright page
 startup_message off
-
-# emulate .logout message
 pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
-
-# advertise hardstatus support to $TERMCAP
 termcapinfo xterm ks@:ke@
-
 defscrollback 100000
 shell bash
-
 bindkey -k k1 prev
 bindkey -k k2 next
-
+bindkey -k k3 eval 'layout new' screen
+bindkey -k k4 eval 'split -v' 'focus right' screen
+bindkey -k k5 stuff "lol\015"
+bind r source ~/.screenrc
 termcapinfo xterm* ti@:te@
-
 caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
-
-
+sorendition = "rg"
 
 ###################
 screen -s bash -L
