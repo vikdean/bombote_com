@@ -1,74 +1,51 @@
-	  											                         __  ____        ______       ______
+
+	  				    	    __  ____        ______       ______
                                                   /  |/  (_)_ __  / __/ /___ __/ _/ _/
                                                  / /|_/ / /\ \ / _\ \/ __/ // / _/ _/
                                                 /_/  /_/_//_\_\ /___/\__/\_,_/_//_/
 
+### Bash stuff
 
-### Bash prompt
-
+> Ps1 Prompts
 [~]$
 export PS1="\h\[\e[32m\][\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
 
 [servername:~]$
 export PS1="\[\e[32m\][\[\e[m\]\h:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
 
+[user@servername:~]$
+export PS1="\[\e[32m\][\[\e[m\]\u\[\e[32m\]@\[\e[m\]\h:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
+
 12.15 11:34[~]$
 export PS1="\[\e[37m\]\D{%m.%d} \[\e[m\]\[\e[37m\]\A\[\e[m\]\[\e[32m\][\[\e[m\]\[\e[37m\]\e[0m\w\[\e[m\]\[\e[32m\]]\[\e[m\]\\$ "
 
-_________________________________________________________________________________________________________________________________________________________________________________
+------------------------------------------------------------------------------------------------------------------------------------------------
 
+> Multiline alias
+c() {
+   ssh -l username $1
+}
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+### GNU Screen status bar
+
+ 2017.10.06 | 9:54   0 bash
+hardstatus alwayslastline "%{= dw} %{y}%Y.%m.%d %{w}| %{g}%c %{= dw} %-w%{= rd}%1n %t%{-}%+w"
+
+hardstatus alwayslastline "%{b kw}%H %{r}%1`%{w}|%{g}%c %{w}| %{y}%Y.%m.%d %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### eGREP - Include kifejezes utani 5 sor
 
 more ol | egrep -e "crypto ca enroll" -A 5
 
-_________________________________________________________________________________________________________________________________________________________________________________
-
-### Notepad++ Delete Empty Lines
-
-\n\r
-_________________________________________________________________________________________________________________________________________________________________________________
-
-### Notepad++ Delete Lines Except
-
-^((?!up).)*$
-
-_________________________________________________________________________________________________________________________________________________________________________________
-
-### Syntax highlight
-
-comment.line.work
-storage.type.work
-storage.modifier.work
-string.quoted.work
-support.function.work
-support.class.work
-support.type.work
-support.constant.work
-support.variable.work
-support.other.work
-variable.parameter.work
-variable.language.work
-variable.other.work
-invalid.illegal.work
-invalid.deprecated.work
-constant.numeric.work
-constant.character.work
-constant.character.escape.work
-constant.language.work
-constant.other.work
-entity.name.tag.work
-entity.other.attribute-name.work
-keyword.control.work
-keyword.operator.work
-keyword.other.work
-
-#################################################################################################################################################################################
-#################################################################################################################################################################################
+################################################################################################################################################
+################################################################################################################################################
 
 
-													                           		┌─┐┬┌─┐┌─┐┌─┐
-													                           		│  │└─┐│  │ │
-													                           		└─┘┴└─┘└─┘└─┘
+					                           		┌─┐┬┌─┐┌─┐┌─┐
+					                           		│  │└─┐│  │ │
+					                           		└─┘┴└─┘└─┘└─┘
 
 ### Subnetting
 
@@ -106,8 +83,8 @@ CIDR   Subnet Mask       Addresses       Wildcard
 /2     192.0.0.0         1,073,741,824   63.255.255.255
 /1     128.0.0.0         2,147,483,648   127.255.255.255
 /0     0.0.0.0           4,294,967,296   255.255.255.255
-_________________________________________________________________________________________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### IPv6 bit mapping
 
 XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX
@@ -139,11 +116,11 @@ XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX
       ||32
       |28
       24
-_________________________________________________________________________________________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### NAT
 
-[Private]-->inside  local-->[Router]-->inside  global-->[Public ]
+[Private]-->inside  local-->[Router]-->inside  global-->[Public]
 [Network]<--outside local<--[Router]<--outside global<--[Network]
 
 ip nat inside source:
@@ -166,9 +143,25 @@ Other words:
 iNET can reach 192.168.0.100:8080 as w.x.y.z:80
  - or -
 192.168.0.100:8080 will be visible for iNET as w.x.y.z:80
-_________________________________________________________________________________________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### QoS
+
+Application              PHB   DSCP
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+IP Routing               CS6   48
+Voice                    EF    46
+Interactive-Video        AF41  34
+Streaming Video          CS4   32
+Mission critical         AF31  26
+Call signaling           CS3   24
+Transactional data       AF21  18
+Network management       CS2   16
+Bulk data                AF11  10
+Scavenger                CS1   8
+Best effort              0     0
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Show the full QoS config:
 sh run | s policy-map|access-list extended cos-map|class-map|interface
@@ -219,20 +212,13 @@ packet size of 512 bytes, serialization delays are:
 
 Propagation delay: as a rule of thumb a figure of 0.6 ms per 100km can be used.
 So for two cities 500km apart, a one-way propagation delay of around 3ms can be expected.
-
-_________________________________________________________________________________________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### Stucked SSH
 
 You stucked on the PE in [edit exclusive] : DO NOT CLOSE THE WINDOW!!! Just  [enter] ~ .    ->   TCP session closed
-_________________________________________________________________________________________________________________________________________________________________________________
-
-### ISDN disconnect cause codes
-
-http://www.cisco.com/en/US/tech/tk801/tk379/technologies_tech_note09186a008012e95f.shtml
-http://networking.ringofsaturn.com/Routers/isdncausecodes.php
-_________________________________________________________________________________________________________________________________________________________________________________
-
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ### TCP throughput
 
 http://bradhedlund.com/2008/12/19/how-to-calculate-tcp-throughput-for-long-distance-links/
@@ -275,43 +261,19 @@ show hardware flow l2                  -   	                               		| 	
 show hardware flow sampler             -   	show mls sampling              		| 		Displays the NetFlow sampling configuration
 show hardware flow utilization module  -   	show mls netflow table summary 		| 		Displays NetFlow table utilization per module
 show sampler                           -   	show flow-sampler              		| 		Displays information about sampler maps
-_________________________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+### MTU
 
-### DSL
+> MPLS
+| LDP Label: 4 | VPN Label: 4 | IP: 20 | TCP:20 | PAYLOAD: 1460 |
+                                                | <- TCP MSS -> |
+                              | <---------- IP MTU -----------> |
+| <------------------------ MPLS (1508) ----------------------> |
 
-Router#sh dsl int ATM0/0/0 | i Noise|Out|Atten|Cell|Interleave|Speed|Cells|CRC|rate
-Noise Margin:     8.5 dB                         23.0 dB   >>>   see later
-Output Power:    18.5 dBm                        12.0 dBm   >>>   see later
-Attenuation:     39.0 dB                         24.0 dB   >>>   see later
-                 Interleave             Fast    Interleave              Fast
-Speed (kbps):          4000                0           640                 0   >>>   speed from DSLAM
-Cells:             10438064                0     166244453                 0
-CRC Errors:               0                0             1                 0   >>>   CRC
-clkPerCell:          5300265 (line rate: 512 Kbps)   >>>   Sometimes the output has this instead of "Speed"
-
-Power
-6dB or below is bad and will experience no sync or intermittent sync problems
-7dB-10dB is fair but does not leave much room for variances in conditions
-11dB-20dB is good with no sync problems
-20dB-28dB is excellent
-29dB or above is outstanding
-
-Line Attenuation
-20dB and below is outstanding
-20dB-30dB is excellent
-30dB-40dB is very good
-40dB-50dB is good
-50dB-60dB is poor and may experience connectivity issues
-60dB or above is bad and will experience connectivity issues
-
-For Noise Margin: (the higher this value, the better)
-8-13 Average
-14-22 Very Good
-23-28 Excellent
-
-ATU-R (DS) and ATU-C (US)
-ADSL Termination Unit - Remote (Downstream)
-ADSL Termination Unit - Remote (Upstream)
-ATU-R is a DSL modem and an ATU-C is a DSLAM
-
-http://cosi-nms.sourceforge.net/cgitools/dsl_show/
+> IPsec (Tunnel Mode)
+| IPsec IP Hdr: 20 | IPsec Hdr: 32 | New IP Hdr: 20 | GRE Hdr: 4 | IP: 20 | TCP:20 | PAYLOAD: 1460 |
+                                                                                   | <- TCP MSS -> |
+                                                                 | <------ Ethernet (1500) ------> |
+                                   | <----------------- GRE Encapsulation (1524) ----------------> |
+| <------------------------------ IPsec Tunnel Mode (1576) --------------------------------------> |
