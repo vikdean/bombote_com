@@ -102,9 +102,15 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>((^(\-\s?))|(^(\s\-\s?))|(\||)|(|:)|([\[\]])|([\(\)]))</string>
+                <string>((^(\- \s?))|(^(\s\-\s?))|(\||)|(|:)|([\[\]])|([\(\)]))</string>
                 <key>name</key>
                 <string>work.misc.work</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>(\d\d\/\d\d\/\d\d\d\d|\d\d\d\d\/\d\d\/\d\d|\d\d\d\d\.\d\d\.\d\d|\d\d\.\d\d\.\d\d\d\d)</string>
+                <key>name</key>
+                <string>work.date.work</string>
             </dict>
             <dict>
                 <key>match</key>
@@ -112,6 +118,12 @@
                 <key>name</key>
                 <string>cisco.hostname.ciscooo</string>
             </dict>
+            <dict>
+                <key>match</key>
+                <string>(INC\d\d\d\d\d\d\d|TXF\d\d\d\d\d\d\d\d|XF\d\d\d\d\d\d\d\d|CHG\d\d\d\d\d\d\d)</string>
+                <key>name</key>
+                <string>cisco.inc.ciscooo</string>
+            </dict> 
         </array>
         <key>scopeName</key>
         <string>text.work</string>
