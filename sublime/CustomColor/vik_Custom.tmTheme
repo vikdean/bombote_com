@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict>
+        <key>name</key>
+        <string>vik_Custom</string>
         <key>gutterSettings</key>
         <dict>
             <key>background</key>
@@ -11,8 +13,6 @@
             <key>foreground</key>
             <string>#75715E</string>
         </dict>
-        <key>name</key>
-        <string>vik_Custom</string>
         <key>settings</key>
         <array>
             <dict>
@@ -29,9 +29,9 @@
                     <key>lineHighlight</key>
                     <string>#37474f</string>
                     <key>selection</key>
-                    <string>#9F0100</string>
+                    <string>#1B5E786E</string>
                     <key>selectionBorder</key>
-                    <string>#1CBD03</string>
+                    <string>#00FF3E</string>
                     <key>activeGuide</key>
                     <string>#FF0000</string>
                 </dict>
@@ -954,7 +954,7 @@
                     <string>#9badbd</string>
                 </dict>
             </dict>
-            <!-- ####################################### Cisco ####################################### -->           
+            <!-- ####################################################################### Cisco ################################################################### -->           
             <dict>
                 <key>name</key>
                 <string>Cisco ACL/Route-map</string>
@@ -1294,7 +1294,7 @@
         <string>#E5E5E5</string>
     </dict>
 </dict> 
-<!-- ####################################### Work ####################################### -->
+<!-- ################################################################## Work #################################################################### -->
 <dict>
     <key>name</key>
     <string>Work - Sub Category</string>
@@ -1462,6 +1462,19 @@
      <key>foreground</key>
      <string>#A0A0A0</string>
  </dict>
+</dict>
+<dict>
+    <key>name</key>
+    <string>Work - Date</string>
+    <key>scope</key>
+    <string>work.date</string>
+    <key>settings</key>
+    <dict>
+        <key>fontStyle</key>
+        <string>bold</string>
+        <key>foreground</key>
+        <string>#D4E157</string>
+    </dict>
 </dict>
 </array>
 <key>uuid</key>
