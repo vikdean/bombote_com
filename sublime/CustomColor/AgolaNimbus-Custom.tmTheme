@@ -599,8 +599,12 @@
     <string>cisco.LOG_command</string>
     <key>settings</key>
     <dict>
+        <key>fontStyle</key>
+        <string>bold</string>
+        <key>background</key>
+        <string>#FF0100</string>
         <key>foreground</key>
-        <string>#FFC658</string>
+        <string>#E5E5E5</string>
     </dict>
 </dict> 
 <dict>
@@ -616,6 +620,17 @@
         <string>#767676</string>
         <key>foreground</key>
         <string>#E5E5E5</string>
+    </dict>
+</dict> 
+<dict>
+    <key>name</key>
+    <string>Cisco MAC</string>
+    <key>scope</key>
+    <string>cisco.mac</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#FFA132</string>
     </dict>
 </dict> 
 <!-- ################################################################## Work #################################################################### -->

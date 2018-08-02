@@ -954,7 +954,7 @@
                     <string>#9badbd</string>
                 </dict>
             </dict>
-            <!-- ####################################################################### Cisco ################################################################### -->           
+            <!-- ############################################## Cisco ############################################ -->           
             <dict>
                 <key>name</key>
                 <string>Cisco ACL/Route-map</string>
@@ -1292,6 +1292,17 @@
         <string>#767676</string>
         <key>foreground</key>
         <string>#E5E5E5</string>
+    </dict>
+</dict> 
+<dict>
+    <key>name</key>
+    <string>Cisco MAC</string>
+    <key>scope</key>
+    <string>cisco.mac</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#FFA132</string>
     </dict>
 </dict> 
 <!-- ################################################################## Work #################################################################### -->
