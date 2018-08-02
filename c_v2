@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $1 =~ "[0-9]+.[0-9]+.[0-9]+.[0-9]+" ]]; then
+echo ip
+    host="$1"
+else
+   host=`grep $1 ./scripts/bfg_node.csv | cut -f2 -d","`
+fi
+
+(expect -c "
+  set timeout 20
+  spawn ssh -oStrictHostKeyChecking=no username@$host
+  sleep 1
+  expect \"*?assword:*\"
+  send -- \"paaaaaaaasssss\r\"
+  sleep 1
+  expect -re \">|#\"
+  send -- \"ena\r\"
+  send -- \"paaaaaaaasssss\r\"
+  interact
+  exit
+ ")
