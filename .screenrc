@@ -4,18 +4,24 @@ deflogin off
 autodetach on
 startup_message off
 pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
-termcapinfo xterm ks@:ke@
-defscrollback 100000
+defscrollback 30000
 shell bash
 bindkey -k k1 prev
 bindkey -k k2 next
 bindkey -k k3 eval 'layout new' screen
-bindkey -k k4 eval 'split -v' 'focus right' screen
-bindkey -k k5 stuff "lol\015"
-bind r source ~/.screenrc
+bindkey -k k6 eval 'split -v' 'focus right' screen
+bindkey -k k5 stuff "config paging disable\015"
+bind r source /home/a/.screenrc
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 termcapinfo xterm* ti@:te@
-caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
+#caption always "%{= dw} %-w%{= rd}%1n %t%{-}%+w"
 sorendition = "rg"
+attrcolor b ".I"
+defbce "on"
+term xterm-256color
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= dw} %-w%{= rd}%1n %t%{-}%+w'
 
 ###################
 screen -s bash -L
