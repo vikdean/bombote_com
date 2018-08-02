@@ -26,7 +26,7 @@ def get_input():
 
 def get_match(match):
     for i in range(len(hosts)):
-        match = subprocess.check_output(['grep', hosts[i], '/home/arlettv/scripts/bfg_node.csv'])
+        match = subprocess.check_output(['grep', hosts[i], '/home/a/scripts/bfg_node.csv'])
         print(match)
         #data = {}
         #data['hostname'] = match.split(',')[0]
