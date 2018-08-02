@@ -133,7 +133,7 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>(description|desc) (.*)</string>
+                <string>(description|desc) (.*)|^remark.*</string>
                 <key>name</key>
                 <string>cisco.description.ciscooo</string>
             </dict>
@@ -169,13 +169,13 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>(|crc|admin\sdown|\sdeny\s|\sdown\s|administratively\sdown|"no\sip\saddress|deny\sip\sany\sany|Null0|OFF\s|DOWN\s|block|Total output drops: [1-9]+[0-9]*|[1-9]+[0-9]*\sinput\serrors|[1-9]+[0-9]*\soutput\serrors|[1-9]+[0-9]*\sCRC|[1-9]+[0-9]*\sframe|[1-9]+[0-9]*\soverrun|[1-9]+[0-9]*\signored|[1-9]+[0-9]*\scollisions|Up\s->\sDown|(-)?half|Half)</string>
+                <string>(\sDown\s|crc|admin\sdown|\sdeny\s|\sdown\s|administratively\sdown|no\sip\saddress|deny\sip\sany\sany|Null0|OFF\s|DOWN\s|block|Total output drops: [1-9]+[0-9]*|[1-9]+[0-9]*\sinput\serrors|[1-9]+[0-9]*\soutput\serrors|[1-9]+[0-9]*\sCRC|[1-9]+[0-9]*\sframe|[1-9]+[0-9]*\soverrun|[1-9]+[0-9]*\signored|[1-9]+[0-9]*\scollisions|Up\s->\sDown|(-)?half|Half)</string>
                 <key>name</key>
                 <string>cisco.reds.ciscooo</string>
             </dict>
             <dict>
                 <key>match</key>
-                <string>(no\ssh|no\sshut|no\sshutdown|\spermit|\spass\s|\stransmit|up,\s|\sup\s|\sON\s|\sUP\s|ip\saddress|permit\sip\sany\sany|\sin\s|\swr\s|full|Full-duplex|Full\sDuplex|FULL|0 input errors|0 output errors|Total output drops: 0|Down\s->\sUp)</string>
+                <string>(\sUp\s|no\ssh|no\sshut|no\sshutdown|\spermit|\spass\s|\stransmit|up,\s|\sup\s|\sON\s|\sUP\s|ip\saddress|permit\sip\sany\sany|\sin\s|\swr\s|full|Full-duplex|Full\sDuplex|FULL|0 input errors|0 output errors|Total output drops: 0|Down\s->\sUp)</string>
                 <key>name</key>
                 <string>cisco.greens.ciscooo</string>
             </dict>
@@ -225,7 +225,7 @@
                 <key>match</key>
                 <string>([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9A-Fa-f]{4}[\.]){2}([0-9A-Fa-f]{4})</string>
                 <key>name</key>
-                <string>work.numbers.ciscooo</string>
+                <string>cisco.mac.ciscooo</string>
             </dict>
             <dict>
                 <key>match</key>
@@ -247,13 +247,13 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>(INC\d\d\d\d\d\d\d|TXF\d\d\d\d\d\d\d\d|XF\d\d\d\d\d\d\d\d)</string>
+                <string>(INC\d\d\d\d\d\d\d|TXF\d\d\d\d\d\d\d\d|XF\d\d\d\d\d\d\d\d|CHG\d\d\d\d\d\d\d)</string>
                 <key>name</key>
                 <string>cisco.inc.ciscooo</string>
             </dict> 
             <dict>
                 <key>match</key>
-                <string>(User:(acs|ACS)-.*logged command:)</string>
+                <string>(.*logged command:)</string>
                 <key>name</key>
                 <string>cisco.LOG_command.ciscooo</string>
             </dict>
