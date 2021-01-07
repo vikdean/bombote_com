@@ -1,3 +1,0 @@
-show version
-show cdp nei
-show clock
