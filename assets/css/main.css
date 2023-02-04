@@ -233,8 +233,8 @@ h6 {
   transform: translateY(-100%);
   -webkit-animation: linemove 1200ms linear 0s infinite;
   animation: linemove 1200ms linear 0s infinite;
-  -webkit-animation-delay: 2000ms;
-  animation-delay: 2000ms;
+  -webkit-animation-delay: 1000ms;
+  animation-delay: 1000ms;
 }
 
 #preloader.loaded .line {
@@ -1274,6 +1274,24 @@ h6 {
 
 .hero .btn-get-started:hover {
   background: #2cbc85;
+}
+
+.btn-page {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 12px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  color: #fff;
+  background: #EB5A03;
+}
+
+.btn-page:hover {
+  background: #BD4300;
 }
 
 @media (max-width: 768px) {
