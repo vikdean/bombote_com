@@ -1,22 +1,344 @@
 <!DOCTYPE html>
-<html>
-<head>
-      <title>Index | bombote.com</title>
-      <style>
-            body {
-                  background-color: #111
-            }
-      </style>
-</head>
-<body>
-      <br>
-      <p><img src="https://raw.githubusercontent.com/vikdean/vik/master/logo.png" alt="https://raw.githubusercontent.com/vikdean/vik/master/logo.png" style="height:100px; width:200px; margin-left:20px"/></p>
-      <!--<br>
-      <br>
-      <br>
-      <br>
-      <p style="margin-left:40px"><span style="color:#ffffff"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>My Etsy store</strong>:</span></span></span></p>
-      <p style="margin-left:40px"><a href="https://bombotedesigns.etsy.com" target="_blank"><span style="color:#ffffff">https://bombotedesigns.etsy.com</span></a></p>
-      <p><a href="https://www.etsy.com/shop/BomboteDesigns" target="_blank"><img alt="Banner" src="https://raw.githubusercontent.com/vikdean/vik/master/banner.jpg" style="border-style:solid; border-width:3px; height:250px; margin:0px 40px; width:1000px" /></a></p>-->
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bombote.com | Fragrance Ratings & Reviews</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #191919;
+        color: #e0e0e0;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #ffff;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        color: #ffff;
+        margin-bottom: 14px;
+      }
+
+      table {
+        width: 100%;
+        background-color: #222222;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow-x: auto;
+        display: block;
+        max-width: fit-content;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          margin: 10px;
+          padding: 10px;
+        }
+
+        table {
+          font-size: 14px;
+        }
+
+        th,
+        td {
+          padding: 8px;
+        }
+
+        .info {
+          width: 90%;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        table {
+          font-size: 12px;
+        }
+
+        th,
+        td {
+          padding: 6px;
+        }
+
+        .type-badge {
+          font-size: 0.8em;
+          padding: 2px 4px;
+        }
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #333;
+      }
+
+      th {
+        background-color: #2a2a2a;
+        color: #ecd936;
+      }
+
+      tr:hover {
+        background-color: #463000;
+      }
+
+      tr:first-child th:first-child {
+        border-top-left-radius: 10px;
+      }
+      tr:first-child th:last-child {
+        border-top-right-radius: 10px;
+      }
+      tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+      }
+      tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+      }
+
+      .rating-cell {
+        background-color: #1a1a1a;
+        border-radius: 3px;
+        padding: 4px 6px;
+      }
+
+      .type-badge {
+        display: inline-block;
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+
+      .type-parfum {
+        background-color: #873b03;
+        color: #ffff;
+      }
+
+      .type-eau-de-parfum {
+        background-color: #c5690c;
+        color: #ffff;
+      }
+
+      .type-eau-de-toilette {
+        background-color: #676666;
+        color: #ffff;
+      }
+
+      .type-elixir {
+        background-color: #0c6e99;
+        color: #ffff;
+      }
+
+      .score {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-weight: 500;
+      }
+
+      .score-10 {
+        background-color: #0e7b6c;
+        color: #ffff;
+      }
+
+      .score-9 {
+        background-color: #0c6e99;
+        color: #ffff;
+      }
+
+      .score-8 {
+        background-color: #440991;
+        color: #ffff;
+      }
+
+      .score-7,
+      .score-6 {
+        background-color: #cb7b37;
+        color: #ffff;
+      }
+
+      .score-5,
+      .score-4 {
+        background-color: #6b4432;
+        color: #ffff;
+      }
+
+      .score-3,
+      .score-2,
+      .score-1 {
+        background-color: #892f29;
+        color: #ffff;
+      }
+
+      .info {
+        background-color: #313131;
+        border-left: 8px solid #ffeb3b;
+        margin-bottom: 15px;
+        padding: 4px 16px;
+        border-radius: 8px;
+        width: 70%;
+      }
+
+      a {
+        color: yellow;
+      }
+      a:hover {
+        color: orangered;
+      }
+      a:visited {
+        color: limegreen;
+      }
+      a:active {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <img
+        src="https://raw.githubusercontent.com/vikdean/vik/master/logo.png"
+        alt="https://raw.githubusercontent.com/vikdean/vik/master/logo.png"
+        style="height: 100px; width: 200px; margin-left: 8px"
+      />
+    </p>
+    <br />
+    <br />
+    <h1>My Fragrance Ratings & Reviews</h1>
+    <div class="info">
+      <p>
+        <strong style="padding-right: 14px">Note!</strong>Please keep in mind that the ratings on this page are based on my own taste and preferences; most of these were tested with genuine
+        2ml sample tubes, which manufactures usually give away for free.
+      </p>
+    </div>
+    <br />
+    <table id="fragranceTable">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Smell</th>
+          <th>Strength</th>
+          <th>Overall Score</th>
+          <th>Comments</th>
+          <th>Link to buy</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <br />
+    <h2 id="strength-longevity-guide">Strength (Longevity) guide</h2>
+    <table style="width: 50%">
+      <thead>
+        <tr>
+          <th>Duration</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Under 30 minutes</td>
+          <td>🌗🌑🌑🌑🌑</td>
+        </tr>
+        <tr>
+          <td>30 minutes to 1 hour</td>
+          <td>🌕🌑🌑🌑🌑</td>
+        </tr>
+        <tr>
+          <td>1 hour</td>
+          <td>🌕🌗🌑🌑🌑</td>
+        </tr>
+        <tr>
+          <td>2 hours</td>
+          <td>🌕🌕🌑🌑🌑</td>
+        </tr>
+        <tr>
+          <td>3 hours</td>
+          <td>🌕🌕🌗🌑🌑</td>
+        </tr>
+        <tr>
+          <td>4 hours</td>
+          <td>🌕🌕🌕🌑🌑</td>
+        </tr>
+        <tr>
+          <td>5 hours</td>
+          <td>🌕🌕🌕🌗🌑</td>
+        </tr>
+        <tr>
+          <td>6 hours</td>
+          <td>🌕🌕🌕🌕🌑</td>
+        </tr>
+        <tr>
+          <td>7 hours</td>
+          <td>🌕🌕🌕🌕🌗</td>
+        </tr>
+        <tr>
+          <td>8 hours</td>
+          <td>🌕🌕🌕🌕🌕</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function getTypeClass(type) {
+        return "type-" + type.toLowerCase().replace(/\s+/g, "-");
+      }
+
+      function getScoreClass(score) {
+        const scoreNum = parseInt(score.split("/")[1]);
+        return `score-${scoreNum}`;
+      }
+
+      async function loadFragrances() {
+        try {
+          const response = await fetch("fragrances.csv");
+          const data = await response.text();
+          const rows = data.split("\n");
+          const tbody = document.querySelector("#fragranceTable tbody");
+
+          for (let i = 1; i < rows.length; i++) {
+            if (!rows[i].trim()) continue;
+
+            const columns = rows[i].split(",").map((col) => col.trim());
+            const row = document.createElement("tr");
+            const typeClass = getTypeClass(columns[2]);
+            const scoreClass = getScoreClass(columns[5]);
+
+            // Brand
+            row.innerHTML += `<td>${columns[0]}</td>`;
+            // Name
+            row.innerHTML += `<td>${columns[1].replace(/"/g, "")}</td>`;
+            // Type with colored badge
+            row.innerHTML += `<td><span class="type-badge ${typeClass}">${columns[2]}</span></td>`;
+            // Smell with dark background
+            row.innerHTML += `<td><div class="rating-cell">${columns[3]}</div></td>`;
+            // Strength with dark background
+            row.innerHTML += `<td><div class="rating-cell">${columns[4]}</div></td>`;
+            // Overall Score with color
+            row.innerHTML += `<td><span class="score ${scoreClass}">${columns[5]}</span></td>`;
+            // Comments
+            row.innerHTML += `<td>${columns[6] || ""}</td>`;
+            // Link to buy
+            row.innerHTML += `<td>${columns[7] ? `<a href="${columns[7]}" target="_blank">Amazon</a>` : ""}</td>`;
+
+            tbody.appendChild(row);
+          }
+        } catch (error) {
+          console.error("Error loading fragrances:", error);
+        }
+      }
+
+      loadFragrances();
+    </script>
+  </body>
 </html>
