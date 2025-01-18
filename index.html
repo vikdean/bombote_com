@@ -81,7 +81,7 @@
 
       th,
       td {
-        padding: 12px;
+        padding: 8px;
         text-align: left;
         border: 1px solid #333;
       }
@@ -148,6 +148,10 @@
         font-weight: 500;
       }
 
+      .score-container {
+        text-align: center;
+      }
+
       .score-10 {
         background-color: #0e7b6c;
         color: #ffff;
@@ -188,7 +192,7 @@
         margin-bottom: 15px;
         padding: 4px 16px;
         border-radius: 8px;
-        width: 70%;
+        width: 72%;
       }
 
       a {
@@ -215,7 +219,7 @@
     </p>
     <br />
     <br />
-    <h1>My Fragrance Ratings & Reviews</h1>
+    <h1>Men's Fragrance Ratings & Reviews</h1>
     <div class="info">
       <p>
         <strong style="padding-right: 14px">Note!</strong>Please keep in mind that the ratings on this page are based on my own taste and preferences; most of these were tested with genuine
@@ -223,13 +227,16 @@
       </p>
     </div>
     <br />
+    <p>
+      Fragrances reviewed: <span id="fragranceCount" style="color: #ecd936; font-weight: bold">0</span> | Last update: <span id="lastUpdate" style="color: #ecd936; font-weight: bold"></span>
+    </p>
     <table id="fragranceTable">
       <thead>
         <tr>
           <th>Brand</th>
           <th>Name</th>
           <th>Type</th>
-          <th>Smell</th>
+          <th>Scent</th>
           <th>Strength</th>
           <th>Overall Score</th>
           <th>Comments</th>
@@ -304,6 +311,11 @@
       async function loadFragrances() {
         try {
           const response = await fetch("fragrances.csv");
+          const lastModified = response.headers.get("last-modified");
+          if (lastModified) {
+            const date = new Date(lastModified);
+            document.getElementById("lastUpdate").textContent = date.toLocaleDateString();
+          }
           const data = await response.text();
           const rows = data.split("\n");
           const tbody = document.querySelector("#fragranceTable tbody");
@@ -327,7 +339,7 @@
             // Strength with dark background
             row.innerHTML += `<td><div class="rating-cell">${columns[4]}</div></td>`;
             // Overall Score with color
-            row.innerHTML += `<td><span class="score ${scoreClass}">${columns[5]}</span></td>`;
+            row.innerHTML += `<td><div class="score-container"><span class="score ${scoreClass}">${columns[5]}</span></div></td>`;
             // Comments
             row.innerHTML += `<td>${columns[6] || ""}</td>`;
             // Link to buy
@@ -335,6 +347,9 @@
 
             tbody.appendChild(row);
           }
+
+          // Update the count display
+          document.getElementById("fragranceCount").textContent = tbody.children.length;
         } catch (error) {
           console.error("Error loading fragrances:", error);
         }
