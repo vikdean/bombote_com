@@ -112,6 +112,16 @@ body {
     text-overflow: ellipsis;
   }
 
+  .type-column,
+  .type-column + td {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   td:not(.scent-column + td):not(.longevity-column + td) {
     word-wrap: break-word;
     white-space: normal;
