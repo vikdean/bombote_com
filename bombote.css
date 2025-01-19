@@ -79,9 +79,9 @@ body {
 
   .scent-column,
   .scent-column + td {
-    width: 150px;
-    min-width: 150px;
-    max-width: 150px;
+    width: 122px;
+    min-width: 122px;
+    max-width: 122px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -89,9 +89,9 @@ body {
 
   .longevity-column,
   .longevity-column + td {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
+    width: 122px;
+    min-width: 122px;
+    max-width: 122px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
