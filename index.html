@@ -55,6 +55,10 @@
     <p style="padding-top: 8px">
       Fragrances reviewed: <span id="fragranceCount" style="color: #ecd936; font-weight: bold">0</span> | Last update: <span id="lastUpdate" style="color: #ecd936; font-weight: bold"></span>
     </p>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search fragrances..." />
+      <button id="clearSearch">Clear</button>
+    </div>
     <table id="fragranceTable">
       <thead>
         <tr>
@@ -180,7 +184,43 @@
         }
       }
 
-      loadFragrances();
+      // Search functionality
+      function setupSearch() {
+        const searchInput = document.getElementById('searchInput');
+        const clearButton = document.getElementById('clearSearch');
+        const table = document.getElementById('fragranceTable');
+        const rows = table.getElementsByTagName('tr');
+
+        function filterTable() {
+          const filter = searchInput.value.toLowerCase();
+          for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const cells = row.getElementsByTagName('td');
+            let found = false;
+            
+            for (let cell of cells) {
+              const text = cell.textContent || cell.innerText;
+              if (text.toLowerCase().indexOf(filter) > -1) {
+                found = true;
+                break;
+              }
+            }
+            
+            row.style.display = found ? '' : 'none';
+          }
+        }
+
+        searchInput.addEventListener('keyup', filterTable);
+        
+        clearButton.addEventListener('click', () => {
+          searchInput.value = '';
+          filterTable();
+        });
+      }
+
+      loadFragrances().then(() => {
+        setupSearch();
+      });
     </script>
   </body>
 </html>
