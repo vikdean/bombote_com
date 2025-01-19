@@ -37,32 +37,6 @@ body {
   padding: 20px;
   font-size: 1rem;
   line-height: 1.5;
-  position: relative;
-}
-
-.corner-ribbon {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  pointer-events: none;
-  opacity: 0.85;
-  z-index: 1000;
-}
-
-@media (max-width: 768px) {
-  .corner-ribbon {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .corner-ribbon {
-    width: 80px;
-    height: 80px;
-  }
 }
 
 h1 {
