@@ -12,7 +12,7 @@
 
       gtag("config", "G-98SSJ8YV1J");
     </script>
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -186,18 +186,18 @@
 
       // Search functionality
       function setupSearch() {
-        const searchInput = document.getElementById('searchInput');
-        const clearButton = document.getElementById('clearSearch');
-        const table = document.getElementById('fragranceTable');
-        const rows = table.getElementsByTagName('tr');
+        const searchInput = document.getElementById("searchInput");
+        const clearButton = document.getElementById("clearSearch");
+        const table = document.getElementById("fragranceTable");
+        const rows = table.getElementsByTagName("tr");
 
         function filterTable() {
           const filter = searchInput.value.toLowerCase();
           for (let i = 1; i < rows.length; i++) {
             const row = rows[i];
-            const cells = row.getElementsByTagName('td');
+            const cells = row.getElementsByTagName("td");
             let found = false;
-            
+
             for (let cell of cells) {
               const text = cell.textContent || cell.innerText;
               if (text.toLowerCase().indexOf(filter) > -1) {
@@ -205,15 +205,15 @@
                 break;
               }
             }
-            
-            row.style.display = found ? '' : 'none';
+
+            row.style.display = found ? "" : "none";
           }
         }
 
-        searchInput.addEventListener('keyup', filterTable);
-        
-        clearButton.addEventListener('click', () => {
-          searchInput.value = '';
+        searchInput.addEventListener("keyup", filterTable);
+
+        clearButton.addEventListener("click", () => {
+          searchInput.value = "";
           filterTable();
         });
       }
