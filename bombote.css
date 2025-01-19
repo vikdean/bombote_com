@@ -102,6 +102,16 @@ body {
     text-overflow: ellipsis;
   }
 
+  .score-column,
+  .score-column + td {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   td:not(.scent-column + td):not(.longevity-column + td) {
     word-wrap: break-word;
     white-space: normal;
