@@ -62,8 +62,8 @@
           <th>Brand</th>
           <th>Name</th>
           <th>Type</th>
-          <th>Scent</th>
-          <th>Longevity</th>
+          <th style="width: 150px">Scent</th>
+          <th style="width: 100px">Longevity</th>
           <th>Score</th>
           <th>Comments</th>
           <th>Link to buy</th>
@@ -161,9 +161,9 @@
             // Type with colored badge
             row.innerHTML += `<td><span class="type-badge ${typeClass}">${columns[2]}</span></td>`;
             // Smell with dark background
-            row.innerHTML += `<td><div class="rating-cell">${columns[3]}</div></td>`;
+            row.innerHTML += `<td style="width: 150px"><div class="rating-cell">${columns[3]}</div></td>`;
             // Strength with dark background
-            row.innerHTML += `<td><div class="rating-cell">${columns[4]}</div></td>`;
+            row.innerHTML += `<td style="width: 100px"><div class="rating-cell">${columns[4]}</div></td>`;
             // Overall Score with color
             row.innerHTML += `<td><div class="score-container"><span class="score ${scoreClass}">${columns[5]}</span></div></td>`;
             // Comments
