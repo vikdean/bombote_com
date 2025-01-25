@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="bg-secondary">
       <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-foreground">Men's Perfume Ratings & Reviews</h1>
+        <h1 className="text-3xl font-bold text-foreground">Men&apos;s Perfume Ratings & Reviews</h1>
       </div>
       <div className="max-w-[1920px] mx-auto pb-6 sm:px-6 lg:px-8">
         <div className="px-4 py-2 sm:px-0">

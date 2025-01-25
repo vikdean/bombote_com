@@ -15,7 +15,7 @@ const top_picks = [
     price: "moderate",
     overall_score: "10/10",
     link: "https://amzn.to/42feVx5",
-    description: "The Modern Men's perfume; perfect scent, with incredible performance at an OK price (get the Parfum or EDP version if you can't afford it).  Highly recommended.",
+    description: "The Modern Mens perfume; perfect scent, with incredible performance at an OK price (get the Parfum or EDP version if you can't afford it).  Highly recommended.",
   },
   {
     brand: "Carolina Herrera",
