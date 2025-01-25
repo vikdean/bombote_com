@@ -8,7 +8,7 @@ import Analytics from "@/components/Analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Men&apos;s Perfume Ratings & Reviews | Bombote.com",
+  title: "Men's Perfume Ratings & Reviews | BOMBOTE",
   description: "Comprehensive collection of mens fragrance ratings and reviews",
   keywords: "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
 };
