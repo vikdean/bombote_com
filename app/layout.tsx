@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Men's Perfume Ratings & Reviews | BOMBOTE",
-  description: "Comprehensive collection of mens fragrance ratings and reviews",
+  description: "Comprehensive collection of men's fragrance ratings, reviews and recommendations. Explore niche perfumes and the best scents for every occasion.",
   keywords: "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
 };
 

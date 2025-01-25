@@ -47,7 +47,7 @@ const long_data = [
 export default function Longevity() {
   return (
     <div className="bg-secondary">
-      <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-foreground pb-8">Longevity Legend</h1>
         <div className="overflow-x-auto rounded-xl w-[360px]">
           <Table>

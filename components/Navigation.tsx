@@ -9,7 +9,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between w-full">
             <div className="flex-shrink-0">
               <Link href="/">
-                <Image src="./logo.png" alt="Logo" width="135" height="30" />
+                <Image src="/logo.png" alt="Logo" width="135" height="30" />
               </Link>
             </div>
             <div className="hidden md:block">
