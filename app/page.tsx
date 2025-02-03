@@ -12,8 +12,7 @@ export default function Home() {
   const fragrances: Fragrance[] = parseCSV();
 
   return (
-    <div className="bg-secondary">
-      <section aria-label="Fragrance Reviews Database">
+    <div className="bg-secondary" aria-label="Fragrance Reviews Database">
       <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-foreground">Men&apos;s Perfume Ratings & Reviews</h1>
       </div>

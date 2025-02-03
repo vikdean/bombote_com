@@ -86,8 +86,7 @@ export const metadata = {
 
 export default function TopPicks() {
   return (
-    <div className="bg-secondary">
-      <section aria-label="Top Perfume Picks">
+    <div className="bg-secondary" aria-label="Top Perfume Picks">
       <div className="max-w-[1400px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
         <div className="grid grid-cols-1 gap-6">
