@@ -3,11 +3,17 @@ import FragranceTable from "@/components/FragranceTable";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleAlert } from "lucide-react";
 
+export const metadata = {
+  title: "Men's Perfume Reviews & Ratings Database | BOMBOTE",
+  description: "Browse our comprehensive database of men's perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
+};
+
 export default function Home() {
   const fragrances: Fragrance[] = parseCSV();
 
   return (
     <div className="bg-secondary">
+      <section aria-label="Fragrance Reviews Database">
       <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-foreground">Men&apos;s Perfume Ratings & Reviews</h1>
       </div>
