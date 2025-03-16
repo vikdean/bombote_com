@@ -14,13 +14,13 @@ export default function Navigation() {
             </div>
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-4">
-                <Link href="/" className="text-gray-300 bg-gray-800 hover:bg-emerald-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">
+                <Link href="/" className="text-gray-300 bg-gray-800 hover:bg-emerald-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                   Home
                 </Link>
-                <Link href="/top-picks" className="text-gray-300 bg-gray-800 hover:bg-emerald-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">
+                <Link href="/top-picks" className="text-gray-300 bg-gray-800 hover:bg-emerald-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                   My Top Picks
                 </Link>
-                <Link href="/longevity" className="text-gray-300 bg-gray-800 hover:bg-emerald-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">
+                <Link href="/longevity" className="text-gray-300 bg-gray-800 hover:bg-emerald-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                   Longevity Legend
                 </Link>
               </div>
