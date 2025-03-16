@@ -33,7 +33,7 @@ export default function FragranceTable({ fragrances }: FragranceTableProps) {
             {filteredFragrances.map((fragrance, index) => (
               <TableRow key={index}>
                 {Object.entries(fragrance).map(([key, value]) => (
-                  <TableCell className={`px-4 ${key === "Scent" || key === "Longevity" ? "whitespace-normal min-w-[137px]" : ""}`} key={key}>
+                  <TableCell className={`px-4 ${key === "Scent" || key === "Longevity" ? "whitespace-normal min-w-[138px]" : ""}`} key={key}>
                     {key === "Link to buy" ? (
                       <Link href={value} className="text-emerald-400 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
                         Amazon
