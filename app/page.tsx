@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CircleAlert } from "lucide-react";
 
 export const metadata = {
-  title: "Men's Perfume Reviews & Ratings Database | BOMBOTE",
-  description: "Browse our comprehensive database of men's perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
+  title: "Bombote - Men's Perfume Reviews & Ratings Database",
+  description: "Comprehensive database of men's perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
 };
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
                   <div className="flex-1 space-y-1">
                     <CardTitle className="text-sm font-bold leading-none text-foreground">Note</CardTitle>
                     <p className="text-sm text-gray-300">
-                      Please keep in mind, the ratings on this page are based on my own taste and preferences. Most of these were tested with genuine 2ml sample tubes.
+                      Please keep in mind, the ratings on this page are strictly based on my own taste and preferences. Most of these were tested with genuine 2ml sample tubes.
                     </p>
                   </div>
                 </div>
