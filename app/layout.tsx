@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Comprehensive collection of men's fragrance ratings and reviews. Find your perfect scent.",
     type: "website",
     locale: "en_US",
-    siteName: "BOMBOTE.com",
+    siteName: "Bombote.com",
   },
   twitter: {
     card: "summary_large_image",

@@ -45,8 +45,8 @@ const long_data = [
 ];
 
 export const metadata = {
-  title: "Perfume Longevity Guide | Duration Ratings Explained | BOMBOTE",
-  description: "Understanding perfume longevity ratings. Complete guide to fragrance duration from 30 minutes to 8+ hours with detailed rating system.",
+  title: "Bombote - Longevity Legend",
+  description: "Longevity legend for the main perfume database",
 };
 
 export default function Longevity() {

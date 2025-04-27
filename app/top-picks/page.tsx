@@ -80,8 +80,8 @@ const top_picks = [
 ];
 
 export const metadata = {
-  title: "Top Perfume Picks for Men | Best Fragrances Reviewed | BOMBOTE",
-  description: "Discover our carefully curated selection of the best men's fragrances. Detailed reviews of top perfumes including Dior, Carolina Herrera, and more.",
+  title: "Bombote - Top Picks",
+  description: "Perfume top picks",
 };
 
 export default function TopPicks() {
