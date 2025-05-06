@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CircleAlert } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
   title: "Bombote - Men's Perfume Reviews & Ratings Database",
@@ -54,8 +53,8 @@ export default function Home() {
           <div className="block">
             <FragranceTable fragrances={fragrances} />
           </div>
-          
-          {/* Server-rendered table for SEO - hidden from users but visible to search engines */}
+
+          {/* Server-rendered table for SEO*/}
           <div className="sr-only">
             <h2>Perfume Database</h2>
             <Table>
@@ -70,13 +69,7 @@ export default function Home() {
                 {fragrances.map((fragrance, index) => (
                   <TableRow key={index}>
                     {Object.entries(fragrance).map(([key, value]) => (
-                      <TableCell key={key}>
-                        {key === "Link to buy" ? (
-                          <Link href={value}>Amazon Link</Link>
-                        ) : (
-                          value
-                        )}
-                      </TableCell>
+                      <TableCell key={key}>{key === "Link to buy" ? <Link href={value}>Amazon Link</Link> : value}</TableCell>
                     ))}
                   </TableRow>
                 ))}
