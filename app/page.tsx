@@ -2,6 +2,9 @@ import { parseCSV, type Fragrance, getLastModifiedDate } from "@/utils/csvParser
 import FragranceTable from "@/components/FragranceTable";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleAlert } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
   title: "Bombote - Men's Perfume Reviews & Ratings Database",
@@ -47,7 +50,39 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <FragranceTable fragrances={fragrances} />
+          {/* Client-side interactive table */}
+          <div className="block">
+            <FragranceTable fragrances={fragrances} />
+          </div>
+          
+          {/* Server-rendered table for SEO - hidden from users but visible to search engines */}
+          <div className="sr-only">
+            <h2>Perfume Database</h2>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  {Object.keys(fragrances[0]).map((key) => (
+                    <TableHead key={key}>{key}</TableHead>
+                  ))}
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {fragrances.map((fragrance, index) => (
+                  <TableRow key={index}>
+                    {Object.entries(fragrance).map(([key, value]) => (
+                      <TableCell key={key}>
+                        {key === "Link to buy" ? (
+                          <Link href={value}>Amazon Link</Link>
+                        ) : (
+                          value
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
