@@ -1,13 +1,13 @@
 import { parseCSV, type Fragrance, getLastModifiedDate } from "@/utils/csvParser";
 import FragranceTable from "@/components/FragranceTable";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleAlert } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Bombote - Men's Perfume Reviews & Ratings Database",
-  description: "Comprehensive database of men's perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
+  title: "Bombote - Perfume Reviews & Ratings Database",
+  description: "Comprehensive database of perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
 };
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="bg-secondary" aria-label="Fragrance Reviews Database">
       <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-foreground">Men&apos;s Perfume Ratings & Reviews</h1>
+        <h1 className="text-3xl font-bold text-foreground">Perfume Ratings & Reviews</h1>
       </div>
       <div className="max-w-[1920px] mx-auto pb-6 sm:px-6 lg:px-8">
         <div className="px-4 py-2 sm:px-0">

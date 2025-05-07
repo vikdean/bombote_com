@@ -8,21 +8,21 @@ import Analytics from "@/components/Analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bombote - Men's Perfume Reviews & Ratings Database",
-  description: "Comprehensive collection of men's fragrance ratings, reviews and recommendations. Explore niche perfumes and the best scents for every occasion.",
+  title: "Bombote - Perfume Reviews & Ratings Database",
+  description: "Comprehensive collection of fragrance ratings, reviews and recommendations. Explore niche perfumes and the best scents for every occasion.",
   keywords:
     "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
   openGraph: {
-    title: "Bombote - Men's Perfume Reviews & Ratings Database",
-    description: "Comprehensive collection of men's fragrance ratings and reviews. Find your perfect scent.",
+    title: "Bombote - Perfume Reviews & Ratings Database",
+    description: "Comprehensive collection of fragrance ratings and reviews. Find your perfect scent.",
     type: "website",
     locale: "en_US",
     siteName: "Bombote.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bombote - Men's Perfume Reviews & Ratings Database",
-    description: "Comprehensive collection of men's fragrance ratings and reviews. Find your perfect scent.",
+    title: "Bombote - Perfume Reviews & Ratings Database",
+    description: "Comprehensive collection of fragrance ratings and reviews. Find your perfect scent.",
   },
   robots: {
     index: true,

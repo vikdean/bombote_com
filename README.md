@@ -1,1 +1,1 @@
-# vik
+# Repo for bombote.com
