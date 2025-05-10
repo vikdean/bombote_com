@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { BicepsFlexed, DollarSign, Heart, Link2, Star } from "lucide-react";
@@ -18,6 +18,18 @@ const top_picks = [
     description: "The Modern Mens perfume; perfect scent, with incredible performance at an OK price (get the Parfum or EDP version if you can't afford it).  Highly recommended.",
   },
   {
+    brand: "Initio",
+    name: "Paragon",
+    type: "Parfum",
+    picture: "./top-picks/PARAGON.jpg",
+    scent: "🌕🌕🌕🌕🌗",
+    longevity: "~7 hours",
+    price: "expensive",
+    overall_score: "10/9",
+    link: "https://amzn.to/4kafhdU",
+    description: "Creamy-fruity-woody-spicy scent, good performance; however, its quite expensive.",
+  },
+  {
     brand: "Carolina Herrera",
     name: "Bad Boy Extreme",
     type: "Parfum",
@@ -27,7 +39,7 @@ const top_picks = [
     price: "standard",
     overall_score: "10/9",
     link: "https://amzn.to/4fWLRxA",
-    description: "The Scent might not be for everybody, but it has very good performance at a good price.",
+    description: "Unique scent, very good performance at a good price.",
   },
   {
     brand: "Jean Paul Gaultier",
@@ -52,6 +64,30 @@ const top_picks = [
     overall_score: "10/9",
     link: "https://amzn.to/3PClXnX",
     description: "Pleasant scent, similar to the Dior Sauvage Elixir. Very good performance at a bargain price.",
+  },
+  {
+    brand: "Amouage",
+    name: "Interlude 53 Man",
+    type: "Eau de Parfum",
+    picture: "./top-picks/Interlude-Man-53.jpg",
+    scent: "🌕🌕🌕🌕🌑",
+    longevity: "8 hours+",
+    price: "expensive",
+    overall_score: "10/9",
+    link: "https://amzn.to/4jRGWAT",
+    description: "Unique scent, great performance, but expensive. Very similar to the regular Interlude, but less intrusive.",
+  },
+  {
+    brand: "Ahmed Al Maghribi",
+    name: "Brûlée",
+    type: "Eau de Parfum",
+    picture: "./top-picks/Brulee-scaled-1.jpeg",
+    scent: "🌕🌕🌕🌕🌑",
+    longevity: "8 hours",
+    price: "cheap",
+    overall_score: "10/9",
+    link: "https://bombote.com/",
+    description: "Woody-oriental scent with all-day performance, good price.",
   },
   {
     brand: "Mancera",
@@ -80,8 +116,8 @@ const top_picks = [
 ];
 
 export const metadata = {
-  title: "Bombote - Top Picks",
-  description: "Perfume top picks",
+  title: "Perfume Top Picks",
+  description: "best perfumes, top fragrances",
 };
 
 export default function TopPicks() {
