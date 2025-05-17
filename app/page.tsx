@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Bombote - Perfume Reviews & Ratings Database",
-  description: "Comprehensive database of perfume reviews and ratings. Updated regularly with detailed fragrance analysis and recommendations.",
+  description: "A comprehensive, ever-growing database of perfume reviews and ratings, featuring in-depth fragrance analysis, scent breakdowns, longevity and silage insights, and recommendations. Updated regularly to reflect the latest releases and timeless classics, helping fragrance enthusiasts discover their perfect scent.",
 };
 
 export default function Home() {

@@ -9,12 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Bombote - Perfume Reviews & Ratings Database",
-  description: "Comprehensive collection of fragrance ratings, reviews and recommendations. Explore niche perfumes and the best scents for every occasion.",
+  description: "A comprehensive, ever-growing database of perfume reviews and ratings, featuring in-depth fragrance analysis, scent breakdowns, longevity and silage insights, and recommendations. Updated regularly to reflect the latest releases and timeless classics, helping fragrance enthusiasts discover their perfect scent.",
   keywords:
     "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
   openGraph: {
     title: "Bombote - Perfume Reviews & Ratings Database",
-    description: "Comprehensive collection of fragrance ratings and reviews. Find your perfect scent.",
+    description: "A comprehensive, ever-growing database of perfume reviews and ratings, featuring in-depth fragrance analysis, scent breakdowns, longevity and silage insights, and recommendations. Updated regularly to reflect the latest releases and timeless classics, helping fragrance enthusiasts discover their perfect scent.",
     type: "website",
     locale: "en_US",
     siteName: "Bombote.com",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bombote - Perfume Reviews & Ratings Database",
-    description: "Comprehensive collection of fragrance ratings and reviews. Find your perfect scent.",
+    description: "A comprehensive, ever-growing database of perfume reviews and ratings, featuring in-depth fragrance analysis, scent breakdowns, longevity and silage insights, and recommendations. Updated regularly to reflect the latest releases and timeless classics, helping fragrance enthusiasts discover their perfect scent.",
   },
   robots: {
     index: true,
