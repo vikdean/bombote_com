@@ -124,7 +124,7 @@ export default function TopPicks() {
   return (
     <div className="bg-secondary" aria-label="Top Perfume Picks">
       <div className="max-w-[1400px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
         <div className="grid grid-cols-1 gap-6">
           {top_picks.map((option) => (
             <Card
@@ -137,8 +137,8 @@ export default function TopPicks() {
                 </div>
                 <div className="col-span-1 space-y-4">
                   <div>
-                    <p className="text-3xl font-bold">{option.brand}</p>
-                    <p className="text-xl mt-2">{option.name}</p>
+                    <p className="text-xl md:text-3xl font-bold">{option.brand}</p>
+                    <p className="text-base md:text-xl mt-2">{option.name}</p>
                   </div>
                   <Badge
                     className={`rounded-md py-1 px-2 text-foreground ${
@@ -155,7 +155,7 @@ export default function TopPicks() {
                   >
                     {option.type}
                   </Badge>
-                  <div className="space-y-3 text-sm">
+                  <div className="space-y-3 text-xs md:text-sm">
                     <div className="flex items-center gap-2">
                       <Heart className="h-5 w-5" />
                       Scent: <Badge className="bg-muted-foreground/40 rounded-md py-1">{option.scent}</Badge>
@@ -180,7 +180,7 @@ export default function TopPicks() {
                       </Link>
                     </div>
                   </div>
-                  <p className="text-foreground/90 text-base">{option.description}</p>
+                  <p className="text-foreground/90 text-xs md:text-base">{option.description}</p>
                 </div>
               </CardContent>
             </Card>
