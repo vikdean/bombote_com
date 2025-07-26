@@ -23,11 +23,13 @@ export default function Home() {
                   Perfume Ratings
                 </h3>
                 <p className="text-gray-400 mb-4">My comprehensive collection of fragrance ratings</p>
-                <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
-                  <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                  <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
-                    <span className="relative text-white">Open</span>
-                  </span>
+                <div className="flex justify-center">
+                  <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
+                    <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
+                    <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+                      <span className="relative text-white">Open</span>
+                    </span>
+                  </div>
                 </div>
               </a>
             </div>
@@ -38,11 +40,13 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl md:text-2xl font-bold text-white mb-6 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-400 bg-clip-text text-transparent">Movie Ratings</h3>
                 <p className="text-gray-400 mb-4">My unbiased movie ratings</p>
-                <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
-                  <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                  <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
-                    <span className="relative text-white">Open</span>
-                  </span>
+                <div className="flex justify-center">
+                  <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
+                    <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
+                    <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+                      <span className="relative text-white">Open</span>
+                    </span>
+                  </div>
                 </div>
               </a>
             </div>
@@ -55,11 +59,13 @@ export default function Home() {
                   TV Show Ratings
                 </h3>
                 <p className="text-gray-400 mb-4">My collection of Series ratings</p>
-                <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
-                  <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                  <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
-                    <span className="relative text-white">Open</span>
-                  </span>
+                <div className="flex justify-center">
+                  <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
+                    <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
+                    <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+                      <span className="relative text-white">Open</span>
+                    </span>
+                  </div>
                 </div>
               </a>
             </div>
