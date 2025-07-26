@@ -2,15 +2,21 @@ import fs from "fs"
 import path from "path"
 import { parse } from "csv-parse/sync"
 
-export interface Fragrance {
-  Brand: string
-  Name: string
-  Type: string
-  Scent: string
-  Longevity: string
-  OverallScore: string
-  Comments: string
-  LinkToBuy: string
+export interface Movie {
+  Const: string
+  "Your Rating": string
+  "Date Rated": string
+  Title: string
+  "Original Title": string
+  URL: string
+  "Title Type": string
+  "IMDb Rating": string
+  "Runtime (mins)": string
+  Year: string
+  Genres: string
+  "Num Votes": string
+  "Release Date": string
+  Directors: string
 }
 
 export function getLastModifiedDate(): string {
@@ -24,7 +30,7 @@ export function getLastModifiedDate(): string {
   })
 }
 
-export function parseCSV(): Fragrance[] {
+export function parseCSV(): Movie[] {
   const filePath = path.join(process.cwd(), "imdb.csv")
   const fileContent = fs.readFileSync(filePath, "utf-8")
   const records = parse(fileContent, {
