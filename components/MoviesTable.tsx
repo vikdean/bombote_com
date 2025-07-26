@@ -35,7 +35,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                 Year
               </TableHead>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                Your Rating
+                Rating
               </TableHead>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 URL

@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="bg-secondary" aria-label="Movie Reviews Database">
       <div className="max-w-[1920px] mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl md:text-3xl font-bold text-foreground">Movie Ratings & Reviews</h1>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground">Movie Ratings</h1>
       </div>
       <div className="max-w-[1920px] mx-auto pb-6 sm:px-6 lg:px-8">
         <div className="px-4 py-2 sm:px-0">
@@ -42,7 +42,7 @@ export default function Home() {
                   <div className="flex-1 space-y-1">
                     <CardTitle className="text-xs md:text-sm font-bold leading-none text-foreground">Note</CardTitle>
                     <p className="text-xs md:text-sm text-gray-300">
-                      Please keep in mind, the ratings on this page are strictly based on my own taste and preferences. These are personal movie ratings from my IMDb account.
+                      Please keep in mind, the ratings on this page are strictly based on my own taste and preferences.
                     </p>
                   </div>
                 </div>
