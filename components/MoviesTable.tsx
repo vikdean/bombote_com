@@ -84,7 +84,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                 </TableCell>
                 <TableCell className="px-4 text-xs md:text-sm">
                   <Badge
-                    className={`rounded-md py-1 text-foreground min-w-[58px] ${
+                    className={`rounded-md py-1 text-foreground min-w-[57px] ${
                       movie["Your Rating"] === "10"
                         ? "bg-green-700 hover:bg-green-500"
                         : movie["Your Rating"] === "9"
