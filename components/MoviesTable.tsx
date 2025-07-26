@@ -5,6 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface MoviesTableProps {
   movies: Movie[];
@@ -12,6 +13,8 @@ interface MoviesTableProps {
 
 export default function MoviesTable({ movies }: MoviesTableProps) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 50;
 
   const filteredMovies = movies
     .filter((movie) => movie["Title Type"] === "Movie")
@@ -22,9 +25,36 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
     )
     .sort((a, b) => new Date(b["Date Rated"]).getTime() - new Date(a["Date Rated"]).getTime());
 
+  const totalPages = Math.ceil(filteredMovies.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedMovies = filteredMovies.slice(startIndex, endIndex);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setCurrentPage(1); // Reset to first page when searching
+  };
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const goToPreviousPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
+
+  const goToNextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  };
+
   return (
     <div className="space-y-4 w-full">
-      <Input placeholder="Search for movies..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="max-w-sm text-foreground border-gray-600" />
+      <div className="flex justify-between items-center">
+        <Input placeholder="Search for movies..." value={searchTerm} onChange={handleSearchChange} className="max-w-sm text-foreground border-gray-600" />
+        <div className="text-sm text-gray-400">
+          Showing {startIndex + 1}-{Math.min(endIndex, filteredMovies.length)} of {filteredMovies.length} movies
+        </div>
+      </div>
       <div className="overflow-x-auto bg-muted-foreground/10 rounded-xl">
         <Table className="w-full">
           <TableHeader>
@@ -44,7 +74,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
             </TableRow>
           </TableHeader>
           <TableBody className="text-foreground">
-            {filteredMovies.map((movie, index) => (
+            {paginatedMovies.map((movie, index) => (
               <TableRow key={index}>
                 <TableCell className="px-4 text-xs md:text-sm">
                   {movie.Title}
@@ -83,6 +113,58 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
           </TableBody>
         </Table>
       </div>
+      
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center space-x-2 mt-4">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            className="text-foreground border-gray-600"
+          >
+            Previous
+          </Button>
+          
+          <div className="flex space-x-1">
+            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+              let pageNumber;
+              if (totalPages <= 5) {
+                pageNumber = i + 1;
+              } else if (currentPage <= 3) {
+                pageNumber = i + 1;
+              } else if (currentPage >= totalPages - 2) {
+                pageNumber = totalPages - 4 + i;
+              } else {
+                pageNumber = currentPage - 2 + i;
+              }
+              
+              return (
+                <Button
+                  key={pageNumber}
+                  variant={currentPage === pageNumber ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => goToPage(pageNumber)}
+                  className={currentPage === pageNumber ? "bg-blue-600 text-white" : "text-foreground border-gray-600"}
+                >
+                  {pageNumber}
+                </Button>
+              );
+            })}
+          </div>
+          
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className="text-foreground border-gray-600"
+          >
+            Next
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
