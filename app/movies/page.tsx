@@ -67,7 +67,10 @@ export default function Home() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {movies.filter(movie => movie["Title Type"] === "Movie").map((movie, index) => (
+                {movies
+                  .filter(movie => movie["Title Type"] === "Movie")
+                  .sort((a, b) => new Date(b["Date Rated"]).getTime() - new Date(a["Date Rated"]).getTime())
+                  .map((movie, index) => (
                   <TableRow key={index}>
                     <TableCell>{movie.Title}</TableCell>
                     <TableCell>{movie.Year}</TableCell>

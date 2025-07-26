@@ -19,7 +19,8 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
       movie.Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       movie["Your Rating"].toLowerCase().includes(searchTerm.toLowerCase()) ||
       movie.Year.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
+    .sort((a, b) => new Date(b["Date Rated"]).getTime() - new Date(a["Date Rated"]).getTime());
 
   return (
     <div className="space-y-4 w-full">
