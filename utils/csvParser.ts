@@ -2,19 +2,31 @@ import fs from "fs"
 import path from "path"
 import { parse } from "csv-parse/sync"
 
-export interface Fragrance {
-  Brand: string
-  Name: string
-  Type: string
-  Scent: string
-  Longevity: string
-  OverallScore: string
-  Comments: string
-  LinkToBuy: string
+export interface Movie {
+  "Your Rating": string
+  Title: string
+  URL: string
+}
+
+interface IMDBRecord {
+  Const: string
+  "Your Rating": string
+  "Date Rated": string
+  Title: string
+  "Original Title": string
+  URL: string
+  "Title Type": string
+  "IMDb Rating": string
+  "Runtime (mins)": string
+  Year: string
+  Genres: string
+  "Num Votes": string
+  "Release Date": string
+  Directors: string
 }
 
 export function getLastModifiedDate(): string {
-  const filePath = path.join(process.cwd(), "fragrances.csv")
+  const filePath = path.join(process.cwd(), "imdb.csv")
   const stats = fs.statSync(filePath)
   const lastModified = stats.mtime
   return lastModified.toLocaleDateString('en-US', { 
@@ -24,13 +36,21 @@ export function getLastModifiedDate(): string {
   })
 }
 
-export function parseCSV(): Fragrance[] {
-  const filePath = path.join(process.cwd(), "fragrances.csv")
+export function parseCSV(): Movie[] {
+  const filePath = path.join(process.cwd(), "imdb.csv")
   const fileContent = fs.readFileSync(filePath, "utf-8")
-  const records = parse(fileContent, {
+  const records: IMDBRecord[] = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,
   })
+  
+  // Filter for movies only and extract only the needed fields
   return records
+    .filter(record => record["Title Type"] === "Movie")
+    .map(record => ({
+      "Your Rating": record["Your Rating"],
+      Title: record.Title,
+      URL: record.URL
+    }))
 }
 
