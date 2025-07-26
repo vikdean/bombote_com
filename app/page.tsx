@@ -24,7 +24,9 @@ export default function Home() {
             <div className="group">
               <a href="/perfume" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105">
                 
-                <Image src="/icons8-perfume-bottle-100.png" width="50" height="50" alt="bottle" className="mb-4 flex-col flex items-center justify-center"/>
+                <div className="flex justify-center mb-4">
+                  <Image src="/icons8-perfume-bottle-100.png" width="50" height="50" alt="bottle"/>
+                </div>
                 
                 <h3 className="text-2xl font-bold text-white mb-3">Perfume Ratings</h3>
                 <p className="text-gray-400 mb-4">Explore our comprehensive collection of fragrance reviews and ratings</p>
@@ -39,7 +41,9 @@ export default function Home() {
 
             <div className="group">
               <a href="/movies" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105">
-                <Image src="/icons8-movie-50.png" width="50" height="50" alt="movie" className="mb-4 flex-col flex items-center justify-center"/>
+                <div className="flex justify-center mb-4">
+                  <Image src="/icons8-movie-50.png" width="50" height="50" alt="movie"/>
+                </div>
                 <h3 className="text-2xl font-bold text-white mb-3">Movie Ratings</h3>
                 <p className="text-gray-400 mb-4">Find your next movie night pick with our detailed film reviews</p>
                 <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
@@ -53,7 +57,9 @@ export default function Home() {
 
             <div className="group">
               <a href="/series" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105">
-                <Image src="/icons8-tv-50.png" width="50" height="50" alt="tv" className="mb-4 flex-col flex items-center justify-center"/>
+                <div className="flex justify-center mb-4">
+                  <Image src="/icons8-tv-50.png" width="50" height="50" alt="tv"/>
+                </div>
                 <h3 className="text-2xl font-bold text-white mb-3">TV Show Ratings</h3>
                 <p className="text-gray-400 mb-4">Discover binge-worthy series with our TV show recommendations</p>
                 <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
