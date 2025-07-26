@@ -17,7 +17,8 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
     .filter((movie) => movie["Title Type"] === "Movie")
     .filter((movie) => 
       movie.Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      movie["Your Rating"].toLowerCase().includes(searchTerm.toLowerCase())
+      movie["Your Rating"].toLowerCase().includes(searchTerm.toLowerCase()) ||
+      movie.Year.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
   return (
@@ -28,10 +29,13 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
           <TableHeader>
             <TableRow>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                Your Rating
+                Title
               </TableHead>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                Title
+                Year
+              </TableHead>
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
+                Your Rating
               </TableHead>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 URL
@@ -41,6 +45,12 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
           <TableBody className="text-foreground">
             {filteredMovies.map((movie, index) => (
               <TableRow key={index}>
+                <TableCell className="px-4 text-xs md:text-sm">
+                  {movie.Title}
+                </TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">
+                  {movie.Year}
+                </TableCell>
                 <TableCell className="px-4 text-xs md:text-sm">
                   <Badge
                     className={`rounded-md py-1 text-foreground min-w-[59px] ${
@@ -61,9 +71,6 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                   >
                     {movie["Your Rating"]}/10
                   </Badge>
-                </TableCell>
-                <TableCell className="px-4 text-xs md:text-sm">
-                  {movie.Title}
                 </TableCell>
                 <TableCell className="px-4 text-xs md:text-sm">
                   <Link href={movie.URL} className="text-blue-400 hover:text-blue-200" target="_blank" rel="noopener noreferrer">

@@ -60,16 +60,18 @@ export default function Home() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Your Rating</TableHead>
                   <TableHead>Title</TableHead>
+                  <TableHead>Year</TableHead>
+                  <TableHead>Your Rating</TableHead>
                   <TableHead>URL</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {movies.filter(movie => movie["Title Type"] === "Movie").map((movie, index) => (
                   <TableRow key={index}>
-                    <TableCell>{movie["Your Rating"]}</TableCell>
                     <TableCell>{movie.Title}</TableCell>
+                    <TableCell>{movie.Year}</TableCell>
+                    <TableCell>{movie["Your Rating"]}</TableCell>
                     <TableCell><Link href={movie.URL}>IMDb Link</Link></TableCell>
                   </TableRow>
                 ))}
