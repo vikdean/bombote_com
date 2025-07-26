@@ -15,7 +15,10 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 w-full max-w-5xl">
             <div className="group">
-              <a href="/perfume" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between">
+              <a
+                href="/perfume"
+                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+              >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-perfume-bottle-100.png" width="50" height="50" alt="bottle" />
                 </div>
@@ -34,7 +37,10 @@ export default function Home() {
               </a>
             </div>
             <div className="group">
-              <a href="/movies" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between">
+              <a
+                href="/movies"
+                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+              >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-movie-50.png" width="50" height="50" alt="movie" />
                 </div>
@@ -51,7 +57,10 @@ export default function Home() {
               </a>
             </div>
             <div className="group">
-              <a href="/series" className="block p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between">
+              <a
+                href="/series"
+                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+              >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-tv-50.png" width="50" height="50" alt="tv" />
                 </div>
