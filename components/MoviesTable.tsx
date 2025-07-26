@@ -65,7 +65,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 Year
               </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm text-center">
                 Rating
               </TableHead>
               <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
@@ -82,7 +82,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                 <TableCell className="px-4 text-xs md:text-sm">
                   {movie.Year}
                 </TableCell>
-                <TableCell className="px-4 text-xs md:text-sm">
+                <TableCell className="px-4 text-xs md:text-sm text-center">
                   <Badge
                     className={`rounded-md py-1 text-foreground min-w-[57px] ${
                       movie["Your Rating"] === "10"
