@@ -1,5 +1,5 @@
 "use client";
-import type { Movie } from "@/utils/csvParser";
+import type { Fragrance } from "@/utils/csvParser";
 import Link from "next/link";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
 interface MoviesTableProps {
-  movies: Movie[];
+  movies: Fragrance[];
 }
 
 export default function MoviesTable({ movies }: MoviesTableProps) {
