@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Bombote - Movie Reviews & Ratings Database",
-  description: "A comprehensive, ever-growing database of movie reviews and ratings, featuring in-depth film analysis and recommendations. Updated regularly to reflect the latest releases and timeless classics, helping movie enthusiasts discover their next great watch.",
+  description: "A comprehensive, ever-growing database of my movie ratings",
 };
 
 export default function Home() {

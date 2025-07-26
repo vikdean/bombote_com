@@ -27,13 +27,13 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
         <Table className="w-full">
           <TableHeader>
             <TableRow>
-              <TableHead className="px-4 font-bold text-white bg-emerald-900 whitespace-nowrap text-xs md:text-sm">
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 Your Rating
               </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-emerald-900 whitespace-nowrap text-xs md:text-sm">
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 Title
               </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-emerald-900 whitespace-nowrap text-xs md:text-sm">
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
                 URL
               </TableHead>
             </TableRow>
@@ -66,7 +66,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                   {movie.Title}
                 </TableCell>
                 <TableCell className="px-4 text-xs md:text-sm">
-                  <Link href={movie.URL} className="text-emerald-400 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
+                  <Link href={movie.URL} className="text-blue-400 hover:text-blue-200" target="_blank" rel="noopener noreferrer">
                     IMDb
                   </Link>
                 </TableCell>
