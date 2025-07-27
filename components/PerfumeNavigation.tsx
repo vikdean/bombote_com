@@ -14,7 +14,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center justify-between w-full">
             <div className="flex-shrink-0">
-              <Link href="/perfume">
+              <Link href="/">
                 <Image src="/logo.png" alt="Logo" width="135" height="30" className="w-[80px] md:w-[135px] h-auto" />
               </Link>
             </div>
@@ -22,7 +22,7 @@ export default function Navigation() {
             {/* Desktop menu */}
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-4">
-                <Link href="/perfume" className="text-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-white px-2 md:px-3 py-1 md:py-2 rounded-md text-xs md:text-sm font-medium">
+                <Link href="/" className="text-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-white px-2 md:px-3 py-1 md:py-2 rounded-md text-xs md:text-sm font-medium">
                   Home
                 </Link>
                 <Link
@@ -64,7 +64,7 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link href="/perfume" className="text-gray-300 hover:bg-emerald-800 hover:text-white block px-2 py-1 rounded-md text-xs font-medium" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="text-gray-300 hover:bg-emerald-800 hover:text-white block px-2 py-1 rounded-md text-xs font-medium" onClick={() => setIsOpen(false)}>
                 Home
               </Link>
               <Link href="/perfume/top-picks" className="text-gray-300 hover:bg-emerald-800 hover:text-white block px-2 py-1 rounded-md text-xs font-medium" onClick={() => setIsOpen(false)}>

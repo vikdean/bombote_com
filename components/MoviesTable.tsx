@@ -18,10 +18,11 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
 
   const filteredMovies = movies
     .filter((movie) => movie["Title Type"] === "Movie")
-    .filter((movie) => 
-      movie.Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      movie["Your Rating"].toLowerCase().includes(searchTerm.toLowerCase()) ||
-      movie.Year.toLowerCase().includes(searchTerm.toLowerCase())
+    .filter(
+      (movie) =>
+        movie.Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        movie["Your Rating"].toLowerCase().includes(searchTerm.toLowerCase()) ||
+        movie.Year.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => new Date(b["Date Rated"]).getTime() - new Date(a["Date Rated"]).getTime());
 
@@ -40,11 +41,11 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
   };
 
   const goToPreviousPage = () => {
-    setCurrentPage(prev => Math.max(prev - 1, 1));
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
 
   const goToNextPage = () => {
-    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
   return (
@@ -59,32 +60,20 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
         <Table className="w-full">
           <TableHeader>
             <TableRow>
-              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                Title
-              </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                Year
-              </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm text-center">
-                Rating
-              </TableHead>
-              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">
-                URL
-              </TableHead>
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">Title</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">Year</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm text-center">Rating</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-blue-900 whitespace-nowrap text-xs md:text-sm">URL</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody className="text-foreground">
             {paginatedMovies.map((movie, index) => (
               <TableRow key={index}>
-                <TableCell className="px-4 text-xs md:text-sm">
-                  {movie.Title}
-                </TableCell>
-                <TableCell className="px-4 text-xs md:text-sm">
-                  {movie.Year}
-                </TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">{movie.Title}</TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">{movie.Year}</TableCell>
                 <TableCell className="px-4 text-xs md:text-sm text-center">
                   <Badge
-                    className={`rounded-md py-1 text-foreground min-w-[56px] text-center ${
+                    className={`rounded-md py-1 text-foreground min-w-[56px] ${
                       movie["Your Rating"] === "10"
                         ? "bg-green-700 hover:bg-green-500"
                         : movie["Your Rating"] === "9"
@@ -113,20 +102,14 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
           </TableBody>
         </Table>
       </div>
-      
+
       {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="flex justify-center items-center space-x-2 mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-foreground border-gray-600"
-          >
+          <Button variant="outline" size="sm" onClick={goToPreviousPage} disabled={currentPage === 1} className="text-foreground border-gray-600">
             Previous
           </Button>
-          
+
           <div className="flex space-x-1">
             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
               let pageNumber;
@@ -139,7 +122,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
               } else {
                 pageNumber = currentPage - 2 + i;
               }
-              
+
               return (
                 <Button
                   key={pageNumber}
@@ -153,14 +136,8 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
               );
             })}
           </div>
-          
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className="text-foreground border-gray-600"
-          >
+
+          <Button variant="outline" size="sm" onClick={goToNextPage} disabled={currentPage === totalPages} className="text-foreground border-gray-600">
             Next
           </Button>
         </div>
