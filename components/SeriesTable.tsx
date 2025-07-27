@@ -53,7 +53,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
           <TableHeader>
             <TableRow>
               {Object.keys(series[0]).map((key) => (
-                <TableHead className="px-4 font-bold text-white bg-emerald-900 whitespace-nowrap text-xs md:text-sm" key={key}>
+                <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm" key={key}>
                   {key}
                 </TableHead>
               ))}
@@ -65,12 +65,12 @@ export default function SeriesTable({ series }: SeriesTableProps) {
                 {Object.entries(show).map(([key, value]) => (
                   <TableCell className={`px-4 text-xs md:text-sm`} key={key}>
                     {key === "URL" ? (
-                      <Link href={value} className="text-emerald-400 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
+                      <Link href={value} className="text-orange-400 hover:text-orange-200" target="_blank" rel="noopener noreferrer">
                         IMDb
                       </Link>
                     ) : key === "Your Rating" ? (
                       <Badge
-                        className={`rounded-md py-1 text-foreground min-w-[59px] ${
+                        className={`rounded-md py-1 text-foreground min-w-[56px] ${
                           parseInt(value) >= 9
                             ? "bg-green-700 hover:bg-green-500"
                             : parseInt(value) >= 8
@@ -129,7 +129,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
                   variant={currentPage === pageNumber ? "default" : "outline"}
                   size="sm"
                   onClick={() => goToPage(pageNumber)}
-                  className={currentPage === pageNumber ? "bg-emerald-600 text-white" : "text-foreground border-gray-600"}
+                  className={currentPage === pageNumber ? "bg-orange-600 text-white" : "text-foreground border-gray-600"}
                 >
                   {pageNumber}
                 </Button>

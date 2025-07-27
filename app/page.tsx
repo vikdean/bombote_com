@@ -17,19 +17,17 @@ export default function Home() {
             <div className="group">
               <a
                 href="/perfume"
-                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+                className="p-8 bg-green-950/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
               >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-perfume-bottle-100.png" width="50" height="50" alt="bottle" />
                 </div>
-                <h3 className="text-2xl md:text-2xl font-bold text-white mb-6 bg-gradient-to-r from-emerald-300 via-emerald-500 to-emerald-400 bg-clip-text text-transparent">
-                  Perfume Ratings
-                </h3>
+                <h3 className="text-2xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-emerald-300 via-emerald-500 to-emerald-400 bg-clip-text text-transparent">Perfume Ratings</h3>
                 <p className="text-gray-400 mb-4">My comprehensive collection of fragrance ratings</p>
                 <div className="flex justify-center">
                   <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
                     <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                    <span className="relative px-12 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
+                    <span className="relative px-16 py-3 transition-all ease-out bg-gray-800 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
                       <span className="relative text-white">Open</span>
                     </span>
                   </div>
@@ -39,17 +37,17 @@ export default function Home() {
             <div className="group">
               <a
                 href="/movies"
-                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+                className="p-8 bg-blue-950/50 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
               >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-movie-50.png" width="50" height="50" alt="movie" />
                 </div>
-                <h3 className="text-2xl md:text-2xl font-bold text-white mb-6 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-400 bg-clip-text text-transparent">Movie Ratings</h3>
+                <h3 className="text-2xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-400 bg-clip-text text-transparent">Movie Ratings</h3>
                 <p className="text-gray-400 mb-4">My unbiased movie ratings</p>
                 <div className="flex justify-center">
                   <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
                     <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                    <span className="relative px-12 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
+                    <span className="relative px-16 py-3 transition-all ease-out bg-gray-800 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
                       <span className="relative text-white">Open</span>
                     </span>
                   </div>
@@ -59,19 +57,17 @@ export default function Home() {
             <div className="group">
               <a
                 href="/series"
-                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
+                className="p-8 bg-orange-950/50 rounded-xl border border-gray-700 hover:border-orange-500 transition-all duration-300 hover:transform hover:scale-105 h-80 flex flex-col justify-between"
               >
                 <div className="flex justify-center mb-4">
                   <Image src="/icons8-tv-50.png" width="50" height="50" alt="tv" />
                 </div>
-                <h3 className="text-2xl md:text-2xl font-bold text-white mb-6 bg-gradient-to-r from-orange-300 via-orange-500 to-orange-400 bg-clip-text text-transparent">
-                  TV Show Ratings
-                </h3>
+                <h3 className="text-2xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-orange-500 to-orange-400 bg-clip-text text-transparent">TV Show Ratings</h3>
                 <p className="text-gray-400 mb-4">My collection of Series ratings</p>
                 <div className="flex justify-center">
                   <div className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
                     <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-                    <span className="relative px-12 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
+                    <span className="relative px-16 py-3 transition-all ease-out bg-gray-800 rounded-md group-hover:bg-opacity-0 duration-400 min-w-[120px]">
                       <span className="relative text-white">Open</span>
                     </span>
                   </div>

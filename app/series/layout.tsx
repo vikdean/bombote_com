@@ -3,12 +3,12 @@ import Navigation from "@/components/SeriesNavigation";
 import Footer from "@/components/SeriesFooter";
 
 export const metadata: Metadata = {
-  title: "Bombote.com",
+  title: "Bombote.com | TV Show Ratings",
   description: "Perfume, Movie and TV Show ratings",
   keywords:
     "movie ratings, series ratings, tv show ratings, fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
   openGraph: {
-    title: "Bombote.com",
+    title: "Bombote.com | TV Show Ratings",
     description: "Perfume, Movie and TV Show ratings",
     type: "website",
     locale: "en_US",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bombote.com",
+    title: "Bombote.com | TV Show Ratings",
     description: "Perfume, Movie and TV Show ratings",
   },
   robots: {

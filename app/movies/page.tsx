@@ -62,7 +62,7 @@ export default function Home() {
                 <TableRow>
                   <TableHead>Title</TableHead>
                   <TableHead>Year</TableHead>
-                  <TableHead>Your Rating</TableHead>
+                  <TableHead>Rating</TableHead>
                   <TableHead>URL</TableHead>
                 </TableRow>
               </TableHeader>

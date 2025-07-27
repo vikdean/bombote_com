@@ -1,5 +1,5 @@
 "use client";
-import type { Fragrance } from "@/utils/csvParser";
+import type { Fragrance } from "@/utils/Perfume_csvParser";
 import Link from "next/link";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";

@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Analytics from "@/components/Analytics";
 import { ThemeProvider } from "@/components/theme-provider";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -32,16 +31,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <Analytics />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          disableTransitionOnChange
-          suppressHydrationWarning
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
