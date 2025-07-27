@@ -68,7 +68,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
                       <Link href={value} className="text-orange-400 hover:text-orange-200" target="_blank" rel="noopener noreferrer">
                         IMDb
                       </Link>
-                    ) : key === "Your Rating" ? (
+                    ) : key === "Rating" ? (
                       <Badge
                         className={`rounded-md py-1 text-foreground min-w-[56px] ${
                           parseInt(value) >= 9
