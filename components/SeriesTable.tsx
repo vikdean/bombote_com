@@ -33,11 +33,11 @@ export default function SeriesTable({ series }: SeriesTableProps) {
   };
 
   const goToPreviousPage = () => {
-    setCurrentPage(prev => Math.max(prev - 1, 1));
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
 
   const goToNextPage = () => {
-    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
   return (
@@ -96,20 +96,14 @@ export default function SeriesTable({ series }: SeriesTableProps) {
           </TableBody>
         </Table>
       </div>
-      
+
       {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="flex justify-center items-center space-x-2 mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-foreground border-gray-600"
-          >
+          <Button variant="outline" size="sm" onClick={goToPreviousPage} disabled={currentPage === 1} className="text-foreground border-gray-600">
             Previous
           </Button>
-          
+
           <div className="flex space-x-1">
             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
               let pageNumber;
@@ -122,7 +116,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
               } else {
                 pageNumber = currentPage - 2 + i;
               }
-              
+
               return (
                 <Button
                   key={pageNumber}
@@ -136,14 +130,8 @@ export default function SeriesTable({ series }: SeriesTableProps) {
               );
             })}
           </div>
-          
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className="text-foreground border-gray-600"
-          >
+
+          <Button variant="outline" size="sm" onClick={goToNextPage} disabled={currentPage === totalPages} className="text-foreground border-gray-600">
             Next
           </Button>
         </div>
