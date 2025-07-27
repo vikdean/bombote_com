@@ -52,11 +52,10 @@ export default function SeriesTable({ series }: SeriesTableProps) {
         <Table className="w-full">
           <TableHeader>
             <TableRow>
-              {Object.keys(series[0]).map((key) => (
-                <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm" key={key}>
-                  {key}
-                </TableHead>
-              ))}
+              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">Title</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">Year</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm text-center">Rating</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">URL</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody className="text-foreground">
@@ -68,7 +67,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
                       <Link href={value} className="text-orange-400 hover:text-orange-200" target="_blank" rel="noopener noreferrer">
                         IMDb
                       </Link>
-                    ) : key === "Rating" ? (
+                    ) : key === "Your Rating" ? (
                       <Badge
                         className={`rounded-md py-1 text-foreground min-w-[56px] text-center flex justify-center items-center ${
                           parseInt(value) >= 9
