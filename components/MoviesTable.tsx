@@ -73,7 +73,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                 <TableCell className="px-4 text-xs md:text-sm">{movie.Year}</TableCell>
                 <TableCell className="px-4 text-xs md:text-sm text-center">
                   <Badge
-                    className={`rounded-md py-1 text-foreground min-w-[56px] ${
+                    className={`rounded-md py-1 text-foreground min-w-[56px] text-center flex justify-center items-center ${
                       movie["Your Rating"] === "10"
                         ? "bg-green-700 hover:bg-green-500"
                         : movie["Your Rating"] === "9"
