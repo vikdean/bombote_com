@@ -70,7 +70,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
                       </Link>
                     ) : key === "Rating" ? (
                       <Badge
-                        className={`rounded-md py-1 text-foreground min-w-[56px] ${
+                        className={`rounded-md py-1 text-foreground min-w-[56px] text-center flex justify-center items-center ${
                           parseInt(value) >= 9
                             ? "bg-green-700 hover:bg-green-500"
                             : parseInt(value) >= 8
