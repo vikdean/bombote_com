@@ -18,4 +18,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://bombote.com/sitemap.xml
+Sitemap: https://bombote.com/sitemap
