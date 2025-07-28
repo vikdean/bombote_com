@@ -9,7 +9,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-bl from-blue-400 from-10% via-blue-600 via-25% to-blue-950 to-80% shadow">
+    <nav className="bg-gradient-to-bl from-blue-500 from-10% via-blue-600 via-25% to-blue-950 to-80% shadow">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center justify-between w-full">

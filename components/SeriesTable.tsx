@@ -54,7 +54,7 @@ export default function SeriesTable({ series }: SeriesTableProps) {
             <TableRow>
               <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">Title</TableHead>
               <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">Year</TableHead>
-              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm text-center">Rating</TableHead>
+              <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">Rating</TableHead>
               <TableHead className="px-4 font-bold text-white bg-orange-900 whitespace-nowrap text-xs md:text-sm">URL</TableHead>
             </TableRow>
           </TableHeader>

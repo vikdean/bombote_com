@@ -3,25 +3,58 @@ import Navigation from "@/components/SeriesNavigation";
 import Footer from "@/components/SeriesFooter";
 
 export const metadata: Metadata = {
-  title: "Bombote.com | TV Show Ratings",
-  description: "Perfume, Movie and TV Show ratings",
-  keywords:
-    "movie ratings, series ratings, tv show ratings, fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
+  title: "TV Show Reviews & Ratings Database",
+  description:
+    "Comprehensive database of personal TV show and series reviews and ratings. Discover honest opinions on the latest series, classic shows, and hidden gems with detailed ratings and recommendations.",
+  keywords: [
+    "tv show ratings",
+    "series ratings",
+    "television reviews",
+    "tv series database",
+    "show recommendations",
+    "series reviews",
+    "television ratings",
+    "tv show reviews",
+    "series analysis",
+    "television database",
+    "show ratings",
+    "tv series reviews",
+  ],
   openGraph: {
-    title: "Bombote.com | TV Show Ratings",
-    description: "Perfume, Movie and TV Show ratings",
+    title: "TV Show Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of personal TV show and series reviews and ratings. Discover honest opinions on series with detailed ratings and recommendations.",
     type: "website",
     locale: "en_US",
+    url: "https://bombote.com/series",
     siteName: "Bombote.com",
+    images: [
+      {
+        url: "/icons8-tv-50.png",
+        width: 50,
+        height: 50,
+        alt: "TV Show Reviews Database",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bombote.com | TV Show Ratings",
-    description: "Perfume, Movie and TV Show ratings",
+    title: "TV Show Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of personal TV show and series reviews and ratings with honest opinions and recommendations.",
+    images: ["/icons8-tv-50.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://bombote.com/series",
   },
 };
 

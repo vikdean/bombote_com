@@ -4,25 +4,59 @@ import Footer from "@/components/MoviesFooter";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Bombote.com | Movie Ratings",
-  description: "Perfume, Movie and TV Show ratings",
-  keywords:
-    "movie ratings, series ratings, tv show ratings, fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, perfume blog, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne",
+  title: "Movie Reviews & Ratings Database",
+  description:
+    "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings, detailed reviews, and honest opinions on the latest films and cinema classics.",
+  keywords: [
+    "movie ratings",
+    "cinema ratings",
+    "movie reviews",
+    "film reviews",
+    "movie database",
+    "unbiased movie ratings",
+    "personal movie reviews",
+    "film ratings",
+    "cinema reviews",
+    "movie recommendations",
+    "film analysis",
+    "movie opinions",
+    "cinema database",
+  ],
   openGraph: {
-    title: "Bombote.com | Movie Ratings",
-    description: "Perfume, Movie and TV Show ratings",
+    title: "Movie Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings, detailed reviews, and honest opinions on films.",
     type: "website",
     locale: "en_US",
+    url: "https://bombote.com/movies",
     siteName: "Bombote.com",
+    images: [
+      {
+        url: "/icons8-movie-50.png",
+        width: 50,
+        height: 50,
+        alt: "Movie Reviews Database",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bombote.com | Movie Ratings",
-    description: "Perfume, Movie and TV Show ratings",
+    title: "Movie Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings and honest film opinions.",
+    images: ["/icons8-movie-50.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://bombote.com/movies",
   },
 };
 
