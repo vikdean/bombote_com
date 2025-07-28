@@ -45,7 +45,7 @@ const long_data = [
 ];
 
 export const metadata = {
-  title: "Bombote - Longevity Legend",
+  title: "Bombote - Perfume Longevity Legend",
   description: "Longevity legend for the main perfume database",
 };
 

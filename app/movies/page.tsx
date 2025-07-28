@@ -8,12 +8,11 @@ import StructuredData from "@/components/StructuredData";
 
 export const metadata = {
   title: "Movie Reviews & Ratings Database",
-  description:
-    "Comprehensive database of personal movie reviews and ratings. Browse through detailed movie ratings, discover film recommendations, and explore honest opinions on cinema classics and latest releases.",
+  description: "Comprehensive database of unbiased personal movie reviews and ratings.",
   keywords: ["movie ratings", "film reviews", "cinema database", "movie recommendations", "unbiased movie ratings", "personal film reviews", "movie analysis", "film ratings database"],
   openGraph: {
     title: "Movie Reviews & Ratings Database | Bombote.com",
-    description: "Comprehensive database of personal movie reviews and ratings. Browse detailed movie ratings and discover film recommendations.",
+    description: "Comprehensive database of unbiased personal movie reviews and ratings.",
     url: "https://bombote.com/movies",
     type: "website",
     images: [

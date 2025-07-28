@@ -116,8 +116,9 @@ const top_picks = [
 ];
 
 export const metadata = {
-  title: "Perfume Top Picks",
-  description: "best perfumes, top fragrances",
+  title: "Bombote - Perfume Top Picks",
+  description:
+    "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne, fragrance database, perfume analysis, scent reviews",
 };
 
 export default function TopPicks() {

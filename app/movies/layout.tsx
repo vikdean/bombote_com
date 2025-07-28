@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: "Movie Reviews & Ratings Database",
   description:
-    "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings, detailed reviews, and honest opinions on the latest films and cinema classics.",
+    "Comprehensive database of unbiased personal movie reviews and ratings.",
   keywords: [
     "movie ratings",
     "cinema ratings",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Movie Reviews & Ratings Database | Bombote.com",
-    description: "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings, detailed reviews, and honest opinions on films.",
+    description: "Comprehensive database of unbiased personal movie reviews and ratings.",
     type: "website",
     locale: "en_US",
     url: "https://bombote.com/movies",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Movie Reviews & Ratings Database | Bombote.com",
-    description: "Comprehensive database of personal movie reviews and ratings. Discover unbiased movie ratings and honest film opinions.",
+    description: "Comprehensive database of unbiased personal movie reviews and ratings.",
     images: ["/icons8-movie-50.png"],
   },
   robots: {

@@ -8,8 +8,7 @@ import StructuredData from "@/components/StructuredData";
 
 export const metadata = {
   title: "Perfume Reviews & Ratings Database",
-  description:
-    "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis, scent breakdowns, longevity insights, and recommendations. Browse through detailed perfume ratings and discover your perfect scent from niche and designer fragrances.",
+  description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
   keywords: [
     "perfume ratings",
     "fragrance reviews",

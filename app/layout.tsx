@@ -12,8 +12,7 @@ export const metadata: Metadata = {
     default: "Bombote.com - Personal Reviews & Ratings Database",
     template: "%s | Bombote.com",
   },
-  description:
-    "Comprehensive personal database of perfume, movie, and TV show reviews and ratings. Discover detailed fragrance analysis, unbiased movie ratings, and honest TV series reviews with regular updates.",
+  description: "Comprehensive personal database of detailed fragrance analysis, unbiased movie ratings, and honest TV series reviews with regular updates.",
   keywords: [
     "movie ratings",
     "series ratings",
@@ -56,8 +55,7 @@ export const metadata: Metadata = {
     url: "https://bombote.com",
     siteName: "Bombote.com",
     title: "Bombote.com - Personal Reviews & Ratings Database",
-    description:
-      "Comprehensive personal database of perfume, movie, and TV show reviews and ratings. Discover detailed fragrance analysis, unbiased movie ratings, and honest TV series reviews.",
+    description: "Comprehensive personal database of detailed fragrance analysis, unbiased movie ratings, and honest TV series reviews with regular updates.",
     images: [
       {
         url: "/logo.png",
