@@ -79,3 +79,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Simplified Thematic Background - No Animations */
+.thematic-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgba(16,23,42,1) 0%, rgba(30,41,59,1) 35%, rgba(51,65,85,1) 70%, rgba(71,85,105,1) 100%);
+}

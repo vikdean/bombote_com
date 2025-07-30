@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/PerfumeNavigation";
-import Footer from "@/components/PerfumeFooter";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Perfume Reviews & Ratings Database",
@@ -61,10 +61,15 @@ export const metadata: Metadata = {
 
 export default function PerfumeLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
-      <main className="flex-grow bg-secondary">{children}</main>
-      <Footer />
-    </div>
+    <>
+      {/* Thematic Background */}
+      <div className="thematic-background"></div>
+
+      <div className="flex flex-col min-h-screen relative isolate">
+        <Navigation />
+        <main className="flex-grow pt-20">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 }

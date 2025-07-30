@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/MoviesNavigation";
-import Footer from "@/components/MoviesFooter";
+import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Movie Reviews & Ratings Database",
-  description:
-    "Comprehensive database of unbiased personal movie reviews and ratings.",
+  description: "Comprehensive database of unbiased personal movie reviews and ratings.",
   keywords: [
     "movie ratings",
     "cinema ratings",
@@ -54,12 +53,15 @@ export const metadata: Metadata = {
 
 export default function MoviesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
-      <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
-        <main className="flex-grow bg-secondary">{children}</main>
-      </ThemeProvider>
-      <Footer />
-    </div>
+    <>
+      {/* Thematic Background */}
+      <div className="thematic-background"></div>
+
+      <div className="flex flex-col min-h-screen relative isolate">
+        <Navigation />
+        <main className="flex-grow pt-20">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 }

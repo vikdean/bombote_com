@@ -49,14 +49,14 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
   };
 
   return (
-    <div className="space-y-4 w-full">
+    <div className="space-y-4 pt-4">
       <div className="flex justify-between items-center">
         <Input placeholder="Search for movies..." value={searchTerm} onChange={handleSearchChange} className="max-w-sm text-foreground border-gray-600" />
         <div className="text-sm text-gray-400">
           Showing {startIndex + 1}-{Math.min(endIndex, filteredMovies.length)} of {filteredMovies.length} movies
         </div>
       </div>
-      <div className="overflow-x-auto bg-muted-foreground/10 rounded-xl">
+      <div className="overflow-x-auto bg-gray-500/20 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl shadow-black/50">
         <Table className="w-full">
           <TableHeader>
             <TableRow>
@@ -93,7 +93,7 @@ export default function MoviesTable({ movies }: MoviesTableProps) {
                   </Badge>
                 </TableCell>
                 <TableCell className="px-4 text-xs md:text-sm">
-                  <Link href={movie.URL} className="text-blue-400 hover:text-blue-200" target="_blank" rel="noopener noreferrer">
+                  <Link href={movie.URL} className="text-blue-300 hover:text-blue-100" target="_blank" rel="noopener noreferrer">
                     IMDb
                   </Link>
                 </TableCell>

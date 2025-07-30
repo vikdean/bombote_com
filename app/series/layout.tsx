@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/SeriesNavigation";
-import Footer from "@/components/SeriesFooter";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "TV Show Reviews & Ratings Database",
@@ -52,10 +52,15 @@ export const metadata: Metadata = {
 
 export default function SeriesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
-      <main className="flex-grow bg-secondary">{children}</main>
-      <Footer />
-    </div>
+    <>
+      {/* Thematic Background */}
+      <div className="thematic-background"></div>
+
+      <div className="flex flex-col min-h-screen relative isolate">
+        <Navigation />
+        <main className="flex-grow pt-20">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 }
