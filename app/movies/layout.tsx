@@ -28,12 +28,27 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bombote.com/movies",
     siteName: "Bombote.com",
+    images: [
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Movie Reviews & Ratings Database | Bombote.com",
     description: "Comprehensive database of unbiased personal movie reviews and ratings.",
-    images: ["/icons8-movie-50.png"],
+    images: [
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
   },
   robots: {
     index: true,

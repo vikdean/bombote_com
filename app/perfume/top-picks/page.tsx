@@ -137,6 +137,14 @@ export const metadata = {
     description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
     url: "https://bombote.com/perfume/top-picks",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
   },
   alternates: {
     canonical: "https://bombote.com/perfume/top-picks",

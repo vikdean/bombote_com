@@ -32,7 +32,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TV Show Reviews & Ratings Database | Bombote.com",
     description: "Comprehensive database of personal TV show and series reviews and ratings with honest opinions and recommendations.",
-    images: ["/icons8-tv-50.png"],
+    images: [
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
   },
   robots: {
     index: true,
