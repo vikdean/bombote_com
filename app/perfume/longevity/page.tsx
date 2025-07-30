@@ -74,30 +74,28 @@ export const metadata = {
 
 export default function Longevity() {
   return (
-    <div className="bg-secondary" aria-label="Longevity Rating Guide">
-      <div className="w-[95%] max-w-7xl mx-auto pt-12">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">Longevity Legend</h1>
-          <div className="overflow-x-auto rounded-xl w-[360px]">
-            <Table>
-              <TableHeader className="bg-emerald-900 whitespace-nowrap">
-                <TableRow>
-                  <TableHead className="px-4 w-[180px] text-white font-bold text-xs md:text-sm">Duration</TableHead>
-                  <TableHead className="w-[140px] text-white font-bold text-xs md:text-sm">Rating</TableHead>
+    <div className="w-[95%] max-w-7xl mx-auto pt-12" aria-label="Longevity Rating Guide">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">Longevity Legend</h1>
+        <div className="overflow-x-auto rounded-xl w-[360px]">
+          <Table>
+            <TableHeader className="bg-emerald-800 whitespace-nowrap">
+              <TableRow>
+                <TableHead className="px-4 w-[180px] text-white font-bold text-xs md:text-sm">Duration</TableHead>
+                <TableHead className="w-[140px] text-white font-bold text-xs md:text-sm">Rating</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody className="text-foreground bg-muted-foreground/10">
+              {long_data.map((data) => (
+                <TableRow key={data.duration}>
+                  <TableCell className="px-4 font-medium text-xs md:text-sm">{data.duration}</TableCell>
+                  <TableCell>
+                    <Badge className="bg-secondary rounded-md py-1">{data.rating}</Badge>
+                  </TableCell>
                 </TableRow>
-              </TableHeader>
-              <TableBody className="text-foreground bg-muted-foreground/10">
-                {long_data.map((data) => (
-                  <TableRow key={data.duration}>
-                    <TableCell className="px-4 font-medium text-xs md:text-sm">{data.duration}</TableCell>
-                    <TableCell>
-                      <Badge className="bg-secondary rounded-md py-1">{data.rating}</Badge>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </div>
     </div>

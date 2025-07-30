@@ -145,71 +145,66 @@ export const metadata = {
 
 export default function TopPicks() {
   return (
-    <div className="bg-secondary" aria-label="Top Perfume Picks">
-      <div className="w-[95%] max-w-7xl mx-auto pt-12">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
-          <div className="grid grid-cols-1 gap-6">
-            {top_picks.map((option) => (
-              <Card
-                key={option.brand}
-                className="text-xl rounded-xl border border-emerald-900 bg-gradient-to-tl from-emerald-700/40 from-1% to-card to-40% shadow-md w-full hover:border-emerald-600 duration-200"
-              >
-                <CardContent className="grid grid-cols-2 gap-4 p-6">
-                  <div className="col-span-1">
-                    <Image src={option.picture} alt="Perfume Picture" width="380" height="300" className="object-contain rounded-3xl shadow-md" />
+    <div className="w-[95%] max-w-7xl mx-auto pt-16" aria-label="Top Perfume Picks">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
+        <div className="grid grid-cols-1 gap-8">
+          {top_picks.map((option) => (
+            <Card key={option.brand} className="text-xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl shadow-black/50 w-full">
+              <CardContent className="grid grid-cols-2 gap-4 p-6">
+                <div className="col-span-1">
+                  <Image src={option.picture} alt="Perfume Picture" width="380" height="300" className="object-contain rounded-3xl shadow-md" />
+                </div>
+                <div className="col-span-1 space-y-4">
+                  <div>
+                    <p className="text-xl md:text-3xl font-bold">{option.brand}</p>
+                    <p className="text-base md:text-xl mt-2">{option.name}</p>
                   </div>
-                  <div className="col-span-1 space-y-4">
-                    <div>
-                      <p className="text-xl md:text-3xl font-bold">{option.brand}</p>
-                      <p className="text-base md:text-xl mt-2">{option.name}</p>
+                  <Badge
+                    className={`rounded-md py-1 px-2 text-foreground ${
+                      option.type === "Parfum"
+                        ? "bg-purple-800 hover:bg-purple-600"
+                        : option.type === "Eau de Parfum"
+                        ? "bg-orange-800 hover:bg-orange-600"
+                        : option.type === "Elixir"
+                        ? "bg-blue-700 hover:bg-blue-500"
+                        : option.type === "Eau de Toilette"
+                        ? "bg-gray-600 hover:bg-gray-400"
+                        : ""
+                    }`}
+                  >
+                    {option.type}
+                  </Badge>
+                  <div className="space-y-3 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
+                      <Heart className="h-5 w-5" />
+                      Scent: <Badge className="bg-muted-foreground/40 rounded-md py-1">{option.scent}</Badge>
                     </div>
-                    <Badge
-                      className={`rounded-md py-1 px-2 text-foreground ${
-                        option.type === "Parfum"
-                          ? "bg-purple-800 hover:bg-purple-600"
-                          : option.type === "Eau de Parfum"
-                          ? "bg-orange-800 hover:bg-orange-600"
-                          : option.type === "Elixir"
-                          ? "bg-blue-700 hover:bg-blue-500"
-                          : option.type === "Eau de Toilette"
-                          ? "bg-gray-600 hover:bg-gray-400"
-                          : ""
-                      }`}
-                    >
-                      {option.type}
-                    </Badge>
-                    <div className="space-y-3 text-xs md:text-sm">
-                      <div className="flex items-center gap-2">
-                        <Heart className="h-5 w-5" />
-                        Scent: <Badge className="bg-muted-foreground/40 rounded-md py-1">{option.scent}</Badge>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <BicepsFlexed className="h-5 w-5" />
-                        Longevity: <Badge className="bg-muted-foreground/40 rounded-md py-1 text-foreground">{option.longevity}</Badge>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="h-5 w-5" />
-                        Price: <Badge className="bg-muted-foreground/40 rounded-md py-1 text-foreground">{option.price}</Badge>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Star className="h-5 w-5" />
-                        Rating: <Badge className="bg-orange-700 rounded-md py-1 text-foreground">{option.overall_score}</Badge>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Link2 className="h-5 w-5" />
-                        Link:{" "}
-                        <Link href={option.link} className="text-emerald-300 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
-                          Amazon
-                        </Link>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <BicepsFlexed className="h-5 w-5" />
+                      Longevity: <Badge className="bg-muted-foreground/40 rounded-md py-1 text-foreground">{option.longevity}</Badge>
                     </div>
-                    <p className="text-foreground/90 text-xs md:text-base">{option.description}</p>
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="h-5 w-5" />
+                      Price: <Badge className="bg-muted-foreground/40 rounded-md py-1 text-foreground">{option.price}</Badge>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Star className="h-5 w-5" />
+                      Rating: <Badge className="bg-orange-700 rounded-md py-1 text-foreground">{option.overall_score}</Badge>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Link2 className="h-5 w-5" />
+                      Link:{" "}
+                      <Link href={option.link} className="text-emerald-300 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
+                        Amazon
+                      </Link>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <p className="text-foreground/90 text-xs md:text-base">{option.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
