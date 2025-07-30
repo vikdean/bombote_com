@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     "movie database",
     "tv show database",
   ],
-  authors: [{ name: "Bombote" }],
-  creator: "Bombote",
+  authors: [{ name: "VA" }],
+  creator: "VA",
   publisher: "Bombote.com",
   formatDetection: {
     email: false,

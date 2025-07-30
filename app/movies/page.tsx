@@ -15,14 +15,6 @@ export const metadata = {
     description: "Comprehensive database of unbiased personal movie reviews and ratings.",
     url: "https://bombote.com/movies",
     type: "website",
-    images: [
-      {
-        url: "/icons8-movie-50.png",
-        width: 50,
-        height: 50,
-        alt: "Movie Reviews Database",
-      },
-    ],
   },
   alternates: {
     canonical: "https://bombote.com/movies",

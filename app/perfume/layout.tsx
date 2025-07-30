@@ -1,12 +1,6 @@
-import "@/app/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Navigation from "@/components/PerfumeNavigation";
 import Footer from "@/components/PerfumeFooter";
-import Analytics from "@/components/Analytics";
-import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Perfume Reviews & Ratings Database",
@@ -42,14 +36,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bombote.com/perfume",
     siteName: "Bombote.com",
-    images: [
-      {
-        url: "/icons8-perfume-bottle-100.png",
-        width: 100,
-        height: 100,
-        alt: "Perfume Reviews Database",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -73,17 +59,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function PerfumeLayout({ children }: { children: React.ReactNode }) {
   return (
-    <body className={inter.className}>
-      <Analytics />
-      <div className="flex flex-col min-h-screen">
-        <Navigation />
-        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
-          <main className="flex-grow bg-secondary">{children}</main>
-        </ThemeProvider>
-        <Footer />
-      </div>
-    </body>
+    <div className="flex flex-col min-h-screen">
+      <Navigation />
+      <main className="flex-grow bg-secondary">{children}</main>
+      <Footer />
+    </div>
   );
 }

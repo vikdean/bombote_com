@@ -27,14 +27,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bombote.com/series",
     siteName: "Bombote.com",
-    images: [
-      {
-        url: "/icons8-tv-50.png",
-        width: 50,
-        height: 50,
-        alt: "TV Show Reviews Database",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",

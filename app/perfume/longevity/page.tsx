@@ -45,8 +45,31 @@ const long_data = [
 ];
 
 export const metadata = {
-  title: "Bombote - Perfume Longevity Legend",
-  description: "Longevity legend for the main perfume database",
+  title: "Perfume Longevity Legend - Bombote.com",
+  description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+  keywords: [
+    "perfume ratings",
+    "fragrance reviews",
+    "perfume database",
+    "fragrance analysis",
+    "perfume recommendations",
+    "niche fragrances",
+    "designer perfumes",
+    "cologne reviews",
+    "fragrance notes",
+    "perfume comparisons",
+    "scent reviews",
+    "fragrance database",
+  ],
+  openGraph: {
+    title: "Perfume Longevity Legend - Bombote.com",
+    description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+    url: "https://bombote.com/perfume/top-picks",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://bombote.com/perfume/top-picks",
+  },
 };
 
 export default function Longevity() {

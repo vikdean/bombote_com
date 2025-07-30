@@ -116,9 +116,31 @@ const top_picks = [
 ];
 
 export const metadata = {
-  title: "Bombote - Perfume Top Picks",
-  description:
-    "fragrance reviews, perfume ratings, best perfumes, cologne reviews, top fragrances, niche fragrances, designer perfumes, fragrance recommendations, perfume guide, unisex perfumes, luxury perfumes, fragrance notes, Eau de Parfum reviews, cologne guide, perfume comparisons, top-rated perfumes, affordable perfumes, mens cologne, fragrance database, perfume analysis, scent reviews",
+  title: "Perfume Top Picks - Bombote.com",
+  description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+  keywords: [
+    "perfume ratings",
+    "fragrance reviews",
+    "perfume database",
+    "fragrance analysis",
+    "perfume recommendations",
+    "niche fragrances",
+    "designer perfumes",
+    "cologne reviews",
+    "fragrance notes",
+    "perfume comparisons",
+    "scent reviews",
+    "fragrance database",
+  ],
+  openGraph: {
+    title: "Perfume Top Picks - Bombote.com",
+    description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+    url: "https://bombote.com/perfume/top-picks",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://bombote.com/perfume/top-picks",
+  },
 };
 
 export default function TopPicks() {

@@ -29,14 +29,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bombote.com/movies",
     siteName: "Bombote.com",
-    images: [
-      {
-        url: "/icons8-movie-50.png",
-        width: 50,
-        height: 50,
-        alt: "Movie Reviews Database",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",

@@ -29,14 +29,6 @@ export const metadata = {
     description: "Comprehensive database of personal TV show and series reviews and ratings. Browse detailed series ratings and discover show recommendations.",
     url: "https://bombote.com/series",
     type: "website",
-    images: [
-      {
-        url: "/icons8-tv-50.png",
-        width: 50,
-        height: 50,
-        alt: "TV Show Reviews Database",
-      },
-    ],
   },
   alternates: {
     canonical: "https://bombote.com/series",

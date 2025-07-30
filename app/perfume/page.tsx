@@ -5,6 +5,7 @@ import { CircleAlert } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
+import { Info } from "lucide-react";
 
 export const metadata = {
   title: "Perfume Reviews & Ratings Database",
@@ -28,14 +29,6 @@ export const metadata = {
     description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
     url: "https://bombote.com/perfume",
     type: "website",
-    images: [
-      {
-        url: "/icons8-perfume-bottle-100.png",
-        width: 100,
-        height: 100,
-        alt: "Perfume Reviews Database",
-      },
-    ],
   },
   alternates: {
     canonical: "https://bombote.com/perfume",
