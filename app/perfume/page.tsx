@@ -5,6 +5,8 @@ import { CircleAlert } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
+import RatingsRadialChart from "@/components/RatingsRadialChart";
+import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
 
 export const metadata = {
   title: "Perfume Reviews & Ratings Database",
@@ -36,6 +38,13 @@ export const metadata = {
 
 export default function Home() {
   const fragrances: Fragrance[] = parseCSV();
+  const fragranceRatings = fragrances
+    .map((fragrance) => {
+      const ratingMatch = fragrance.Rating.match(/10 \/ (\d+)/);
+      return ratingMatch ? parseFloat(ratingMatch[1]) : NaN;
+    })
+    .filter((rating) => !isNaN(rating));
+  const averageRating = fragranceRatings.length > 0 ? (fragranceRatings.reduce((sum, rating) => sum + rating, 0) / fragranceRatings.length).toFixed(1) : "0.0";
 
   return (
     <>
@@ -52,33 +61,30 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid grid-cols-1 md:grid-cols-[230px_230px_1fr] gap-4 my-4">
-                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-emerald-500 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-[0.6fr_1fr_1fr_0.6fr] gap-4 my-4">
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
-                    <CardTitle className="pb-4 text-sm md:text-base">Fragrances reviewed</CardTitle>
+                    <CardTitle className="pb-4 text-base md:text-xl">Perfumes reviewed</CardTitle>
                     <CardDescription className="text-2xl md:text-3xl font-bold text-emerald-400">{fragrances.length}</CardDescription>
                   </CardHeader>
                 </Card>
 
-                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-emerald-500 w-full">
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
-                    <CardTitle className="pb-4 text-sm md:text-base">Last update</CardTitle>
-                    <CardDescription className="text-lg md:text-xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
+                    <CardTitle className="text-base md:text-xl">Average rating</CardTitle>
                   </CardHeader>
+                  <CardContent className="-mt-2 pb-1">
+                    <RatingsRadialChart averageRating={averageRating} color="#10b981" label="Perfume Rating" />
+                  </CardContent>
                 </Card>
 
-                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-emerald-500 w-full">
-                  <CardContent>
-                    <div className="flex items-center space-x-4 rounded-md pt-6">
-                      <CircleAlert className="text-emerald-400" />
-                      <div className="flex-1 space-y-1">
-                        <CardTitle className="text-xs md:text-sm font-bold leading-none text-foreground">Note</CardTitle>
-                        <p className="text-xs md:text-sm text-gray-300">
-                          Please keep in mind, the ratings on this page are strictly based on my own taste and preferences. Most of these were tested with genuine 2ml sample tubes.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
+                <RatingsRadarDistribution ratings={fragranceRatings} color="#34d399" label="" />
+
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="pb-4 text-base md:text-xl">Last update</CardTitle>
+                    <CardDescription className="text-lg md:text-xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
+                  </CardHeader>
                 </Card>
               </div>
               {/* Client-side interactive table */}
@@ -91,11 +97,7 @@ export default function Home() {
                 <h2>Perfume Database</h2>
                 <Table>
                   <TableHeader>
-                    <TableRow>
-                      {Object.keys(fragrances[0]).map((key) => (
-                        <TableHead key={key}>{key}</TableHead>
-                      ))}
-                    </TableRow>
+                    <TableRow>{fragrances.length > 0 && Object.keys(fragrances[0]).map((key) => <TableHead key={key}>{key}</TableHead>)}</TableRow>
                   </TableHeader>
                   <TableBody>
                     {fragrances.map((fragrance, index) => (

@@ -7,6 +7,8 @@ import { Sparkles, Film, Tv, Droplets, Play, CirclePlay, Star } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
+import { CircleAlert } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function Home() {
   return (
@@ -21,10 +23,10 @@ export default function Home() {
             <div className="mt-4 mb-4 sm:mt-2 sm:mb-2">
               <Image src="/logo.png" alt="Logo" width={220} height={200} className="max-w-[160px] sm:max-w-[180px] md:max-w-[200px] h-auto" />
             </div>
-            <h1 className="bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-2xl tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-sans pt-4 pb-2">
+            <h1 className="bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-2xl tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-sans pt-8 pb-2">
               Honest Reviews & Ratings
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl text-gray-400 pb-8 sm:pb-2 md:pb-12 px-4">My curated collections of unbiased fragrance, movie, and TV show ratings</p>
+            <p className="text-sm sm:text-lg md:text-xl text-gray-400 pb-8 sm:pb-4 md:pb-16 px-4">My curated collections of unbiased fragrance, movie, and TV show ratings</p>
 
             {/* Perfume Card */}
             <div className="container mx-auto max-w-6xl px-2 sm:px-4">
@@ -143,6 +145,19 @@ export default function Home() {
                 </Card>
               </div>
             </div>
+
+            {/* Alert */}
+            <Alert className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 text-left mt-12 w-[60%]">
+              <div className="flex items-center space-x-4 rounded-md py-1">
+                <CircleAlert className="text-neutral-200" />
+                <div className="flex-1 space-y-1">
+                  <AlertTitle className="text-xs md:text-sm font-bold leading-none text-foreground">Note</AlertTitle>
+                  <AlertDescription className="text-xs md:text-sm text-gray-300">
+                    Please keep in mind, the ratings on this site are strictly based on my own personal taste and preferences.
+                  </AlertDescription>
+                </div>
+              </div>
+            </Alert>
           </div>
         </div>
       </div>
