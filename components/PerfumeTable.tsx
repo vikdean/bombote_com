@@ -68,9 +68,13 @@ export default function PerfumeTable({ fragrances }: PerfumeTableProps) {
                     key={key}
                   >
                     {key === "Link to buy" ? (
-                      <Link href={value} className="text-emerald-300 hover:text-emerald-100" target="_blank" rel="noopener noreferrer">
-                        Amazon
-                      </Link>
+                      typeof value === "string" && (value.includes("amazon.") || value.includes("amzn.to")) ? (
+                        <Link href={value} className="text-emerald-300 hover:text-emerald-100" target="_blank" rel="noopener noreferrer">
+                          Amazon
+                        </Link>
+                      ) : (
+                        ""
+                      )
                     ) : key === "Type" ? (
                       <Badge
                         className={`rounded-md py-1 text-foreground ${

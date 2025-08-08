@@ -103,7 +103,11 @@ export default function Home() {
                     {fragrances.map((fragrance, index) => (
                       <TableRow key={index}>
                         {Object.entries(fragrance).map(([key, value]) => (
-                          <TableCell key={key}>{key === "Link to buy" ? <Link href={value}>Amazon Link</Link> : value}</TableCell>
+                          <TableCell key={key}>
+                            {key === "Link to buy"
+                              ? (typeof value === "string" && (value.includes("amazon.") || value.includes("amzn.to")) ? <Link href={value}>Amazon Link</Link> : "")
+                              : value}
+                          </TableCell>
                         ))}
                       </TableRow>
                     ))}
