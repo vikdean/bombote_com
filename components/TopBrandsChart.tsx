@@ -63,8 +63,8 @@ export default function TopBrandsChart({ data, overallAvg, className }: TopBrand
             axisLine={false}
             tickFormatter={(value) => String(chartConfig[value as keyof typeof chartConfig]?.label ?? value)}
             width={90}
-            tick={{ fill: '#e5e5e5', fontSize: 11 }}
-            style={{ fill: '#e5e5e5' }}
+            tick={{ fill: "#e5e5e5", fontSize: 11 }}
+            style={{ fill: "#e5e5e5" }}
           />
           <XAxis dataKey="average" type="number" hide domain={[0, Math.ceil(maxAvg)]} />
           <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />

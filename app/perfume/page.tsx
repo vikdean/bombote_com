@@ -63,11 +63,11 @@ export default function Home() {
       }
     }
     return Array.from(map.entries())
-      .map(([brand, { sum, count }]) => ({ brand, average: sum / count }))
+      .map(([brand, { sum, count }]) => ({ brand, average: sum / count, count }))
       .sort((a, b) => b.average - a.average);
   })();
 
-  const topBrands = brandAverages.slice(0, 5);
+  const topBrands = brandAverages.filter((b) => (b.count ?? 0) >= 3).slice(0, 5);
   const overallAvg = parseFloat(averageRating) || 0;
   const chartData = topBrands.map((b) => ({
     brand: b.brand,
