@@ -1,12 +1,12 @@
 import { parseCSV, type Fragrance, getLastModifiedDate } from "@/utils/Perfume_csvParser";
 import PerfumeTable from "@/components/PerfumeTable";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CircleAlert } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
 import RatingsRadialChart from "@/components/RatingsRadialChart";
 import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
+import TopBrandsChart from "@/components/TopBrandsChart";
 
 export const metadata = {
   title: "Perfume Reviews & Ratings Database",
@@ -46,6 +46,35 @@ export default function Home() {
     .filter((rating) => !isNaN(rating));
   const averageRating = fragranceRatings.length > 0 ? (fragranceRatings.reduce((sum, rating) => sum + rating, 0) / fragranceRatings.length).toFixed(1) : "0.0";
 
+  // Compute top 5 brands by average rating (normalize brand names; robust rating parsing)
+  const brandAverages = (() => {
+    const map = new Map<string, { sum: number; count: number }>();
+    const ratingRegex = /10\s*\/\s*(\d+(?:\.\d+)?)/;
+    for (const f of fragrances) {
+      const brand = (f.Brand || "").toString().trim();
+      if (!brand) continue;
+      const match = f.Rating?.toString().match(ratingRegex);
+      const rating = match ? parseFloat(match[1]) : NaN;
+      if (!isNaN(rating)) {
+        const prev = map.get(brand) || { sum: 0, count: 0 };
+        prev.sum += rating;
+        prev.count += 1;
+        map.set(brand, prev);
+      }
+    }
+    return Array.from(map.entries())
+      .map(([brand, { sum, count }]) => ({ brand, average: sum / count }))
+      .sort((a, b) => b.average - a.average);
+  })();
+
+  const topBrands = brandAverages.slice(0, 5);
+  const overallAvg = parseFloat(averageRating) || 0;
+  const chartData = topBrands.map((b) => ({
+    brand: b.brand,
+    average: b.average,
+    overall: overallAvg,
+  }));
+
   return (
     <>
       <StructuredData type="perfume" data={{ count: fragrances.length }} />
@@ -61,12 +90,27 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid grid-cols-1 md:grid-cols-[0.6fr_1fr_1fr_0.6fr] gap-4 my-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[0.35fr_0.85fr_0.5fr_0.52fr_0.38fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Perfumes reviewed</CardTitle>
                     <CardDescription className="text-2xl md:text-3xl font-bold text-emerald-400">{fragrances.length}</CardDescription>
                   </CardHeader>
+                </Card>
+
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="text-base md:text-xl">Top brands</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <TopBrandsChart data={chartData} overallAvg={overallAvg} />
+                    <script
+                      // embed the same chartData into window so the client component can hydrate reliably
+                      dangerouslySetInnerHTML={{
+                        __html: `window.__TOP_BRANDS = ${JSON.stringify(chartData)};`,
+                      }}
+                    />
+                  </CardContent>
                 </Card>
 
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
@@ -104,9 +148,15 @@ export default function Home() {
                       <TableRow key={index}>
                         {Object.entries(fragrance).map(([key, value]) => (
                           <TableCell key={key}>
-                            {key === "Link to buy"
-                              ? (typeof value === "string" && (value.includes("amazon.") || value.includes("amzn.to")) ? <Link href={value}>Amazon Link</Link> : "")
-                              : value}
+                            {key === "Link to buy" ? (
+                              typeof value === "string" && (value.includes("amazon.") || value.includes("amzn.to")) ? (
+                                <Link href={value}>Amazon Link</Link>
+                              ) : (
+                                ""
+                              )
+                            ) : (
+                              value
+                            )}
                           </TableCell>
                         ))}
                       </TableRow>

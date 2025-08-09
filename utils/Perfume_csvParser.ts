@@ -26,7 +26,9 @@ export function getLastModifiedDate(): string {
 
 export function parseCSV(): Fragrance[] {
   const filePath = path.join(process.cwd(), "fragrances.csv");
-  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const fileContentRaw = fs.readFileSync(filePath, "utf-8");
+  // Remove BOM if present (some CSVs include a UTF-8 BOM which makes the first header key '\uFEFFBrand')
+  const fileContent = fileContentRaw.replace(/^\uFEFF/, "");
   const records = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,

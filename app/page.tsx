@@ -147,7 +147,7 @@ export default function Home() {
             </div>
 
             {/* Alert */}
-            <Alert className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 text-left mt-12 w-[60%]">
+            <Alert className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 text-left mt-12 mb-16 w-[60%]">
               <div className="flex items-center space-x-4 rounded-md py-1">
                 <CircleAlert className="text-neutral-200" />
                 <div className="flex-1 space-y-1">
