@@ -14,7 +14,7 @@ const top_picks = [
     longevity: "12 hours+",
     price: "moderate",
     overall_score: "10/10",
-    link: "https://amzn.to/42feVx5",
+    link: "https://amzn.to/3Hi9G7Q",
     description: "The Modern Mens perfume; perfect scent, with incredible performance at an OK price (get the Parfum or EDP version if you can't afford it).  Highly recommended.",
   },
   {
@@ -26,7 +26,7 @@ const top_picks = [
     longevity: "~7 hours",
     price: "expensive",
     overall_score: "10/9",
-    link: "https://amzn.to/4kafhdU",
+    link: "https://amzn.to/45pCOC2",
     description: "Creamy-fruity-woody-spicy scent, good performance; however, its quite expensive.",
   },
   {
@@ -38,7 +38,7 @@ const top_picks = [
     longevity: "8 hours+",
     price: "standard",
     overall_score: "10/9",
-    link: "https://amzn.to/4fWLRxA",
+    link: "https://amzn.to/3JqjgWI",
     description: "Unique scent, very good performance at a good price.",
   },
   {
@@ -50,7 +50,7 @@ const top_picks = [
     longevity: "~7 hours",
     price: "standard",
     overall_score: "10/9",
-    link: "https://amzn.to/4hfMDqp",
+    link: "https://amzn.to/4mkgWzd",
     description: "Lovely sweet, but not too sweet scent, good performance, affordable price.",
   },
   {
@@ -62,7 +62,7 @@ const top_picks = [
     longevity: "10 hours+",
     price: "cheap",
     overall_score: "10/9",
-    link: "https://amzn.to/3PClXnX",
+    link: "https://amzn.to/4mc2oBK",
     description: "Pleasant scent, similar to the Dior Sauvage Elixir. Very good performance at a bargain price.",
   },
   {
@@ -74,7 +74,7 @@ const top_picks = [
     longevity: "8 hours+",
     price: "expensive",
     overall_score: "10/9",
-    link: "https://amzn.to/4jRGWAT",
+    link: "https://amzn.to/45JeJaz",
     description: "Unique scent, great performance, but expensive. Very similar to the regular Interlude, but less intrusive.",
   },
   {
@@ -86,7 +86,7 @@ const top_picks = [
     longevity: "8 hours",
     price: "cheap",
     overall_score: "10/9",
-    link: "https://bombote.com/",
+    link: "",
     description: "Woody-oriental scent with all-day performance, good price.",
   },
   {
@@ -110,7 +110,7 @@ const top_picks = [
     longevity: "8 hours+",
     price: "cheap",
     overall_score: "10/9",
-    link: "https://amzn.to/3BZG8Jz",
+    link: "https://amzn.to/4fyZa8Q",
     description: "Oriental woody Tobacco scent with good performance, really cheap.",
   },
 ];
