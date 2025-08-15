@@ -25,14 +25,57 @@ export const metadata = {
     "scent reviews",
     "fragrance database",
   ],
+  authors: [{ name: "VA" }],
+  creator: "VA",
+  publisher: "Bombote.com",
+  category: "Lifestyle",
+  classification: "Reviews & Ratings",
   openGraph: {
     title: "Perfume Reviews & Ratings Database | Bombote.com",
     description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
     url: "https://bombote.com/perfume",
     type: "website",
+    locale: "en_US",
+    siteName: "Bombote.com",
+    images: [
+      {
+        url: "/icons8-perfume-bottle-100.png",
+        width: 100,
+        height: 100,
+        alt: "Perfume Reviews Database",
+      },
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perfume Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations.",
+    images: ["/icons8-perfume-bottle-100.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
     canonical: "https://bombote.com/perfume",
+  },
+  other: {
+    "revisit-after": "7 days",
+    rating: "general",
+    distribution: "global",
   },
 };
 

@@ -9,13 +9,41 @@ import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
 
 export const metadata = {
   title: "Movie Reviews & Ratings Database",
-  description: "Comprehensive database of unbiased personal movie reviews and ratings.",
-  keywords: ["movie ratings", "film reviews", "cinema database", "movie recommendations", "unbiased movie ratings", "personal film reviews", "movie analysis", "film ratings database"],
+  description:
+    "Comprehensive database of unbiased personal movie reviews and ratings. Discover honest film critiques, detailed movie analysis, and authentic ratings covering classics, blockbusters, and hidden cinematic gems.",
+  keywords: [
+    "movie ratings",
+    "film reviews",
+    "cinema database",
+    "movie recommendations",
+    "unbiased movie ratings",
+    "personal film reviews",
+    "movie analysis",
+    "film ratings database",
+    "best movies",
+    "top films",
+    "cinema reviews",
+    "movie opinions",
+    "film critiques",
+    "movie database",
+    "honest movie reviews",
+    "independent film reviews",
+    "blockbuster reviews",
+    "classic movies",
+    "movie guide",
+  ],
+  authors: [{ name: "VA" }],
+  creator: "VA",
+  publisher: "Bombote.com",
+  category: "Entertainment",
+  classification: "Reviews & Ratings",
   openGraph: {
     title: "Movie Reviews & Ratings Database | Bombote.com",
-    description: "Comprehensive database of unbiased personal movie reviews and ratings.",
+    description: "Comprehensive database of unbiased personal movie reviews and ratings. Discover honest film critiques and authentic ratings covering classics and modern cinema.",
     url: "https://bombote.com/movies",
     type: "website",
+    locale: "en_US",
+    siteName: "Bombote.com",
     images: [
       {
         url: "/logo.png",
@@ -25,8 +53,37 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Movie Reviews & Ratings Database | Bombote.com",
+    description: "Comprehensive database of unbiased personal movie reviews and ratings with honest film critiques and authentic ratings.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 220,
+        height: 200,
+        alt: "Bombote.com Logo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "https://bombote.com/movies",
+  },
+  other: {
+    "revisit-after": "7 days",
+    rating: "general",
+    distribution: "global",
   },
 };
 

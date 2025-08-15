@@ -23,7 +23,7 @@ export default function Navigation() {
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-4">
                 <Link
-                  href="/"
+                  href="/perfume"
                   className="text-white/90 bg-white/10 hover:bg-white/30 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-white/10"
                 >
                   Home

@@ -45,28 +45,45 @@ const long_data = [
 ];
 
 export const metadata = {
-  title: "Perfume Longevity Legend - Bombote.com",
-  description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+  title: "Perfume Longevity Rating Guide & Legend",
+  description:
+    "Complete guide to understanding perfume longevity ratings and duration scales. Learn how fragrance performance is measured from 30 minutes to 8+ hours with detailed rating explanations.",
   keywords: [
-    "perfume ratings",
-    "fragrance reviews",
-    "perfume database",
-    "fragrance analysis",
-    "perfume recommendations",
-    "niche fragrances",
-    "designer perfumes",
-    "cologne reviews",
-    "fragrance notes",
-    "perfume comparisons",
-    "scent reviews",
-    "fragrance database",
+    "perfume longevity",
+    "fragrance duration",
+    "perfume performance",
+    "cologne longevity",
+    "fragrance lasting power",
+    "perfume rating scale",
+    "scent longevity guide",
+    "fragrance endurance",
+    "perfume wear time",
+    "cologne duration",
+    "fragrance performance guide",
+    "perfume longevity rating",
+    "scent lasting time",
+    "fragrance projection",
+    "perfume sillage",
   ],
+  authors: [{ name: "VA" }],
+  creator: "VA",
+  publisher: "Bombote.com",
+  category: "Lifestyle",
+  classification: "Guide",
   openGraph: {
-    title: "Perfume Longevity Legend - Bombote.com",
-    description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+    title: "Perfume Longevity Rating Guide & Legend | Bombote.com",
+    description: "Complete guide to understanding perfume longevity ratings and duration scales. Learn how fragrance performance is measured with detailed rating explanations.",
     url: "https://bombote.com/perfume/longevity",
     type: "website",
+    locale: "en_US",
+    siteName: "Bombote.com",
     images: [
+      {
+        url: "/icons8-perfume-bottle-100.png",
+        width: 100,
+        height: 100,
+        alt: "Perfume Longevity Guide",
+      },
       {
         url: "/logo.png",
         width: 220,
@@ -75,8 +92,31 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perfume Longevity Rating Guide & Legend | Bombote.com",
+    description: "Complete guide to understanding perfume longevity ratings and duration scales for fragrance performance measurement.",
+    images: ["/icons8-perfume-bottle-100.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "https://bombote.com/perfume/longevity",
+  },
+  other: {
+    "revisit-after": "30 days",
+    rating: "general",
+    distribution: "global",
+    "content-type": "reference-guide",
   },
 };
 

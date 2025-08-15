@@ -116,28 +116,46 @@ const top_picks = [
 ];
 
 export const metadata = {
-  title: "Perfume Top Picks - Bombote.com",
-  description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+  title: "Perfume Top Picks & Recommendations",
+  description:
+    "Curated selection of the best perfumes and fragrances personally tested and rated. Discover top-performing colognes from designer and niche brands with detailed reviews, longevity, and value analysis.",
   keywords: [
-    "perfume ratings",
-    "fragrance reviews",
-    "perfume database",
-    "fragrance analysis",
+    "best perfumes",
+    "top perfume picks",
     "perfume recommendations",
-    "niche fragrances",
+    "best cologne",
+    "top fragrances",
     "designer perfumes",
-    "cologne reviews",
-    "fragrance notes",
-    "perfume comparisons",
-    "scent reviews",
-    "fragrance database",
+    "niche fragrances",
+    "best men's cologne",
+    "fragrance reviews",
+    "perfume guide",
+    "cologne recommendations",
+    "luxury perfumes",
+    "affordable perfumes",
+    "long lasting perfumes",
+    "high performance fragrances",
+    "perfume ratings",
   ],
+  authors: [{ name: "VA" }],
+  creator: "VA",
+  publisher: "Bombote.com",
+  category: "Lifestyle",
+  classification: "Product Recommendations",
   openGraph: {
-    title: "Perfume Top Picks - Bombote.com",
-    description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
+    title: "Best Perfume Top Picks & Recommendations | Bombote.com",
+    description: "Curated selection of the best perfumes and fragrances personally tested and rated. Discover top-performing colognes with detailed reviews and value analysis.",
     url: "https://bombote.com/perfume/top-picks",
     type: "website",
+    locale: "en_US",
+    siteName: "Bombote.com",
     images: [
+      {
+        url: "/top-picks/sauvage_elixir.jpg",
+        width: 380,
+        height: 300,
+        alt: "Dior Sauvage Elixir - Top Perfume Pick",
+      },
       {
         url: "/logo.png",
         width: 220,
@@ -146,8 +164,31 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Perfume Top Picks & Recommendations | Bombote.com",
+    description: "Curated selection of the best perfumes and fragrances personally tested and rated with detailed reviews.",
+    images: ["/top-picks/sauvage_elixir.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "https://bombote.com/perfume/top-picks",
+  },
+  other: {
+    "revisit-after": "14 days",
+    rating: "general",
+    distribution: "global",
+    "content-type": "product-recommendations",
   },
 };
 
@@ -156,7 +197,7 @@ export default function TopPicks() {
     <div className="w-[95%] max-w-7xl mx-auto pt-16" aria-label="Top Perfume Picks">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl md:text-3xl font-bold text-foreground pb-8">My Top Picks</h1>
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 pb-16">
           {top_picks.map((option) => (
             <Card key={option.brand} className="text-xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl shadow-black/50 w-full">
               <CardContent className="grid grid-cols-2 gap-4 p-6">
