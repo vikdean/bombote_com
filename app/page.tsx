@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
-import { Sparkles, Film, Tv, Droplets, Play, CirclePlay, Star } from "lucide-react";
+import { Sparkles, Film, Tv, Droplets, CirclePlay, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";

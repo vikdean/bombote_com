@@ -43,5 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/fizu`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 1,
+    },
   ];
 }
