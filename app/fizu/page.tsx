@@ -24,14 +24,14 @@ const MONTHS = [
   { value: "január", label: "Január", workDays: 22 },
   { value: "február", label: "Február", workDays: 20 },
   { value: "március", label: "Március", workDays: 21 },
-  { value: "április", label: "Április", workDays: 22 },
+  { value: "április", label: "Április", workDays: 21 },
   { value: "május", label: "Május", workDays: 20 },
   { value: "június", label: "Június", workDays: 20 },
   { value: "július", label: "Július", workDays: 23 },
-  { value: "augusztus", label: "Augusztus", workDays: 21 },
+  { value: "augusztus", label: "Augusztus", workDays: 20 },
   { value: "szeptember", label: "Szeptember", workDays: 22 },
   { value: "október", label: "Október", workDays: 21 },
-  { value: "november", label: "November", workDays: 21 },
+  { value: "november", label: "November", workDays: 20 },
   { value: "december", label: "December", workDays: 20 },
 ];
 
