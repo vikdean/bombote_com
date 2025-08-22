@@ -35,3 +35,5 @@ next\.config.*
 .aider*
 *:Zone\.Identifier
 /.clinerules/
+/.kilocode/
+/.vscode/

@@ -61,35 +61,32 @@ export default function SeriesTable({ series }: SeriesTableProps) {
           <TableBody className="text-foreground">
             {paginatedSeries.map((show, index) => (
               <TableRow key={index}>
-                {Object.entries(show).map(([key, value]) => (
-                  <TableCell className={`px-4 text-xs md:text-sm`} key={key}>
-                    {key === "URL" ? (
-                      <Link href={value} className="text-orange-300 hover:text-orange-100" target="_blank" rel="noopener noreferrer">
-                        IMDb
-                      </Link>
-                    ) : key === "Your Rating" ? (
-                      <Badge
-                        className={`rounded-md py-1 text-foreground min-w-[56px] text-center justify-center items-center ${
-                          parseInt(value) >= 9
-                            ? "bg-green-700 hover:bg-green-500"
-                            : parseInt(value) >= 8
-                            ? "bg-blue-700 hover:bg-blue-500"
-                            : parseInt(value) >= 7
-                            ? "bg-purple-700 hover:bg-purple-500"
-                            : parseInt(value) >= 6
-                            ? "bg-orange-800 hover:bg-orange-600"
-                            : parseInt(value) >= 4
-                            ? "bg-neutral-600 hover:bg-neutral-400"
-                            : "bg-gray-900 hover:bg-gray-500"
-                        }`}
-                      >
-                        {value}/10
-                      </Badge>
-                    ) : (
-                      value
-                    )}
-                  </TableCell>
-                ))}
+                <TableCell className="px-4 text-xs md:text-sm">{show.Title}</TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">{show.Year}</TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">
+                  <Badge
+                    className={`rounded-md py-1 text-foreground min-w-[56px] text-center justify-center items-center ${
+                      parseInt(show["Your Rating"]) >= 9
+                        ? "bg-green-700 hover:bg-green-500"
+                        : parseInt(show["Your Rating"]) >= 8
+                        ? "bg-blue-700 hover:bg-blue-500"
+                        : parseInt(show["Your Rating"]) >= 7
+                        ? "bg-purple-700 hover:bg-purple-500"
+                        : parseInt(show["Your Rating"]) >= 6
+                        ? "bg-orange-800 hover:bg-orange-600"
+                        : parseInt(show["Your Rating"]) >= 4
+                        ? "bg-neutral-600 hover:bg-neutral-400"
+                        : "bg-gray-900 hover:bg-gray-500"
+                    }`}
+                  >
+                    {show["Your Rating"]}/10
+                  </Badge>
+                </TableCell>
+                <TableCell className="px-4 text-xs md:text-sm">
+                  <Link href={show.URL} className="text-orange-300 hover:text-orange-100" target="_blank" rel="noopener noreferrer">
+                    IMDb
+                  </Link>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

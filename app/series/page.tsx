@@ -6,6 +6,7 @@ import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
 import RatingsRadialChart from "@/components/RatingsRadialChart";
 import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
+import { GenresPieChart } from "@/components/GenresPieChart";
 
 export const metadata = {
   title: "TV Show Reviews & Ratings Database",
@@ -85,6 +86,25 @@ export default function Home() {
   const seriesRatings = series.map((show) => parseFloat(show["Your Rating"])).filter((rating) => !isNaN(rating));
   const averageRating = seriesRatings.length > 0 ? (seriesRatings.reduce((sum, rating) => sum + rating, 0) / seriesRatings.length).toFixed(1) : "0.0";
 
+  const genreData = series
+    .flatMap((show) => show.Genres.split(", "))
+    .reduce((acc, genre) => {
+      if (genre) {
+        acc[genre] = (acc[genre] || 0) + 1;
+      }
+      return acc;
+    }, {} as Record<string, number>);
+
+  // Ensure types: Object.entries can be loose in TS, so cast to [string, number][] and
+  // produce a strongly typed array for the chart component.
+  const genreChartData: { genre: string; count: number; fill: string }[] = (Object.entries(genreData) as [string, number][])
+    .map(([genre, count], index) => ({
+      genre,
+      count: Number(count) || 0,
+      fill: `var(--chart-${(index % 5) + 1})`,
+    }))
+    .sort((a, b) => b.count - a.count);
+
   return (
     <>
       <StructuredData type="series" data={{ count: series.length }} />
@@ -100,7 +120,7 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid grid-cols-1 md:grid-cols-[0.6fr_1fr_1fr_0.6fr] gap-4 my-4">
+              <div className="grid grid-cols-1 md:grid-cols-[0.75fr_0.8fr_0.9fr_0.9fr_0.7fr] gap-4 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Series reviewed</CardTitle>
@@ -118,6 +138,8 @@ export default function Home() {
                 </Card>
 
                 <RatingsRadarDistribution ratings={seriesRatings} color="#fbbf24" label="" />
+
+                <GenresPieChart data={genreChartData} />
 
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
@@ -137,17 +159,21 @@ export default function Home() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      {Object.keys(series[0]).map((key) => (
-                        <TableHead key={key}>{key}</TableHead>
-                      ))}
+                      {Object.keys(series[0])
+                        .filter((k) => k !== "Genres")
+                        .map((key) => (
+                          <TableHead key={key}>{key}</TableHead>
+                        ))}
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {series.map((show, index) => (
                       <TableRow key={index}>
-                        {Object.entries(show).map(([key, value]) => (
-                          <TableCell key={key}>{key === "URL" ? <Link href={value}>IMDb Link</Link> : value}</TableCell>
-                        ))}
+                        {Object.entries(show)
+                          .filter(([key]) => key !== "Genres")
+                          .map(([key, value]) => (
+                            <TableCell key={key}>{key === "URL" ? <Link href={value}>IMDb Link</Link> : value}</TableCell>
+                          ))}
                       </TableRow>
                     ))}
                   </TableBody>

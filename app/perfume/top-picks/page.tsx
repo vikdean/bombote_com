@@ -143,7 +143,7 @@ export const metadata = {
   category: "Lifestyle",
   classification: "Product Recommendations",
   openGraph: {
-    title: "Best Perfume Top Picks & Recommendations | Bombote.com",
+    title: "Perfume Top Picks & Recommendations | Bombote.com",
     description: "Curated selection of the best perfumes and fragrances personally tested and rated. Discover top-performing colognes with detailed reviews and value analysis.",
     url: "https://bombote.com/perfume/top-picks",
     type: "website",
@@ -166,7 +166,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Perfume Top Picks & Recommendations | Bombote.com",
+    title: "Perfume Top Picks & Recommendations | Bombote.com",
     description: "Curated selection of the best perfumes and fragrances personally tested and rated with detailed reviews.",
     images: ["/top-picks/sauvage_elixir.jpg"],
   },

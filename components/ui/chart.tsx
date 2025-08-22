@@ -80,20 +80,36 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     <style
       dangerouslySetInnerHTML={{
         __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
+          .map(([theme, prefix]) => {
+            const body = colorConfig
+              .map(([key, itemConfig]) => {
+                const rawColor =
+                  itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+                  itemConfig.color
+                if (!rawColor) return null
+
+                // If the configured color references a chart token like `var(--chart-1)`
+                // we need to wrap it with `hsl(...)` so it becomes a valid CSS color:
+                //   hsl(var(--chart-1)) -> hsl(12 76% 61%)
+                // For any other color value (hex, rgb, or full CSS var that already resolves to a color),
+                // use it as-is.
+                const colorValue =
+                  typeof rawColor === "string" &&
+                  rawColor.startsWith("var(--chart-")
+                    ? `hsl(${rawColor})`
+                    : rawColor
+
+                return colorValue ? `  --color-${key}: ${colorValue};` : null
+              })
+              .join("\n")
+
+            return `
 ${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
-  })
-  .join("\n")}
+${body}
 }
+${prefix} [data-chart=${id}] svg title { display: none; }
 `
-          )
+          })
           .join("\n"),
       }}
     />

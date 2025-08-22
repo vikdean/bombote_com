@@ -7,6 +7,7 @@ export interface Series {
   Year: string
   "Your Rating": string
   URL: string
+  Genres: string
 }
 
 export function getLastModifiedDate(): string {
@@ -37,6 +38,7 @@ export function parseCSV(): Series[] {
       Title: record.Title,
       Year: record.Year,
       "Your Rating": record["Your Rating"],
-      URL: record.URL
+      URL: record.URL,
+      Genres: record.Genres ?? "",
     }))
 }
