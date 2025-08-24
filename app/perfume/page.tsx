@@ -118,6 +118,22 @@ export default function Home() {
     overall: overallAvg,
   }));
 
+  // Compute worst 5 brands (require at least 3 entries) by ascending average
+  const worstBrands = brandAverages
+    .filter((b) => (b.count ?? 0) >= 3)
+    .slice()
+    .sort((a, b) => a.average - b.average)
+    .slice(0, 5);
+  // Reverse so the absolute worst-rated brand appears at the bottom of the chart
+  const chartDataWorst = worstBrands
+    .slice()
+    .reverse()
+    .map((b) => ({
+      brand: b.brand,
+      average: b.average,
+      overall: overallAvg,
+    }));
+
   return (
     <>
       <StructuredData type="perfume" data={{ count: fragrances.length }} />
@@ -133,27 +149,12 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[0.35fr_0.85fr_0.5fr_0.52fr_0.38fr] gap-3 my-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.6fr_0.7fr_1.2fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Perfumes reviewed</CardTitle>
                     <CardDescription className="text-2xl md:text-3xl font-bold text-emerald-400">{fragrances.length}</CardDescription>
                   </CardHeader>
-                </Card>
-
-                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
-                  <CardHeader>
-                    <CardTitle className="text-base md:text-xl">Top brands</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <TopBrandsChart data={chartData} overallAvg={overallAvg} />
-                    <script
-                      // embed the same chartData into window so the client component can hydrate reliably
-                      dangerouslySetInnerHTML={{
-                        __html: `window.__TOP_BRANDS = ${JSON.stringify(chartData)};`,
-                      }}
-                    />
-                  </CardContent>
                 </Card>
 
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
@@ -165,15 +166,47 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <RatingsRadarDistribution ratings={fragranceRatings} color="#34d399" label="" />
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="text-base md:text-xl">Top rated brands</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <TopBrandsChart data={chartData} overallAvg={overallAvg} />
+                    <script
+                      // embed the same chartData into window so the client component can hydrate reliably
+                      dangerouslySetInnerHTML={{
+                        __html: `window.__TOP_BRANDS = ${JSON.stringify(chartData)};`,
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
 
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.6fr_0.7fr_1.2fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Last update</CardTitle>
-                    <CardDescription className="text-lg md:text-xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
+                    <CardDescription className="text-xl md:text-2xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
                   </CardHeader>
                 </Card>
+
+                <RatingsRadarDistribution ratings={fragranceRatings} color="#34d399" label="" />
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="text-base md:text-xl">Worst rated brands</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <TopBrandsChart data={chartDataWorst} overallAvg={overallAvg} />
+                    <script
+                      // expose worst brands data for client hydration as well
+                      dangerouslySetInnerHTML={{
+                        __html: `window.__WORST_BRANDS = ${JSON.stringify(chartDataWorst)};`,
+                      }}
+                    />
+                  </CardContent>
+                </Card>
               </div>
+
               {/* Client-side interactive table */}
               <div className="block">
                 <PerfumeTable fragrances={fragrances} />

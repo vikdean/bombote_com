@@ -231,7 +231,7 @@ export default function FizuCalculator() {
                   <p className="text-xl font-bold text-gray-300">{Math.round(calculations.netSalaryBase).toLocaleString()} Ft</p>
                 </div>
                 <div className="bg-amber-700/30 p-3 rounded-lg border border-amber-700/50">
-                  <p className="text-base font-bold text-gray-200">Nettó bér (végleges)</p>
+                  <p className="text-base font-bold text-gray-200">Nettó bér (teljes)</p>
                   <p className="text-2xl font-bold text-amber-400">{Math.round(calculations.netSalaryWithOvertime).toLocaleString()} Ft</p>
                 </div>
               </div>
