@@ -8,6 +8,16 @@ import RatingsRadialChart from "@/components/RatingsRadialChart";
 import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
 import TopBrandsChart from "@/components/TopBrandsChart";
 
+// Declare injected window properties so client-side hydration access is type-safe
+declare global {
+  interface Window {
+    __TOP_BRANDS?: Array<any>;
+    __WORST_BRANDS?: Array<any>;
+    __TOP_FRAGRANCES?: Array<any>;
+    __WORST_FRAGRANCES?: Array<any>;
+  }
+}
+
 export const metadata = {
   title: "Perfume Reviews & Ratings Database",
   description: "Comprehensive database of perfume reviews and ratings featuring in-depth fragrance analysis and recommendations for fragrance enthusiasts.",
@@ -134,6 +144,38 @@ export default function Home() {
       overall: overallAvg,
     }));
 
+  // Compute top/worst individual fragrances (by Name) regardless of brand counts
+  const fragranceRatingRegex = /10\s*\/\s*(\d+(?:\.\d+)?)/;
+  const fragrancesWithRatings = fragrances
+    .map((f) => {
+      const match = (f.Rating ?? "").toString().match(fragranceRatingRegex);
+      const rating = match ? parseFloat(match[1]) : NaN;
+      return { ...f, numericRating: !isNaN(rating) ? rating : null };
+    })
+    .filter((f) => f.numericRating !== null) as (Fragrance & { numericRating: number })[];
+
+  const topFragrances = fragrancesWithRatings
+    .slice()
+    .sort((a, b) => b.numericRating - a.numericRating)
+    .slice(0, 5)
+    .map((f) => ({
+      brand: `${f.Brand} - ${f.Name}`,
+      average: f.numericRating,
+      overall: overallAvg,
+    }));
+
+  const worstFragrances = fragrancesWithRatings
+    .slice()
+    .sort((a, b) => a.numericRating - b.numericRating)
+    .slice(0, 5)
+    // reverse so the least-bad of the worst group appears at the top of the chart
+    .reverse()
+    .map((f) => ({
+      brand: `${f.Brand} - ${f.Name}`,
+      average: f.numericRating,
+      overall: overallAvg,
+    }));
+
   return (
     <>
       <StructuredData type="perfume" data={{ count: fragrances.length }} />
@@ -149,7 +191,7 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.6fr_0.7fr_1.2fr] gap-3 my-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.6fr_1fr_1fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Perfumes reviewed</CardTitle>
@@ -173,16 +215,29 @@ export default function Home() {
                   <CardContent>
                     <TopBrandsChart data={chartData} overallAvg={overallAvg} />
                     <script
-                      // embed the same chartData into window so the client component can hydrate reliably
                       dangerouslySetInnerHTML={{
                         __html: `window.__TOP_BRANDS = ${JSON.stringify(chartData)};`,
                       }}
                     />
                   </CardContent>
                 </Card>
+
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="text-base md:text-xl">Top rated fragrances</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <TopBrandsChart data={topFragrances} overallAvg={overallAvg} />
+                    <script
+                      dangerouslySetInnerHTML={{
+                        __html: `window.__TOP_FRAGRANCES = ${JSON.stringify(topFragrances)};window.__WORST_FRAGRANCES = ${JSON.stringify(worstFragrances)};`,
+                      }}
+                    />
+                  </CardContent>
+                </Card>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.6fr_0.7fr_1.2fr] gap-3 my-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.6fr_1fr_1fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Last update</CardTitle>
@@ -201,6 +256,21 @@ export default function Home() {
                       // expose worst brands data for client hydration as well
                       dangerouslySetInnerHTML={{
                         __html: `window.__WORST_BRANDS = ${JSON.stringify(chartDataWorst)};`,
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+                  <CardHeader>
+                    <CardTitle className="text-base md:text-xl">Worst rated fragrances</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <TopBrandsChart data={worstFragrances} overallAvg={overallAvg} />
+                    <script
+                      // expose worst fragrances data for client hydration
+                      dangerouslySetInnerHTML={{
+                        __html: `window.__WORST_FRAGRANCES = ${JSON.stringify(worstFragrances)};`,
                       }}
                     />
                   </CardContent>

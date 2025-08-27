@@ -41,7 +41,6 @@ export default function TopBrandsChart({ data, overallAvg, className }: TopBrand
     ),
   } as unknown as ChartConfig;
 
-  // Use the actual maximum average from the data (and overallAvg) so bars fill available width more tightly.
   const maxAvg = chartData.length > 0 ? Math.max(...chartData.map((c) => c.average), overallAvg || 0) : 10;
 
   if (chartData.length === 0) {
@@ -51,35 +50,41 @@ export default function TopBrandsChart({ data, overallAvg, className }: TopBrand
       </div>
     );
   }
- 
+
   return (
     <div className={className ?? ""}>
-      {/* Constrain the chart wrapper height and let the chart scale to fit.
-          ChartContainer receives h-full so ResponsiveContainer (100% height) uses this space. */}
-      <div className="h-44 md:h-52 max-h-52">
+      <div className="max-h-48">
         <ChartContainer config={chartConfig} className="h-full">
-          <BarChart data={chartData} layout="vertical" margin={{ left: 0, right: 20, top: -4, bottom: -4 }} barCategoryGap="10%">
-          <YAxis
-            dataKey="key"
-            type="category"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tickFormatter={(value) => String(chartConfig[value as keyof typeof chartConfig]?.label ?? value)}
-            width={100}
-            tick={{ fill: "#e5e5e5", fontSize: 12 }}
-            style={{ fill: "#e5e5e5" }}
-          />
-          <XAxis dataKey="average" type="number" hide domain={[0, maxAvg]} />
-          <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-          <CartesianGrid vertical={false} strokeDasharray="3 3" />
-          <Bar dataKey="average" radius={8}>
-            <LabelList dataKey="average" formatter={(value: number) => Number(value).toFixed(1)} position="right" />
-            {chartData.map((entry, idx) => (
-              <Cell key={`cell-${idx}`} fill={entry.fill} style={{ fill: `var(--color-${entry.key}, ${entry.fill})` }} />
-            ))}
-          </Bar>
-          <Line type="monotone" dataKey="overall" stroke="var(--color-overall, #10b981)" strokeWidth={1} dot={false} isAnimationActive={false} />
+          <BarChart data={chartData} layout="vertical" margin={{ left: -14, right: 28, top: -4, bottom: -4 }} barCategoryGap="10%">
+            <YAxis
+              dataKey="key"
+              type="category"
+              tickLine={false}
+              tickMargin={8}
+              axisLine={false}
+              tickFormatter={(value) => String(chartConfig[value as keyof typeof chartConfig]?.label ?? value)}
+              // Use a moderate width so the chart layout remains stable while giving extra room
+              width={120}
+              // Recharts expects tick props like fill and fontSize; avoid unsupported SVG attributes here.
+              tick={{ fill: "#e5e5e5", fontSize: 11 }}
+              style={{ fill: "#e5e5e5" }}
+            />
+            <XAxis dataKey="average" type="number" hide domain={[0, maxAvg]} />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <Bar dataKey="average" radius={8}>
+              <LabelList
+                dataKey="average"
+                formatter={(value: number) => Number(value).toFixed(1)}
+                position="right"
+                // keep value label spacing modest so layout stays intact
+                style={{ fontSize: 12, fill: "#e5e5e5" }}
+              />
+              {chartData.map((entry, idx) => (
+                <Cell key={`cell-${idx}`} fill={entry.fill} style={{ fill: `var(--color-${entry.key}, ${entry.fill})` }} />
+              ))}
+            </Bar>
+            <Line type="monotone" dataKey="overall" stroke="var(--color-overall, #10b981)" strokeWidth={1} dot={false} isAnimationActive={false} />
           </BarChart>
         </ChartContainer>
       </div>
