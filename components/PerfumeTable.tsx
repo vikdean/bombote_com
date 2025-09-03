@@ -18,10 +18,22 @@ export default function PerfumeTable({ fragrances }: PerfumeTableProps) {
 
   const filteredFragrances = fragrances.filter((fragrance) => Object.values(fragrance).some((value) => value.toLowerCase().includes(searchTerm.toLowerCase())));
 
-  const totalPages = Math.ceil(filteredFragrances.length / itemsPerPage);
+  // Sort by Brand then Name (case-insensitive) before paginating
+  const sortedFiltered = filteredFragrances.slice().sort((a, b) => {
+    const brandA = (a.Brand || "").toString().toLowerCase().trim();
+    const brandB = (b.Brand || "").toString().toLowerCase().trim();
+    if (brandA < brandB) return -1;
+    if (brandA > brandB) return 1;
+    const nameA = (a.Name || "").toString().toLowerCase().trim();
+    const nameB = (b.Name || "").toString().toLowerCase().trim();
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+  });
+  const totalPages = Math.ceil(sortedFiltered.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedFragrances = filteredFragrances.slice(startIndex, endIndex);
+  const paginatedFragrances = sortedFiltered.slice(startIndex, endIndex);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -54,7 +66,7 @@ export default function PerfumeTable({ fragrances }: PerfumeTableProps) {
             <TableRow>
               {Object.keys(fragrances[0]).map((key) => (
                 <TableHead className="px-4 font-bold text-white bg-emerald-800 whitespace-nowrap text-xs md:text-sm" key={key}>
-                  {key}
+                  {key === "Rating calc" ? "Rating" : key}
                 </TableHead>
               ))}
             </TableRow>
@@ -95,26 +107,27 @@ export default function PerfumeTable({ fragrances }: PerfumeTableProps) {
                       <Badge className="bg-secondary rounded-md py-1">{value}</Badge>
                     ) : key === "Longevity" ? (
                       <Badge className="bg-secondary rounded-md py-1">{value}</Badge>
-                    ) : key === "Rating" ? (
-                      <Badge
-                        className={`rounded-md py-1 text-foreground min-w-[59px] ${
-                          value === "10 / 10"
+                    ) : key === "Rating calc" ? (
+                      (() => {
+                        const rawStr = String(value ?? "");
+                        const match = rawStr.match(/10\s*\/\s*(\d+(?:\.\d+)?)/);
+                        const num = match ? parseFloat(match[1]) : NaN;
+                        const displayNum = !isNaN(num) ? (Number.isInteger(num) ? num.toFixed(0) : num.toFixed(1)) : null;
+                        const display = displayNum ? `10 / ${displayNum}` : rawStr;
+                        const colorClass =
+                          !isNaN(num) && num >= 9
                             ? "bg-green-700 hover:bg-green-500"
-                            : value === "10 / 9"
+                            : !isNaN(num) && num >= 8
                             ? "bg-blue-700 hover:bg-blue-500"
-                            : value === "10 / 8"
+                            : !isNaN(num) && num >= 7
                             ? "bg-purple-700 hover:bg-purple-500"
-                            : value === "10 / 7" || value === "10 / 6"
+                            : !isNaN(num) && num >= 6
                             ? "bg-orange-800 hover:bg-orange-600"
-                            : value === "10 / 5" || value === "10 / 4"
+                            : !isNaN(num) && num >= 4
                             ? "bg-neutral-600 hover:bg-neutral-400"
-                            : value === "10 / 3" || value === "10 / 2" || value === "10 / 1"
-                            ? "bg-gray-900 hover:bg-gray-500"
-                            : ""
-                        }`}
-                      >
-                        {value}
-                      </Badge>
+                            : "bg-gray-900 hover:bg-gray-500";
+                        return <Badge className={`rounded-md py-1 text-foreground min-w-[64px] flex items-center justify-center text-center ${colorClass}`}>{display}</Badge>;
+                      })()
                     ) : (
                       value
                     )}

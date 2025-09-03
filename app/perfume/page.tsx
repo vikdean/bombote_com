@@ -8,7 +8,6 @@ import RatingsRadialChart from "@/components/RatingsRadialChart";
 import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
 import TopBrandsChart from "@/components/TopBrandsChart";
 
-// Declare injected window properties so client-side hydration access is type-safe
 declare global {
   interface Window {
     __TOP_BRANDS?: Array<any>;
@@ -93,20 +92,21 @@ export default function Home() {
   const fragrances: Fragrance[] = parseCSV();
   const fragranceRatings = fragrances
     .map((fragrance) => {
-      const ratingMatch = fragrance.Rating.match(/10 \/ (\d+)/);
+      const raw = (fragrance as any)["Rating calc"] ?? (fragrance as any).Rating ?? "";
+      const ratingMatch = raw.toString().match(/10\s*\/\s*(\d+(?:\.\d+)?)/);
       return ratingMatch ? parseFloat(ratingMatch[1]) : NaN;
     })
     .filter((rating) => !isNaN(rating));
   const averageRating = fragranceRatings.length > 0 ? (fragranceRatings.reduce((sum, rating) => sum + rating, 0) / fragranceRatings.length).toFixed(1) : "0.0";
 
-  // Compute top 5 brands by average rating (normalize brand names; robust rating parsing)
   const brandAverages = (() => {
     const map = new Map<string, { sum: number; count: number }>();
     const ratingRegex = /10\s*\/\s*(\d+(?:\.\d+)?)/;
     for (const f of fragrances) {
       const brand = (f.Brand || "").toString().trim();
       if (!brand) continue;
-      const match = f.Rating?.toString().match(ratingRegex);
+      const raw = (f as any)["Rating calc"] ?? (f as any).Rating ?? "";
+      const match = raw?.toString().match(ratingRegex);
       const rating = match ? parseFloat(match[1]) : NaN;
       if (!isNaN(rating)) {
         const prev = map.get(brand) || { sum: 0, count: 0 };
@@ -128,13 +128,12 @@ export default function Home() {
     overall: overallAvg,
   }));
 
-  // Compute worst 5 brands (require at least 3 entries) by ascending average
   const worstBrands = brandAverages
     .filter((b) => (b.count ?? 0) >= 3)
     .slice()
     .sort((a, b) => a.average - b.average)
     .slice(0, 5);
-  // Reverse so the absolute worst-rated brand appears at the bottom of the chart
+
   const chartDataWorst = worstBrands
     .slice()
     .reverse()
@@ -144,11 +143,11 @@ export default function Home() {
       overall: overallAvg,
     }));
 
-  // Compute top/worst individual fragrances (by Name) regardless of brand counts
   const fragranceRatingRegex = /10\s*\/\s*(\d+(?:\.\d+)?)/;
   const fragrancesWithRatings = fragrances
     .map((f) => {
-      const match = (f.Rating ?? "").toString().match(fragranceRatingRegex);
+      const raw = (f as any)["Rating calc"] ?? (f as any).Rating ?? "";
+      const match = raw.toString().match(fragranceRatingRegex);
       const rating = match ? parseFloat(match[1]) : NaN;
       return { ...f, numericRating: !isNaN(rating) ? rating : null };
     })
@@ -168,7 +167,6 @@ export default function Home() {
     .slice()
     .sort((a, b) => a.numericRating - b.numericRating)
     .slice(0, 5)
-    // reverse so the least-bad of the worst group appears at the top of the chart
     .reverse()
     .map((f) => ({
       brand: `${f.Brand} - ${f.Name}`,
@@ -191,7 +189,7 @@ export default function Home() {
         <div className="w-[95%] max-w-7xl mx-auto pb-6">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="py-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.6fr_1fr_1fr] gap-3 my-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.55fr_1fr_1fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Perfumes reviewed</CardTitle>
@@ -237,11 +235,11 @@ export default function Home() {
                 </Card>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.6fr_1fr_1fr] gap-3 my-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[0.45fr_0.55fr_1fr_1fr] gap-3 my-4">
                 <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
                   <CardHeader>
                     <CardTitle className="pb-4 text-base md:text-xl">Last update</CardTitle>
-                    <CardDescription className="text-xl md:text-2xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
+                    <CardDescription className="text-xl md:text-xl font-bold text-emerald-400">{getLastModifiedDate()}</CardDescription>
                   </CardHeader>
                 </Card>
 
@@ -253,7 +251,6 @@ export default function Home() {
                   <CardContent>
                     <TopBrandsChart data={chartDataWorst} overallAvg={overallAvg} />
                     <script
-                      // expose worst brands data for client hydration as well
                       dangerouslySetInnerHTML={{
                         __html: `window.__WORST_BRANDS = ${JSON.stringify(chartDataWorst)};`,
                       }}
@@ -268,7 +265,6 @@ export default function Home() {
                   <CardContent>
                     <TopBrandsChart data={worstFragrances} overallAvg={overallAvg} />
                     <script
-                      // expose worst fragrances data for client hydration
                       dangerouslySetInnerHTML={{
                         __html: `window.__WORST_FRAGRANCES = ${JSON.stringify(worstFragrances)};`,
                       }}
@@ -287,7 +283,7 @@ export default function Home() {
                 <h2>Perfume Database</h2>
                 <Table>
                   <TableHeader>
-                    <TableRow>{fragrances.length > 0 && Object.keys(fragrances[0]).map((key) => <TableHead key={key}>{key}</TableHead>)}</TableRow>
+                    <TableRow>{fragrances.length > 0 && Object.keys(fragrances[0]).map((key) => <TableHead key={key}>{key === "Rating calc" ? "Rating" : key}</TableHead>)}</TableRow>
                   </TableHeader>
                   <TableBody>
                     {fragrances.map((fragrance, index) => (

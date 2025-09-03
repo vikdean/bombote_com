@@ -8,7 +8,7 @@ export interface Fragrance {
   Type: string;
   Scent: string;
   Longevity: string;
-  Rating: string;
+  "Rating calc": string;
   Comments: string;
   "Link to buy": string;
 }
