@@ -31,6 +31,6 @@ export function parseCSV(): Fragrance[] {
   const records = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,
-  });
+  }) as Fragrance[];
   return records;
 }

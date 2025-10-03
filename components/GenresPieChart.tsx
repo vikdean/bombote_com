@@ -36,22 +36,9 @@ export function GenresPieChart({ data }: GenresPieChartProps) {
   const id = "genres-pie-chart";
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  // Early return for empty data
-  if (!data || data.length === 0) {
-    return (
-      <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
-        <CardHeader>
-          <CardTitle>Genres Distribution</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>No genre data available to display.</p>
-        </CardContent>
-      </Card>
-    );
-  }
-
   // Process incoming data to include a safe key for config & nameKey
   const processedData = React.useMemo(() => {
+    if (!data || data.length === 0) return [];
     return data.map((item) => {
       const key = slugify(item.genre || "unknown");
 
@@ -108,6 +95,20 @@ export function GenresPieChart({ data }: GenresPieChartProps) {
 
     return () => observer.disconnect();
   }, []);
+
+  // Early return for empty data (after all hooks)
+  if (!data || data.length === 0) {
+    return (
+      <Card className="shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
+        <CardHeader>
+          <CardTitle>Genres Distribution</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>No genre data available to display.</p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card data-chart={id} className="flex flex-col shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 w-full">

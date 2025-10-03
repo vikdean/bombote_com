@@ -36,6 +36,6 @@ export function parseCSV(): Movie[] {
   const records = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,
-  })
+  }) as Movie[]
   return records
 }

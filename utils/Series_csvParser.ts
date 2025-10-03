@@ -27,11 +27,11 @@ export function parseCSV(): Series[] {
   const records = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,
-  })
+  }) as any[]
   
   // Filter for TV Series and TV Mini Series, then map to only the fields we need
   return records
-    .filter((record: any) => 
+    .filter((record: any) =>
       record["Title Type"] === "TV Series" || record["Title Type"] === "TV Mini Series"
     )
     .map((record: any) => ({
