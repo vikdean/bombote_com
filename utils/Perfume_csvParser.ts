@@ -10,7 +10,6 @@ export interface Fragrance {
   Longevity: string;
   "Rating calc": string;
   Comments: string;
-  "Link to buy": string;
 }
 
 export function getLastModifiedDate(): string {

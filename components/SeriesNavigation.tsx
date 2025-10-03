@@ -40,6 +40,12 @@ export default function Navigation() {
                 >
                   Movie Ratings
                 </Link>
+                <Link
+                  href="/portfolio"
+                  className="text-white/90 bg-violet-500/25 hover:bg-violet-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-violet-400/20"
+                >
+                  My Portfolio
+                </Link>
               </div>
             </div>
 
@@ -81,6 +87,13 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Movie Ratings
+              </Link>
+              <Link
+                href="/series"
+                className="text-white/90 hover:bg-orange-500/30 hover:text-white block px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 border border-orange-400/20"
+                onClick={() => setIsOpen(false)}
+              >
+                TV Show Ratings
               </Link>
             </div>
           </div>

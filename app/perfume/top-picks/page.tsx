@@ -1,8 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { BicepsFlexed, DollarSign, Heart, Link2, Star } from "lucide-react";
-import Link from "next/link";
+import { BicepsFlexed, DollarSign, Heart, Star } from "lucide-react";
 
 const top_picks = [
   {
@@ -14,9 +13,8 @@ const top_picks = [
     longevity: "8 hours+",
     price: "moderate",
     overall_score: "10/10",
-    link: "https://amzn.to/3Hi9G7Q",
     description:
-      "The Modern Mens perfume; perfect scent, with incredible performance at an OK price (get the Parfum or EDP version if the Elixir is too expensive for you).  Highly recommended.",
+      "The Modern Mens perfume; perfect scent, with incredible performance at an OK price; highly recommended. If you are looking for a clone, Zimaya - Zukhruf Black is about a 95% match scent wise, with a solid performance, and its only around $25 for 100ml.",
   },
   {
     brand: "Initio",
@@ -27,7 +25,6 @@ const top_picks = [
     longevity: "~7 hours",
     price: "expensive",
     overall_score: "10/9",
-    link: "https://amzn.to/45pCOC2",
     description: "Creamy-fruity-woody-spicy scent, good performance; however, its quite expensive.",
   },
   {
@@ -39,7 +36,6 @@ const top_picks = [
     longevity: "8 hours+",
     price: "standard",
     overall_score: "10/9.5",
-    link: "https://amzn.to/3JqjgWI",
     description: "Unique scent, very good performance at a good price.",
   },
   {
@@ -51,7 +47,6 @@ const top_picks = [
     longevity: "~7 hours",
     price: "standard",
     overall_score: "10/9",
-    link: "https://amzn.to/4mkgWzd",
     description: "Lovely sweet, but not too sweet scent, good performance, affordable price.",
   },
   {
@@ -63,7 +58,6 @@ const top_picks = [
     longevity: "8 hours+",
     price: "cheap",
     overall_score: "10/9.5",
-    link: "https://amzn.to/4mc2oBK",
     description: "Pleasant scent, similar to the Dior Sauvage Elixir. Very good performance at a bargain price.",
   },
   {
@@ -75,7 +69,6 @@ const top_picks = [
     longevity: "8 hours+",
     price: "expensive",
     overall_score: "10/9",
-    link: "https://amzn.to/45JeJaz",
     description: "Unique scent, great performance, but expensive. Very similar to the regular Interlude, but less intrusive.",
   },
   {
@@ -87,7 +80,6 @@ const top_picks = [
     longevity: "8 hours",
     price: "cheap",
     overall_score: "10/9",
-    link: "",
     description: "Woody-oriental scent with all-day performance, good price.",
   },
   {
@@ -99,7 +91,6 @@ const top_picks = [
     longevity: "8 hours+",
     price: "cheap",
     overall_score: "10/9",
-    link: "https://amzn.to/3DSX30K",
     description: "Smoky spicy-sweet tobacco with really good performance and it comes cheap.",
   },
   {
@@ -111,7 +102,6 @@ const top_picks = [
     longevity: "8 hours+",
     price: "cheap",
     overall_score: "10/9.5",
-    link: "https://amzn.to/4fyZa8Q",
     description: "Oriental woody Tobacco scent with good performance, really cheap.",
   },
 ];
@@ -241,13 +231,6 @@ export default function TopPicks() {
                     <div className="flex items-center gap-2">
                       <Star className="h-5 w-5" />
                       Rating: <Badge className="bg-orange-700 rounded-md py-1 text-foreground">{option.overall_score}</Badge>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Link2 className="h-5 w-5" />
-                      Link:{" "}
-                      <Link href={option.link} className="text-emerald-300 hover:text-emerald-200" target="_blank" rel="noopener noreferrer">
-                        Amazon
-                      </Link>
                     </div>
                   </div>
                   <p className="text-foreground/90 text-xs md:text-base">{option.description}</p>

@@ -23,23 +23,18 @@ export default function Navigation() {
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-4">
                 <Link
-                  href="/perfume"
+                  href="/"
                   className="text-white/90 bg-white/10 hover:bg-white/30 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-white/10"
                 >
                   Home
                 </Link>
                 <Link
-                  href="/perfume/top-picks"
+                  href="/perfume/"
                   className="text-white/90 bg-emerald-500/25 hover:bg-emerald-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-emerald-400/20"
                 >
-                  My Top Picks
+                  Perfume Ratings
                 </Link>
-                <Link
-                  href="/perfume/longevity"
-                  className="text-white/90 bg-emerald-500/25 hover:bg-emerald-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-emerald-400/20"
-                >
-                  Longevity Legend
-                </Link>
+
                 <Link
                   href="/movies"
                   className="text-white/90 bg-blue-500/25 hover:bg-blue-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-blue-400/20"
@@ -51,12 +46,6 @@ export default function Navigation() {
                   className="text-white/90 bg-orange-500/25 hover:bg-orange-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-orange-400/20"
                 >
                   TV Show Ratings
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="text-white/90 bg-violet-500/25 hover:bg-violet-400/50 hover:text-white backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 border border-violet-400/20"
-                >
-                  My Portfolio
                 </Link>
               </div>
             </div>
@@ -87,18 +76,11 @@ export default function Navigation() {
                 Home
               </Link>
               <Link
-                href="/perfume/top-picks"
+                href="/perfume"
                 className="text-white/90 hover:bg-emerald-500/30 hover:text-white block px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 border border-emerald-400/20"
                 onClick={() => setIsOpen(false)}
               >
-                My Top Picks
-              </Link>
-              <Link
-                href="/perfume/longevity"
-                className="text-white/90 hover:bg-emerald-500/30 hover:text-white block px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 border border-emerald-400/20"
-                onClick={() => setIsOpen(false)}
-              >
-                Longevity Legend
+                Perfume Ratings
               </Link>
               <Link
                 href="/movies"
@@ -113,13 +95,6 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 TV Show Ratings
-              </Link>
-              <Link
-                href="/portfolio"
-                className="text-white/90 hover:bg-violet-500/30 hover:text-white block px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 border border-violet-400/20"
-                onClick={() => setIsOpen(false)}
-              >
-                My Portfolio
               </Link>
             </div>
           </div>

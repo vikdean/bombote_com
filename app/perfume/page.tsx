@@ -2,7 +2,6 @@ import { parseCSV, type Fragrance, getLastModifiedDate } from "@/utils/Perfume_c
 import PerfumeTable from "@/components/PerfumeTable";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
 import RatingsRadialChart from "@/components/RatingsRadialChart";
 import RatingsRadarDistribution from "@/components/RatingsRadarDistribution";
@@ -289,17 +288,7 @@ export default function Home() {
                     {fragrances.map((fragrance, index) => (
                       <TableRow key={index}>
                         {Object.entries(fragrance).map(([key, value]) => (
-                          <TableCell key={key}>
-                            {key === "Link to buy" ? (
-                              typeof value === "string" && (value.includes("amazon.") || value.includes("amzn.to")) ? (
-                                <Link href={value}>Amazon Link</Link>
-                              ) : (
-                                ""
-                              )
-                            ) : (
-                              value
-                            )}
-                          </TableCell>
+                          <TableCell key={key}>{value}</TableCell>
                         ))}
                       </TableRow>
                     ))}
